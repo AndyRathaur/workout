@@ -23,13 +23,13 @@
 
 ## 📅 The Weekly Schedule
 
-* **Monday:** Upper Body A (Chest Shelf, Butterfly Stretch, Lat Width & Heavy Arms)
-* **Tuesday:** Lower Body A (Pelvic Alignment, Glutes, Hamstrings, Machine Calves & Core)
+* **Monday:** Upper Body A (Width, Scapular Balance, Chest & Elbow-Safe Arms)
+* **Tuesday:** Lower Body A (Pelvic Alignment, Glutes, Hamstrings, Machine Calves & Loaded Core Flexion)
 * **Wednesday:** Active Rest (Incline walking + posture mobility)
 * **Thursday:** Upper Body B (Arm Thickness, Brachialis & Wide Delts)
-* **Friday:** Lower Body B (Quad Sweep & Deep Core Corset)
+* **Friday:** Lower Body B (Quad Sweep & Anti-Extension Core Corset)
 * **Saturday & Sunday:** Full Rest (Recovery, 8k–10k steps)
-* **Every Morning:** 2 Minutes of Stomach Vacuums (empty stomach after washroom)
+* **Every Morning:** 2 Minutes of Stomach Vacuums (Transverse Abdominis tone)
 
 ---
 
@@ -37,7 +37,7 @@
 
 ---
 
-## 🟦 MONDAY: UPPER BODY A (Chest, Width & Heavy Triceps)
+## 🟦 MONDAY: UPPER BODY A (Width, Chest & Elbow-Safe Arms)
 
 ### Exercise 1: Upper Chest Compound Press
 * **Option A (Dumbbells - Recommended):** **Incline Dumbbell Bench Press**  
@@ -51,22 +51,10 @@
 
 ---
 
-### Exercise 2: Chest Stretch & Inner Squeeze
-* **Option A (Machine - Recommended):** **Butterfly / Pec Deck Machine**  
-  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Continuous tension from full stretch to peak squeeze. Squeeze pecs hard for 1 second when handles touch.
-  * ![Pec Deck Fly](https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif)
-* **Option B (Dumbbells):** **Flat / Incline Dumbbell Flyes**  
-  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Great chest stretch on flat or incline bench.
-  * ![Dumbbell Fly](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Fly.gif)
-
----
-
-### Exercise 3: Lat Width (V-Taper Wings)
+### Exercise 2: Lat Width Compound (V-Taper Wings)
 * **Option A (Cable Machine - Recommended):** **Wide-Grip Lat Pulldown**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
-  * *Advantage:* Direct vertical plane to drive elbows into back pockets. Squeeze 1s at upper chest.
+  * *Advantage:* Prioritized ahead of isolation flyes so your prime vertical pulling movers are completely fresh for maximum overload. Squeeze 1s at upper chest.
   * ![Lat Pulldown](https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif)
 * **Option B (Dumbbell):** **Dumbbell Pullover on Bench**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
@@ -75,7 +63,31 @@
 
 ---
 
-### Exercise 4: Shoulder Width Cap (Side Delts)
+### Exercise 3: Mid-Back Thickness & Horizontal Scapular Pull
+* **Option A (Cable Machine - Recommended):** **Seated Cable Row**  
+  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
+  * *Advantage:* Essential horizontal pulling to balance anterior chest pressing volume, thicken mid-traps & rhomboids, and stabilize shoulders against desk slouch.
+  * ![Seated Cable Row](https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif)
+* **Option B (Dumbbells):** **Chest-Supported DB Row**  
+  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
+  * *Advantage:* Lie chest-down on a 45° incline bench to lock out spinal momentum and isolate upper back thickness.
+  * ![Dumbbell Row](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif)
+
+---
+
+### Exercise 4: Chest Stretch & Inner Squeeze (Isolation)
+* **Option A (Machine - Recommended):** **Butterfly / Pec Deck Machine**  
+  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
+  * *Advantage:* Continuous tension through full squeeze. Squeeze pecs hard for 1 second when handles touch. Placed after compound work for joint safety.
+  * ![Pec Deck Fly](https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif)
+* **Option B (Dumbbells):** **Flat / Incline Dumbbell Flyes**  
+  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
+  * *Advantage:* Deep pectoral stretch without requiring a machine.
+  * ![Dumbbell Fly](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Fly.gif)
+
+---
+
+### Exercise 5: Shoulder Width Cap (Side Delts)
 * **Option A (Cable - Fastest Growth):** **Cable Lateral Raise**  
   * *Sets & Reps:* 4 Sets × 12–15 Reps (Rest: 60s)
   * *Advantage:* Eliminates zero-tension dead zone at the bottom; continuous stretch builds side delts 2x faster.
@@ -87,27 +99,15 @@
 
 ---
 
-### Exercise 5: Triceps Horseshoe (Lateral & Medial Heads)
+### Exercise 6: Consolidated Elbow-Safe Triceps (Lateral & Medial Heads)
 * **Option A (Cable - Recommended):** **Tricep Rope Pushdown**  
-  * *Sets & Reps:* 3 Sets × 12–15 Reps (Rest: 60s)
-  * *Advantage:* Full elbow lockout with rope spread at bottom.
+  * *Sets & Reps:* 3–4 Sets × 10–12 Reps (Rest: 60s)
+  * *Advantage:* Trimmed to 3–4 high-intensity sets (eliminating redundant overhead volume after heavy pressing) to maximize horseshoe growth while eliminating elbow tendonitis.
   * ![Tricep Rope Pushdown](https://fitnessprogramer.com/wp-content/uploads/2021/06/Rope-Pushdown.gif)
 * **Option B (Bench / Bodyweight):** **Bench Dips / Dumbbell Skull Crushers**  
-  * *Sets & Reps:* 3 Sets × 12–15 Reps (Rest: 60s)
+  * *Sets & Reps:* 3–4 Sets × 10–12 Reps (Rest: 60s)
   * *Advantage:* Can be performed anywhere with a flat gym bench.
   * ![Bench Dips](https://fitnessprogramer.com/wp-content/uploads/2021/02/Bench-Dips.gif)
-
----
-
-### Exercise 6: Triceps Hanging Mass (Long Head)
-* **Option A (Cable - Recommended):** **Cable Overhead Triceps Extension**  
-  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
-  * *Advantage:* Stretches long head under load behind head.
-  * ![Cable Overhead Tricep Extension](https://fitnessprogramer.com/wp-content/uploads/2021/04/Cable-Rope-Overhead-Triceps-Extension.gif)
-* **Option B (Dumbbell):** **Seated DB Overhead Extension**  
-  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
-  * *Advantage:* Deep overhead stretch holding 1 heavy dumbbell with both hands.
-  * ![Seated DB Triceps Extension](https://fitnessprogramer.com/wp-content/uploads/2021/06/Seated-Dumbbell-Triceps-Extension.gif)
 
 ---
 
@@ -316,9 +316,9 @@
 
 ---
 
-## 🧘 Everyday Morning Routine (The Flat Stomach Secret)
+## 🧘 Everyday Morning Routine & Core Architecture
 
-### **The Stomach Vacuum**
+### **The Stomach Vacuum (Deep Internal Girdle)**
 * **When:** Every single morning, directly **after washroom/potty** on an empty stomach.
 * **How to do it:**
   1. Stand upright with hands on your hips.
@@ -326,14 +326,16 @@
   3. Suck your belly button all the way in towards your spine as hard as you can (like putting on tight jeans).
   4. Hold that position tightly for **15 to 20 seconds** while taking shallow sips of air.
   5. Relax, breathe normally for 30s, and repeat for **3 sets**.
-* **Result:** Trains your deep internal core belt (*transverse abdominis*) to keep your stomach sucked in flat automatically all day long!
+* **Functional Role:** Specifically activates the **transverse abdominis (TVA)**—your body's internal corset—tightening resting waist circumference and preventing visceral protrusion.
+* **Loaded Core Synergy:** While vacuums flatten resting posture, loaded spinal flexion and anti-extension hypertrophy are delivered directly in the gym sessions: **Captain's Chair Leg Raises (Tuesday)** and **Deadbugs (Friday)**.
 
 ---
 
 ## 🥗 Daily Nutrition & Recovery Blueprint
 
-1. **Daily Protein:** **140g – 150g pure protein**
-   * *Chicken Days:* ₹100–₹120 Chicken Breast (~350g–400g raw) gives ~110g protein.
+1. **Daily Protein Target:** **140g – 150g pure protein**
+   * *Target Calibration:* Exactly **1.7–1.8 g/kg bodyweight** calibrated for your **84 kg body mass**—the scientific sweet spot (*Morton et al.* meta-analysis) for maximal muscle protein synthesis while in a calorie deficit.
+   * *Chicken Days:* 400g–500g raw chicken breast gives ~120g–150g pure protein.
    * *Egg/Soya Days:* 4–6 Eggs (~30g) + 50g Soya Chunks (~26g) + 1 scoop Whey (~24g).
 2. **Daily Calories:** **~2,000 kcal** (creates a ~400 kcal deficit to melt belly fat while muscle grows).
 3. **Daily Water:** **3.0 to 3.5 Litres** (vital for creatine cellular uptake and muscle fullness).
