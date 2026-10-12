@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>V-Taper & Big Arms Hypertrophy Routine</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #151f32;
+      --slide-bg: #0f172a;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-green: #34d399;
+      --accent-orange: #fb923c;
+      --accent-purple: #c084fc;
+      --border: #22324e;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 14px 12px 60px;
+      line-height: 1.5;
+    }
+    header {
+      text-align: center;
+      padding: 16px 0 14px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 22px;
+      color: var(--accent);
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      font-weight: 800;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .badge {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-green);
+    }
+
+    /* Global View Switcher */
+    .global-switcher {
+      background: #111c30;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .global-switcher-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .global-btn-group {
+      display: inline-flex;
+      background: #090e1a;
+      border-radius: 8px;
+      padding: 3px;
+      border: 1px solid rgba(255,255,255,0.08);
+      width: 100%;
+      max-width: 360px;
+    }
+    .global-btn {
+      flex: 1;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .global-btn.active {
+      background: var(--accent);
+      color: #041226;
+      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.35);
+    }
+
+    .daily-box {
+      background: linear-gradient(135deg, #1e1b4b, #172554);
+      border: 1px solid #3b82f6;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 22px;
+    }
+    .daily-box h3 {
+      color: #93c5fd;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .daily-box p {
+      font-size: 12px;
+      color: #e2e8f0;
+      line-height: 1.45;
+    }
+
+    .day-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    }
+    .day-header {
+      background: linear-gradient(90deg, #1b263b, #0f172a);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .day-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .day-tag {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .tag-blue { background: rgba(56, 189, 248, 0.15); color: var(--accent); }
+    .tag-green { background: rgba(52, 211, 153, 0.15); color: var(--accent-green); }
+    .tag-orange { background: rgba(251, 146, 60, 0.15); color: var(--accent-orange); }
+
+    .exercise-list {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Swipeable Card Styles */
+    .exercise-card {
+      background: #090e1a;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      background: #111a2e;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ex-index {
+      font-size: 12px;
+      font-weight: 800;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pill-tabs {
+      display: inline-flex;
+      background: #060a12;
+      border-radius: 20px;
+      padding: 2px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .pill-tab {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pill-tab.active {
+      background: var(--accent);
+      color: #041226;
+      box-shadow: 0 1px 6px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Carousel Snap Track */
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel-slide {
+      flex: 0 0 100%;
+      min-width: 100%;
+      scroll-snap-align: start;
+      box-sizing: border-box;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .slide-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-machine {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-freeweight {
+      background: rgba(251, 146, 60, 0.15);
+      color: var(--accent-orange);
+      border: 1px solid rgba(251, 146, 60, 0.3);
+    }
+    .swipe-hint-badge {
+      font-size: 10px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .ex-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+    .ex-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .ex-sets {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-green);
+      background: rgba(52, 211, 153, 0.1);
+      padding: 2px 7px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .ex-target {
+      font-size: 11px;
+      color: var(--accent-purple);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .ex-advantage {
+      font-size: 11px;
+      color: #6ee7b7;
+      margin-bottom: 6px;
+      background: rgba(16, 185, 129, 0.08);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border-left: 3px solid #10b981;
+      line-height: 1.35;
+    }
+    .ex-cue {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .gif-container {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+    }
+    .gif-container img {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Card Bottom Swipe Bar */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      background: #0a1120;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .swipe-label {
+      font-size: 10px;
+      color: #64748b;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .dot-indicators {
+      display: flex;
+      gap: 5px;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dot.active {
+      width: 14px;
+      border-radius: 4px;
+      background: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0 10px;
+      color: var(--text-muted);
+      font-size: 11px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>V-TAPER & BIG ARMS HYPERTROPHY</h1>
+    <div class="subtitle">Interactive Swipe Cards (Machine ⚙️ vs. Free Weight 🏋️)</div>
+    <div class="stats-bar">
+      <span class="badge">🔥 Goal: Broad Frame & Arms</span>
+      <span class="badge">👈👉 Swipe cards left/right</span>
+      <span class="badge">💪 Protein: 140–150g/day</span>
+    </div>
+  </header>
+
+  <!-- Global One-Tap Switcher -->
+  <div class="global-switcher">
+    <div class="global-switcher-title">Switch All Exercises At Once:</div>
+    <div class="global-btn-group">
+      <button class="global-btn active" id="btnAllMachine" onclick="switchAllCards(0)">⚙️ Machine / Cable</button>
+      <button class="global-btn" id="btnAllFree" onclick="switchAllCards(1)">🏋️ Free Weight / Rod</button>
+    </div>
+  </div>
+
+  <div class="daily-box">
+    <h3>🧘 Everyday Morning Ritual: The Stomach Vacuum</h3>
+    <p><strong>When:</strong> Every morning directly after washroom/potty on an empty stomach.<br>
+    <strong>How:</strong> Exhale all air out, suck your belly button firmly into your spine, and hold tight for <strong>15 to 20 seconds</strong>. Rest 30s. Do <strong>3 sets</strong>.<br>
+    <strong>Why:</strong> Tightens the deep internal core belt so your stomach stays pulled in flat all day.</p>
+  </div>
+
+  <!-- ==================== MONDAY ==================== -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-title">Monday: Upper Body A</div>
+      <div class="day-tag tag-blue">Chest, Width & Triceps</div>
+    </div>
+    <div class="exercise-list">
+
+      <!-- EXERCISE 1 -->
+      <div class="exercise-card" id="card-m-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-1', 0)">Incline DB</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-1', 1)">Incline Rod</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-1')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for Barbell Rod 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline Dumbbell Bench Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Upper Pectorals (Square Masculine Chest Shelf)</div>
+            <div class="ex-advantage">⚡ Dumbbell Advantage: Deeper stretch below chest level + safe to drop weights when training alone.</div>
+            <div class="ex-cue">Bench at 30°–45°. Retract shoulder blades. Lower over 2s to collarbones, press up in a gentle arc. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif" alt="Incline Dumbbell Press">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Barbell Rod Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Dumbbells</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline Barbell Rod Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Upper Pectorals & Raw Pressing Power</div>
+            <div class="ex-advantage">⚡ Barbell Advantage: Easier micro-loading with plates. Stop 1 rep shy of failure for safety without a spotter.</div>
+            <div class="ex-cue">Medium grip outside shoulders. Lower rod under control to collarbone level, drive up explosively. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Barbell-Bench-Press.gif" alt="Incline Barbell Bench Press">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 2 -->
+      <div class="exercise-card" id="card-m-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-2', 0)">Butterfly Machine</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-2', 1)">DB Flyes</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-2')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Butterfly Machine</span>
+              <span class="swipe-hint-badge">Swipe for DB Fly 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Butterfly / Pec Deck Machine</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Sternal & Mid Pectorals (Inner Chest & Separation)</div>
+            <div class="ex-advantage">⚡ Machine Advantage: 100% constant tension through full squeeze. Squeeze hard for 1 second when handles touch.</div>
+            <div class="ex-cue">Seat handles at mid-chest. Slight elbow bend. Open wide for 2s stretch, bring hands together and squeeze pecs. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif" alt="Pec Deck Fly">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Fly Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Butterfly</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Flat / Incline Dumbbell Flyes</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Pectoral Stretch & Fiber Tear</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Great stretch, but stop before dumbbells touch at top to keep tension on chest.</div>
+            <div class="ex-cue">Lie on bench with slight bend in elbows. Open arms wide like hugging a tree, feel deep chest stretch, pull back up. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Fly.gif" alt="Dumbbell Fly">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 3 -->
+      <div class="exercise-card" id="card-m-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-3', 0)">Lat Pulldown</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-3', 1)">DB Pullover</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-3')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Pullover 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Wide-Grip Lat Pulldown</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lats (Latissimus Dorsi) — The V-Taper Wings</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Controlled vertical plane to drive elbows directly into back pockets.</div>
+            <div class="ex-cue">Lean back 10°. Hands are hooks—drive elbows straight down. Squeeze 1s at upper chest. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif" alt="Lat Pulldown">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Pulldown</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Pullover on Bench</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lat Stretch & Ribcage Expansion</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Incredible stretch for upper lats across the top of a flat bench.</div>
+            <div class="ex-cue">Lie across bench holding 1 heavy dumbbell in both hands. Lower dumbbell behind head for deep lat stretch, pull back over forehead. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Pullover.gif" alt="Dumbbell Pullover">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 4 -->
+      <div class="exercise-card" id="card-m-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-4', 0)">Cable Lateral</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-4', 1)">DB Lateral</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-4')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Fastest Growth)</span>
+              <span class="swipe-hint-badge">Swipe for DB Lateral 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoids (Instant Frame Width)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Eliminates the zero-tension dead zone at the bottom. Constant stretch tension builds shoulders 2x faster.</div>
+            <div class="ex-cue">Low pulley at knee height. Grip handle across body. Raise outward leading with elbow up to shoulder level. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif" alt="Cable Lateral Raise">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing Dumbbell Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoids (Capping Shoulders)</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Don't swing! Pour the water at the top (pinkies slightly higher than thumbs).</div>
+            <div class="ex-cue">Stand tall, slight torso hinge. Raise dumbbells out to sides leading with elbows. Pause at top, lower slowly. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" alt="Dumbbell Lateral Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 5 -->
+      <div class="exercise-card" id="card-m-5">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 5</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-5', 0)">Cable Rope</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-5', 1)">Bench Dips</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-5')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Arm Size King)</span>
+              <span class="swipe-hint-badge">Swipe for Bench Dips 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Tricep Rope Pushdown</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Lateral & Medial Heads (70% Arm Size)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Isolates triceps without wrist strain; allows full elbow lockout and rope spread.</div>
+            <div class="ex-cue">Elbows glued to ribs. Push rope down, spread ends apart at bottom, lock elbows for 1 full second. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Rope-Pushdown.gif" alt="Tricep Rope Pushdown">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Bench / Bodyweight Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Rope</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Bench Dips / Skull Crusher</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Tricep Horseshoe Lockout</div>
+            <div class="ex-advantage">⚡ Bodyweight Tip: Can be done on any flat gym bench; excellent mass builder for triceps.</div>
+            <div class="ex-cue">Hands gripped on bench edge behind you. Lower body until elbows are at 90°, press through palms to lock out triceps. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Bench-Dips.gif" alt="Bench Dips">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-5', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-5', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 6 -->
+      <div class="exercise-card" id="card-m-6">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 6</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-6', 0)">Cable Overhead</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-6', 1)">DB Overhead</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-6')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Overhead 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Overhead Triceps Extension</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Long Head (The Hanging Arm Mass)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Constant stretch behind the neck without elbow joint grinding.</div>
+            <div class="ex-cue">Face away from pulley. Extend rope overhead with a deep stretch behind head, lock elbows at top. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/04/Cable-Rope-Overhead-Triceps-Extension.gif" alt="Cable Overhead Triceps">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated DB Overhead Extension</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Long Head (Deep Stretch)</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Hold 1 heavy dumbbell with both hands cupped under the top plate.</div>
+            <div class="ex-cue">Sit upright on bench. Lower dumbbell behind neck until forearms touch biceps, press straight overhead. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Seated-Dumbbell-Triceps-Extension.gif" alt="Seated DB Triceps Extension">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-6', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-6', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 7 -->
+      <div class="exercise-card" id="card-m-7">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 7</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-7', 0)">Cable Face Pull</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-7', 1)">DB Reverse Fly</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-7')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Posture Cure)</span>
+              <span class="swipe-hint-badge">Swipe for DB Fly 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Face Pull</div>
+              <div class="ex-sets">3 Sets × 15–20 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rear Delts & Rotator Cuff (Reverses Desk Slouch)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Dual action of pulling back + externally rotating knuckles to fix posture.</div>
+            <div class="ex-cue">Pulley at eye height. Pull rope towards eyes while rotating knuckles backward. Squeeze upper back. Rest 45s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Face-Pull.gif" alt="Cable Face Pull">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Face Pull</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline DB Reverse Fly</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rear Delts & Rhomboids</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Lie face-down on a 30° incline bench to eliminate lower back strain.</div>
+            <div class="ex-cue">Chest against incline bench. Fly light dumbbells out to the sides leading with pinkies. Squeeze rear shoulders. Rest 45s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Reverse-Fly.gif" alt="Dumbbell Reverse Fly">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-7', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-7', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== TUESDAY ==================== -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-title">Tuesday: Lower Body A</div>
+      <div class="day-tag tag-green">Posterior Chain, Calves & Waist</div>
+    </div>
+    <div class="exercise-list">
+
+      <!-- EXERCISE 1 -->
+      <div class="exercise-card" id="card-t-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-1', 0)">DB RDL</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-1', 1)">Barbell Rod RDL</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-1')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup (Fixes Belly Out)</span>
+              <span class="swipe-hint-badge">Swipe for Barbell Rod 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Romanian Deadlift (RDL)</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Glutes & Hamstrings (Fixes Anterior Pelvic Tilt)</div>
+            <div class="ex-advantage">⚡ Free-Weight Power: Pulls your pelvis back into neutral alignment so your stomach stops sticking out.</div>
+            <div class="ex-cue">Knees soft, back flat. Push butt back as if closing car door. Slide dumbbells down shins, squeeze glutes to stand. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Romanian-Deadlift.gif" alt="Dumbbell Romanian Deadlift">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Barbell Rod Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Dumbbells</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Barbell Rod Romanian Deadlift</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Posterior Chain & Heavy Overload</div>
+            <div class="ex-advantage">⚡ Rod Advantage: Easier to load heavier weights; single bar path reinforces clean hip hinge.</div>
+            <div class="ex-cue">Grip rod shoulder-width. Keep bar brushing against thighs and shins as you push hips back. Squeeze glutes at top. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Romanian-Deadlift.gif" alt="Barbell Romanian Deadlift">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 2 -->
+      <div class="exercise-card" id="card-t-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-2', 0)">Leg Press</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-2', 1)">Goblet Squat</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-2')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for Goblet Squat 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Leg Press Machine</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Quadriceps & Glute Drive</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Zero lower back strain. Push quads to true failure safely.</div>
+            <div class="ex-cue">Feet shoulder-width on platform. Lower sled to 90° knee bend. Drive through midfoot, do not lock knees violently. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2015/11/Leg-Press.gif" alt="Leg Press Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Leg Press</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Goblet Squat</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Quads & Torso Posture</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Holding dumbbell at chest forces upright posture and core bracing.</div>
+            <div class="ex-cue">Hold 1 heavy dumbbell vertically against chest. Squat down between knees until thighs are parallel to floor. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2023/01/Dumbbell-Goblet-Squat.gif" alt="Dumbbell Goblet Squat">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 3 -->
+      <div class="exercise-card" id="card-t-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-3', 0)">Seated Leg Curl</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-3', 1)">Lying / DB Curl</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-3')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup (+40% Growth)</span>
+              <span class="swipe-hint-badge">Swipe for Lying Curl 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated Leg Curl Machine</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Hamstrings (Biceps Femoris)</div>
+            <div class="ex-advantage">⚡ Science Fact: Seated position pre-stretches the hamstrings at the hip, yielding ~40% more growth than lying curls.</div>
+            <div class="ex-cue">Lap pad firmly on thighs. Curl heels down and under seat. Pause 1s at bottom, control 2s on return. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif" alt="Seated Leg Curl Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Alternative Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Seated Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Lying Leg Curl (Machine / DB)</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Hamstrings Peak Contraction</div>
+            <div class="ex-advantage">⚡ Alternative: Great if seated curl is busy; focuses on knee flexion without hip stretch.</div>
+            <div class="ex-cue">Lie face-down, pad against lower calves. Curl legs up towards glutes without lifting hips off the bench. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif" alt="Leg Curl Alternative">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 4 -->
+      <div class="exercise-card" id="card-t-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-4', 0)">Calf Machine</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-4', 1)">DB Calf Raise</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-4')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Calf Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Calf 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Calf Raise Machine</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Calves (Gastrocnemius & Soleus)</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Safe, balanced overload. Allows maximum heel drop for extreme stretch without dropping weights.</div>
+            <div class="ex-cue">Balls of feet on footplate edge. Sink heels down for 2s deep stretch. Press high on big toes, pause 1s at top. Rest 45s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Lever-Seated-Calf-Raise.gif" alt="Calf Raise Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Calf Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing DB Calf Raise on Step</div>
+              <div class="ex-sets">3 Sets × 15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Calves (Ankle Stability)</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Stand on a step or weight plate holding 1 dumbbell, use other hand to balance against a wall.</div>
+            <div class="ex-cue">Deep 2-second heel stretch below the step, explode onto your toes, hold 1-second peak squeeze. Rest 45s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Calf-Raise.gif" alt="Dumbbell Calf Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 5 -->
+      <div class="exercise-card" id="card-t-5">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 5</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-5', 0)">Captain's Chair</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-5', 1)">Floor Leg Raise</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-5')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Tower Apparatus Setup</span>
+              <span class="swipe-hint-badge">Swipe for Floor Raise 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Captain's Chair Leg Raise</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lower Abdominals & Hip Flexors</div>
+            <div class="ex-advantage">⚡ Apparatus Advantage: Hanging pelvis curling pulls the lower stomach flat.</div>
+            <div class="ex-cue">Rest forearms on pads. Curl your hips and knees up towards your chest without swinging your body. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Captains-Chair-Leg-Raise.gif" alt="Captain's Chair Leg Raise">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Floor Mat Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Captain's Chair</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Lying Floor Leg Raise</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lower Abdominals</div>
+            <div class="ex-advantage">⚡ Floor Tip: Press your lower back flat into the mat—do not allow your lower spine to arch.</div>
+            <div class="ex-cue">Lie on mat, hands under hips. Raise legs up to 90°, lower slowly until heels are 2 inches off floor. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Lying-Leg-Raise.gif" alt="Lying Leg Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-5', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-5', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== WEDNESDAY ==================== -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-title">Wednesday: Active Recovery</div>
+      <div class="day-tag tag-orange">Cardio & Mobility</div>
+    </div>
+    <div class="exercise-list">
+      <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6;">
+        • <strong>20–25 Mins Incline Walk:</strong> Treadmill speed 4.5–5.0 km/h at 8–10% incline (Zone 2 fat burn).<br>
+        • <strong>Couch Stretch:</strong> 45 seconds per leg (opens tight hip flexors from desk sitting).<br>
+        • <strong>Bird-Dogs:</strong> 2 sets × 10 reps per side (reinforces lower back stability).
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== THURSDAY ==================== -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-title">Thursday: Upper Body B</div>
+      <div class="day-tag tag-blue">Arm Thickness & Shoulders</div>
+    </div>
+    <div class="exercise-list">
+
+      <!-- EXERCISE 1 -->
+      <div class="exercise-card" id="card-th-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-1', 0)">Machine Press</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-1', 1)">DB Press</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-1')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Press 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Machine Shoulder Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Anterior & Lateral Deltoids (Boulder Shoulders)</div>
+            <div class="ex-advantage">⚡ Machine Advantage: No wasted energy kicking dumbbells up; zero rotator cuff instability near failure.</div>
+            <div class="ex-cue">Back flat against pad. Press up smoothly, lower slowly under control to ear level. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/04/Lever-Shoulder-Press.gif" alt="Machine Shoulder Press">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated Dumbbell Shoulder Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Front & Side Deltoids</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Sit on 90° upright bench; press dumbbells in a smooth arc overhead.</div>
+            <div class="ex-cue">Kick dumbbells to shoulders with knees. Press straight overhead without clanking, lower under control to ear level. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Shoulder-Press.gif" alt="Dumbbell Shoulder Press">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 2 -->
+      <div class="exercise-card" id="card-th-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-2', 0)">Cable Row</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-2', 1)">DB Row</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-2')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Row 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated Cable Row</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Mid-Back, Rhomboids & Lats (Thick Back)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Eliminates lower back fatigue; full lat stretch forward and deep shoulder blade squeeze.</div>
+            <div class="ex-cue">Sit tall, chest proud. Pull handle towards navel, driving elbows backward. Squeeze shoulder blades for 1s. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif" alt="Seated Cable Row">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Row</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Chest-Supported DB Row</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rhomboids & Mid-Back Thickness</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Lie face-down on a 45° incline bench to lock out cheating and protect your spine.</div>
+            <div class="ex-cue">Chest flat on incline bench. Pull dumbbells towards your hips, squeezing shoulder blades together at the top. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif" alt="Dumbbell Row">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 3 -->
+      <div class="exercise-card" id="card-th-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-3', 0)">Cable Lateral</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-3', 1)">DB Lateral</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-3')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (2nd Width Hit)</span>
+              <span class="swipe-hint-badge">Swipe for DB Lateral 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoids (V-Taper Width)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Constant tension from stretch to peak contraction builds 3D round shoulders fast.</div>
+            <div class="ex-cue">Lead with elbows on the cable pulley. Strict form, no body swinging. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif" alt="Cable Lateral Raise">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoids</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Control the 2-second negative lowering on every single rep.</div>
+            <div class="ex-cue">Slight forward lean. Raise dumbbells to shoulder level with pinkies slightly elevated. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" alt="Dumbbell Lateral Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 4 -->
+      <div class="exercise-card" id="card-th-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-4', 0)">Cable Rope Hammer</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-4', 1)">DB Hammer</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-4')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Arm Width Secret)</span>
+              <span class="swipe-hint-badge">Swipe for DB Hammer 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Rope Hammer Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Brachialis & Forearms (Pushes Biceps Outward)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Constant diagonal pull keeps continuous tension on the brachialis across 100% of the movement.</div>
+            <div class="ex-cue">Low pulley with rope. Neutral grip (thumbs up). Curl straight up, spread rope at top. Elbows glued to sides. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/rope-bicep-curls.gif" alt="Cable Rope Hammer Curl">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Rope</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Hammer Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Brachialis & Brachioradialis</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Palms face each other like holding hammers; no twisting of the wrists.</div>
+            <div class="ex-cue">Stand tall, elbows glued to ribs. Curl dumbbells straight up to shoulder level, lower slowly over 2 seconds. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif" alt="Dumbbell Hammer Curl">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 5 -->
+      <div class="exercise-card" id="card-th-5">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 5</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-5', 0)">Cable Curl</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-5', 1)">DB Curl</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-5')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Curl 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing Cable Bicep Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Biceps Brachii (Bicep Peak)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Dumbbells lose tension at the top when forearms are vertical. Cables keep continuous peak squeeze!</div>
+            <div class="ex-cue">Low pulley with straight/EZ bar. Curl up to chin, pause 1s at peak contraction, lower over 2 seconds. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/cable-curl.gif" alt="Cable Bicep Curl">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Curl</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline / Standing DB Bicep Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Biceps Long & Short Heads</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Supinate (rotate pinky inward) at the very top of each rep for maximum peak contraction.</div>
+            <div class="ex-cue">Keep upper arms stationary. Curl dumbbells up while rotating wrists outwards, squeeze bicep at peak. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Curl.gif" alt="Dumbbell Bicep Curl">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-5', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-5', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 6 -->
+      <div class="exercise-card" id="card-th-6">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 6</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-6', 0)">Cable Rope</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-6', 1)">Skull Crusher</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-6')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Final Burnout)</span>
+              <span class="swipe-hint-badge">Swipe for Skull Crusher 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Tricep Rope Pushdown</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Lateral Head (Horseshoe Definition)</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Strict elbow extension burnout to complete failure safely.</div>
+            <div class="ex-cue">Heavy, controlled lockout at the bottom with 1 second pause. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Rope-Pushdown.gif" alt="Tricep Rope Pushdown">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Rope</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Skull Crusher on Bench</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Medial & Lateral Heads</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Lie on flat bench; lower dumbbells to either side of your ears.</div>
+            <div class="ex-cue">Upper arms angled back slightly. Bend only at elbows to lower dumbbells to ears, extend arms straight up. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Dumbbell-Skull-Crusher.gif" alt="Dumbbell Skull Crusher">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-6', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-6', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== FRIDAY ==================== -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-title">Friday: Lower Body B</div>
+      <div class="day-tag tag-green">Quads & Core Corset</div>
+    </div>
+    <div class="exercise-list">
+
+      <!-- EXERCISE 1 -->
+      <div class="exercise-card" id="card-f-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-1', 0)">Leg Press</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-1', 1)">Goblet Squat</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-1')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for Goblet Squat 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Leg Press Machine / Hack Squat</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Quadriceps & Torso Core Strength</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Removes spinal and forearm grip bottlenecks so you can take quads to true failure safely.</div>
+            <div class="ex-cue">Lower sled to 90° knee angle. Drive forcefully through midfoot without violent knee locking. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2015/11/Leg-Press.gif" alt="Leg Press Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Leg Press</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Goblet Squat</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Quadriceps & Core Drive</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Hold heavy dumbbell vertically against chest; stay tall and upright.</div>
+            <div class="ex-cue">Squat down between knees until thighs are parallel to floor, pushing knees outward. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2023/01/Dumbbell-Goblet-Squat.gif" alt="Dumbbell Goblet Squat">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 2 -->
+      <div class="exercise-card" id="card-f-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-2', 0)">DB Lunges</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-2', 1)">Split Squat</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-2')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">Swipe for Split Squats 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Walking Lunges</div>
+              <div class="ex-sets">3 Sets × 10 Steps/Leg</div>
+            </div>
+            <div class="ex-target">Target: Quads, Glutes & High Calorie Burn</div>
+            <div class="ex-advantage">⚡ Functional Muscle: Unilateral work balances leg strength and fires stabilizer muscles.</div>
+            <div class="ex-cue">Controlled forward strides. Back knee gently kisses floor. Keep torso upright. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2023/09/dumbbell-lunges.gif" alt="Dumbbell Walking Lunges">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Stationary Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Walking Lunges</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Static Dumbbell Split Squats</div>
+              <div class="ex-sets">3 Sets × 10 Reps/Leg</div>
+            </div>
+            <div class="ex-target">Target: Glute & Quad Isolation</div>
+            <div class="ex-advantage">⚡ Gym Tip: If the floor is crowded, stationary split squats deliver the same stimulus without walking.</div>
+            <div class="ex-cue">One foot forward, one back. Lower straight down until back knee is 1 inch off floor, drive through front heel. Rest 75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Split-Squat.gif" alt="Split Squats">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 3 -->
+      <div class="exercise-card" id="card-f-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-3', 0)">Leg Extension</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-3', 1)">Split Squat</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-3')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for Bodyweight 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Leg Extension Machine</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rectus Femoris & Quad Tear-Drop Muscle</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Direct isolation of the front quad without hip or glute takeover.</div>
+            <div class="ex-cue">Extend legs and pause 1 full second at top. Lower slowly over 2 seconds. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/LEG-EXTENSION.gif" alt="Leg Extension Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Free Weight Alternative</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Elevated Heel Split Squat</div>
+              <div class="ex-sets">3 Sets × 12 Reps/Leg</div>
+            </div>
+            <div class="ex-target">Target: Quad Teardrop Muscle (Vastus Medialis)</div>
+            <div class="ex-advantage">⚡ Quad Tip: Elevating front heel slightly places massive isolated tension on front quads.</div>
+            <div class="ex-cue">Drive knee forward over toes in a controlled split squat to load the quad teardrop. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Split-Squat.gif" alt="Split Squat Alternative">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 4 -->
+      <div class="exercise-card" id="card-f-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-4', 0)">Deadbugs</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-4', 1)">Captain's Chair</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-4')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Floor Mat Setup</span>
+              <span class="swipe-hint-badge">Swipe for Captain's Chair 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Deadbugs (Floor)</div>
+              <div class="ex-sets">3 Sets × 10 Reps/Side</div>
+            </div>
+            <div class="ex-target">Target: Transverse Abdominis (Inner Corset Belt)</div>
+            <div class="ex-advantage">⚡ Flat Belly Secret: Shrinks the waistline by teaching core to hold stomach pulled in flat.</div>
+            <div class="ex-cue">Lower back glued firmly to floor. Slowly extend opposite arm and leg without arching your spine. Rest 45s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Dead-Bug.gif" alt="Deadbug Floor Exercise">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Tower Apparatus Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Deadbug</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Captain's Chair Knee Raise</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lower Abdominals</div>
+            <div class="ex-advantage">⚡ Tower Alternative: Great vertical pelvic curl to finish off lower core.</div>
+            <div class="ex-cue">Rest on pads. Curl knees upwards into chest, control descent without swinging. Rest 45s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Captains-Chair-Leg-Raise.gif" alt="Captain's Chair Leg Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Saved locally on your device for instant offline access in your office gym.</p>
+  </footer>
+
+  <script>
+    // Smoothly slide to a specific card slide (0 = Machine/Default, 1 = Free Weight)
+    function slideToCard(cardId, slideIndex) {
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      const track = card.querySelector('.carousel-track');
+      if (!track) return;
+      const slideWidth = track.offsetWidth;
+      track.scrollTo({
+        left: slideIndex * slideWidth,
+        behavior: 'smooth'
+      });
+      updateCardUI(card, slideIndex);
+    }
+
+    // Handle scroll-snap detection on touch swipe
+    function handleScroll(cardId) {
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      const track = card.querySelector('.carousel-track');
+      if (!track) return;
+      const slideWidth = track.offsetWidth;
+      const scrollLeft = track.scrollLeft;
+      const activeIndex = Math.round(scrollLeft / slideWidth);
+      updateCardUI(card, activeIndex);
+    }
+
+    // Update the pill tabs and dot indicators for a card
+    function updateCardUI(card, activeIndex) {
+      const pills = card.querySelectorAll('.pill-tab');
+      pills.forEach((p, idx) => {
+        if (idx === activeIndex) p.classList.add('active');
+        else p.classList.remove('active');
+      });
+
+      const dots = card.querySelectorAll('.dot');
+      dots.forEach((d, idx) => {
+        if (idx === activeIndex) d.classList.add('active');
+        else d.classList.remove('active');
+      });
+    }
+
+    // Switch all cards across all days at once
+    function switchAllCards(slideIndex) {
+      const cards = document.querySelectorAll('.exercise-card');
+      cards.forEach(c => {
+        slideToCard(c.id, slideIndex);
+      });
+
+      const btnMachine = document.getElementById('btnAllMachine');
+      const btnFree = document.getElementById('btnAllFree');
+      if (slideIndex === 0) {
+        btnMachine.classList.add('active');
+        btnFree.classList.remove('active');
+      } else {
+        btnMachine.classList.remove('active');
+        btnFree.classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
