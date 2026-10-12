@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>V-Taper & Big Arms Hypertrophy Routine</title>
+  <title>V-Taper & Big Arms Routine</title>
   <style>
     :root {
       --bg: #0b1120;
@@ -27,76 +27,130 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      padding: 14px 12px 60px;
+      padding: 12px 10px 60px;
       line-height: 1.5;
     }
     header {
       text-align: center;
-      padding: 16px 0 14px;
+      padding: 14px 0 10px;
       border-bottom: 1px solid var(--border);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     h1 {
-      font-size: 22px;
+      font-size: 20px;
       color: var(--accent);
       margin-bottom: 4px;
       letter-spacing: -0.5px;
       font-weight: 800;
     }
     .subtitle {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
     }
     .stats-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 5px;
       justify-content: center;
-      margin-top: 12px;
+      margin-top: 10px;
     }
     .badge {
       background: rgba(30, 41, 59, 0.8);
       border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 16px;
-      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 14px;
+      font-size: 10.5px;
       font-weight: 600;
       color: var(--accent-green);
     }
 
-    /* Global View Switcher */
-    .global-switcher {
-      background: #111c30;
+    /* STICKY DAY TABS NAVIGATION */
+    .sticky-tabs-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 8px 0 10px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .day-tabs-nav {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 2px 2px 6px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .day-tabs-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .day-tab-btn {
+      flex: 1 0 auto;
+      background: #111a2e;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px;
-      margin-bottom: 20px;
-      text-align: center;
+      color: #94a3b8;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-sub {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .day-tab-btn.active {
+      background: #1e293b;
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+      transform: translateY(-1px);
+    }
+    .day-tab-btn.active .tab-sub {
+      color: var(--accent);
+    }
+
+    /* Global Mode Switcher */
+    .global-switcher {
+      background: #101827;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
     .global-switcher-title {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 8px;
     }
     .global-btn-group {
       display: inline-flex;
-      background: #090e1a;
+      background: #060a12;
       border-radius: 8px;
-      padding: 3px;
+      padding: 2px;
       border: 1px solid rgba(255,255,255,0.08);
-      width: 100%;
-      max-width: 360px;
     }
     .global-btn {
-      flex: 1;
       border: none;
       background: transparent;
       color: var(--text-muted);
-      padding: 8px 12px;
-      font-size: 12px;
+      padding: 6px 10px;
+      font-size: 11px;
       font-weight: 700;
       border-radius: 6px;
       cursor: pointer;
@@ -105,46 +159,51 @@
     .global-btn.active {
       background: var(--accent);
       color: #041226;
-      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 1px 6px rgba(56, 189, 248, 0.4);
     }
 
     .daily-box {
       background: linear-gradient(135deg, #1e1b4b, #172554);
       border: 1px solid #3b82f6;
       border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 22px;
+      padding: 12px;
+      margin-bottom: 16px;
     }
     .daily-box h3 {
       color: #93c5fd;
-      margin-bottom: 6px;
-      font-size: 14px;
+      margin-bottom: 4px;
+      font-size: 13px;
       font-weight: 700;
     }
     .daily-box p {
-      font-size: 12px;
+      font-size: 11.5px;
       color: #e2e8f0;
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .day-card {
       background: var(--card-bg);
-      border-radius: 16px;
+      border-radius: 14px;
       border: 1px solid var(--border);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      animation: fadeIn 0.25s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .day-header {
       background: linear-gradient(90deg, #1b263b, #0f172a);
-      padding: 12px 16px;
+      padding: 12px 14px;
       border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .day-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       color: #fff;
     }
@@ -161,16 +220,16 @@
     .tag-orange { background: rgba(251, 146, 60, 0.15); color: var(--accent-orange); }
 
     .exercise-list {
-      padding: 12px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
     }
 
     /* Swipeable Card Styles */
     .exercise-card {
       background: #090e1a;
-      border-radius: 14px;
+      border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.08);
       overflow: hidden;
       box-shadow: 0 2px 10px rgba(0,0,0,0.25);
@@ -179,12 +238,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 12px;
+      padding: 8px 10px;
       background: #111a2e;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .ex-index {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       color: #cbd5e1;
       text-transform: uppercase;
@@ -201,9 +260,9 @@
       background: transparent;
       border: none;
       color: #94a3b8;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 16px;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -231,7 +290,7 @@
       min-width: 100%;
       scroll-snap-align: start;
       box-sizing: border-box;
-      padding: 14px;
+      padding: 12px;
       display: flex;
       flex-direction: column;
     }
@@ -243,10 +302,10 @@
     }
     .slide-badge {
       display: inline-block;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 6px;
+      padding: 2px 7px;
+      border-radius: 5px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -261,7 +320,7 @@
       border: 1px solid rgba(251, 146, 60, 0.3);
     }
     .swipe-hint-badge {
-      font-size: 10px;
+      font-size: 9.5px;
       color: #64748b;
       font-weight: 600;
     }
@@ -271,42 +330,42 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 4px;
-      gap: 8px;
+      gap: 6px;
     }
     .ex-name {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
       color: #fff;
     }
     .ex-sets {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--accent-green);
       background: rgba(52, 211, 153, 0.1);
-      padding: 2px 7px;
-      border-radius: 6px;
+      padding: 2px 6px;
+      border-radius: 5px;
       white-space: nowrap;
     }
     .ex-target {
-      font-size: 11px;
+      font-size: 10.5px;
       color: var(--accent-purple);
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .ex-advantage {
-      font-size: 11px;
+      font-size: 10.5px;
       color: #6ee7b7;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       background: rgba(16, 185, 129, 0.08);
-      padding: 4px 8px;
-      border-radius: 6px;
+      padding: 3px 6px;
+      border-radius: 5px;
       border-left: 3px solid #10b981;
       line-height: 1.35;
     }
     .ex-cue {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.4;
     }
 
@@ -318,11 +377,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 200px;
+      min-height: 190px;
     }
     .gif-container img {
       width: 100%;
-      max-width: 360px;
+      max-width: 350px;
       height: auto;
       display: block;
       border-radius: 8px;
@@ -333,39 +392,39 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 12px;
+      padding: 6px 10px;
       background: #0a1120;
       border-top: 1px solid rgba(255,255,255,0.05);
     }
     .swipe-label {
-      font-size: 10px;
+      font-size: 9.5px;
       color: #64748b;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
     }
     .dot-indicators {
       display: flex;
       gap: 5px;
     }
     .dot {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background: #334155;
       cursor: pointer;
       transition: all 0.2s ease;
     }
     .dot.active {
-      width: 14px;
-      border-radius: 4px;
+      width: 12px;
+      border-radius: 3px;
       background: var(--accent);
     }
 
     footer {
       text-align: center;
-      padding: 24px 0 10px;
+      padding: 20px 0 10px;
       color: var(--text-muted);
       font-size: 11px;
       border-top: 1px solid var(--border);
@@ -376,32 +435,56 @@
 
   <header>
     <h1>V-TAPER & BIG ARMS HYPERTROPHY</h1>
-    <div class="subtitle">Interactive Swipe Cards (Machine ⚙️ vs. Free Weight 🏋️)</div>
+    <div class="subtitle">Quick Day Tabs & Swipeable Exercise Cards</div>
     <div class="stats-bar">
-      <span class="badge">🔥 Goal: Broad Frame & Arms</span>
+      <span class="badge">🔥 Broad Frame & Big Arms</span>
       <span class="badge">👈👉 Swipe cards left/right</span>
       <span class="badge">💪 Protein: 140–150g/day</span>
     </div>
   </header>
 
+  <!-- STICKY DAY TABS BAR -->
+  <div class="sticky-tabs-wrapper">
+    <div class="day-tabs-nav">
+      <button class="day-tab-btn active" data-day="mon" onclick="switchDayTab('mon', this)">
+        <span>Mon</span><span class="tab-sub">Upper A</span>
+      </button>
+      <button class="day-tab-btn" data-day="tue" onclick="switchDayTab('tue', this)">
+        <span>Tue</span><span class="tab-sub">Lower A</span>
+      </button>
+      <button class="day-tab-btn" data-day="wed" onclick="switchDayTab('wed', this)">
+        <span>Wed</span><span class="tab-sub">Mobility</span>
+      </button>
+      <button class="day-tab-btn" data-day="thu" onclick="switchDayTab('thu', this)">
+        <span>Thu</span><span class="tab-sub">Upper B</span>
+      </button>
+      <button class="day-tab-btn" data-day="fri" onclick="switchDayTab('fri', this)">
+        <span>Fri</span><span class="tab-sub">Lower B</span>
+      </button>
+      <button class="day-tab-btn" data-day="all" onclick="switchDayTab('all', this)">
+        <span>All</span><span class="tab-sub">Full Week</span>
+      </button>
+    </div>
+  </div>
+
   <!-- Global One-Tap Switcher -->
   <div class="global-switcher">
-    <div class="global-switcher-title">Switch All Exercises At Once:</div>
+    <div class="global-switcher-title">Exercise Setup:</div>
     <div class="global-btn-group">
-      <button class="global-btn active" id="btnAllMachine" onclick="switchAllCards(0)">⚙️ Machine / Cable</button>
-      <button class="global-btn" id="btnAllFree" onclick="switchAllCards(1)">🏋️ Free Weight / Rod</button>
+      <button class="global-btn active" id="btnAllMachine" onclick="switchAllCards(0)">⚙️ Machine</button>
+      <button class="global-btn" id="btnAllFree" onclick="switchAllCards(1)">🏋️ Free Weight</button>
     </div>
   </div>
 
   <div class="daily-box">
     <h3>🧘 Everyday Morning Ritual: The Stomach Vacuum</h3>
     <p><strong>When:</strong> Every morning directly after washroom/potty on an empty stomach.<br>
-    <strong>How:</strong> Exhale all air out, suck your belly button firmly into your spine, and hold tight for <strong>15 to 20 seconds</strong>. Rest 30s. Do <strong>3 sets</strong>.<br>
-    <strong>Why:</strong> Tightens the deep internal core belt so your stomach stays pulled in flat all day.</p>
+    <strong>How:</strong> Exhale all air out, suck belly button into spine, hold tight for <strong>15–20s</strong>. Do <strong>3 sets</strong>.<br>
+    <strong>Why:</strong> Tightens internal core belt to keep stomach flat all day.</p>
   </div>
 
   <!-- ==================== MONDAY ==================== -->
-  <div class="day-card">
+  <div class="day-card" id="day-mon">
     <div class="day-header">
       <div class="day-title">Monday: Upper Body A</div>
       <div class="day-tag tag-blue">Chest, Width & Triceps</div>
@@ -790,7 +873,7 @@
   </div>
 
   <!-- ==================== TUESDAY ==================== -->
-  <div class="day-card">
+  <div class="day-card" id="day-tue">
     <div class="day-header">
       <div class="day-title">Tuesday: Lower Body A</div>
       <div class="day-tag tag-green">Posterior Chain, Calves & Waist</div>
@@ -1071,22 +1154,25 @@
   </div>
 
   <!-- ==================== WEDNESDAY ==================== -->
-  <div class="day-card">
+  <div class="day-card" id="day-wed">
     <div class="day-header">
-      <div class="day-title">Wednesday: Active Recovery</div>
+      <div class="day-title">Wednesday: Active Recovery & Mobility</div>
       <div class="day-tag tag-orange">Cardio & Mobility</div>
     </div>
     <div class="exercise-list">
-      <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6;">
-        • <strong>20–25 Mins Incline Walk:</strong> Treadmill speed 4.5–5.0 km/h at 8–10% incline (Zone 2 fat burn).<br>
-        • <strong>Couch Stretch:</strong> 45 seconds per leg (opens tight hip flexors from desk sitting).<br>
-        • <strong>Bird-Dogs:</strong> 2 sets × 10 reps per side (reinforces lower back stability).
-      </p>
+      <div style="background: #111a2e; border-radius: 12px; padding: 14px; border: 1px solid rgba(255,255,255,0.06);">
+        <h4 style="color: #93c5fd; margin-bottom: 8px; font-size: 14px;">Desk Worker Mobility Routine (30 Mins)</h4>
+        <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6; margin-bottom: 8px;">
+          • <strong>20–25 Mins Incline Walk:</strong> Treadmill speed 4.5–5.0 km/h at 8–10% incline (Zone 2 fat burning, zero knee impact).<br>
+          • <strong>Couch Stretch:</strong> 45 seconds per leg (opens tight hip flexors shortened by prolonged desk sitting).<br>
+          • <strong>Bird-Dogs:</strong> 2 sets × 10 reps per side (reinforces spinal stabilization and glute firing).
+        </p>
+      </div>
     </div>
   </div>
 
   <!-- ==================== THURSDAY ==================== -->
-  <div class="day-card">
+  <div class="day-card" id="day-thu">
     <div class="day-header">
       <div class="day-title">Thursday: Upper Body B</div>
       <div class="day-tag tag-blue">Arm Thickness & Shoulders</div>
@@ -1421,7 +1507,7 @@
   </div>
 
   <!-- ==================== FRIDAY ==================== -->
-  <div class="day-card">
+  <div class="day-card" id="day-fri">
     <div class="day-header">
       <div class="day-title">Friday: Lower Body B</div>
       <div class="day-tag tag-green">Quads & Core Corset</div>
@@ -1652,6 +1738,32 @@
   </footer>
 
   <script>
+    // Tab switching for Days (Monday, Tuesday, Wednesday, Thursday, Friday, All)
+    function switchDayTab(dayKey, clickedBtn) {
+      const allDayCards = document.querySelectorAll('.day-card');
+      const allTabs = document.querySelectorAll('.day-tab-btn');
+
+      allTabs.forEach(b => b.classList.remove('active'));
+      if (clickedBtn) {
+        clickedBtn.classList.add('active');
+      }
+
+      if (dayKey === 'all') {
+        allDayCards.forEach(c => c.style.display = 'block');
+      } else {
+        allDayCards.forEach(c => {
+          if (c.id === `day-${dayKey}`) {
+            c.style.display = 'block';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      }
+
+      // Scroll top smoothly to top of cards
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     // Smoothly slide to a specific card slide (0 = Machine/Default, 1 = Free Weight)
     function slideToCard(cardId, slideIndex) {
       const card = document.getElementById(cardId);
@@ -1710,6 +1822,17 @@
         btnFree.classList.add('active');
       }
     }
+
+    // Auto-select today's workout tab on initial open
+    window.addEventListener('DOMContentLoaded', () => {
+      const dayNum = new Date().getDay(); // 0 Sun, 1 Mon, 2 Tue, 3 Wed, 4 Thu, 5 Fri, 6 Sat
+      const dayMap = { 1: 'mon', 2: 'tue', 3: 'wed', 4: 'thu', 5: 'fri' };
+      const currentDayKey = dayMap[dayNum] || 'mon'; // If weekend, default to Monday
+      const activeBtn = document.querySelector(`.day-tab-btn[data-day="${currentDayKey}"]`);
+      if (activeBtn) {
+        switchDayTab(currentDayKey, activeBtn);
+      }
+    });
   </script>
 
 </body>
