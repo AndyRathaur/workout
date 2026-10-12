@@ -25,9 +25,9 @@
 
 * **Monday:** Upper Body A (Width, Scapular Balance, Chest & Elbow-Safe Arms)
 * **Tuesday:** Lower Body A (Pelvic Alignment, Glutes, Hamstrings, Machine Calves & Loaded Core Flexion)
-* **Wednesday:** Active Rest (Incline walking + posture mobility)
-* **Thursday:** Upper Body B (Arm Thickness, Brachialis & Wide Delts)
-* **Friday:** Lower Body B (Quad Sweep & Anti-Extension Core Corset)
+* **Wednesday:** Active Rest (Incline walking, spinal decompression & posture mobility)
+* **Thursday:** Upper Body B (Lower Lat V-Taper, Delts, Brachialis & Elbow-Safe Triceps)
+* **Friday:** Lower Body B (Quad Sweep, Hamstring Balance, Calves & Anti-Extension Core)
 * **Saturday & Sunday:** Full Rest (Recovery, 8k–10k steps)
 * **Every Morning:** 2 Minutes of Stomach Vacuums (Transverse Abdominis tone)
 
@@ -128,11 +128,11 @@
 ### Exercise 1: Pelvic Realignment & Glute/Hamstring Hinge
 * **Option A (Dumbbells - Recommended):** **Dumbbell Romanian Deadlift (RDL)**  
   * *Sets & Reps:* 3 Sets × 8–10 Reps (Rest: 90s)
-  * *Advantage:* Fixes anterior pelvic tilt so stomach pulls in flat; dumbbells track naturally along shins.
+  * *Advantage:* Directly reverses Anterior Pelvic Tilt (APT) by loading glutes and hamstrings to pull pelvis into neutral. (Do 1 set of 15 bodyweight glute bridges first to awaken dormant glutes!).
   * ![Dumbbell Romanian Deadlift](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Romanian-Deadlift.gif)
 * **Option B (Rod / Barbell):** **Barbell Rod Romanian Deadlift**  
   * *Sets & Reps:* 3 Sets × 8–10 Reps (Rest: 90s)
-  * *Advantage:* Allows heavier progressive overload with barbell plates.
+  * *Advantage:* Allows heavier progressive overload with barbell plates. Keep bar brushing thighs and shins.
   * ![Barbell Romanian Deadlift](https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Romanian-Deadlift.gif)
 
 ---
@@ -173,10 +173,10 @@
 
 ---
 
-### Exercise 5: Lower Belly Tightener
+### Exercise 5: Lower Belly Tightener & Pelvic Curl
 * **Option A (Apparatus - Recommended):** **Captain's Chair Leg Raise**  
   * *Sets & Reps:* 3 Sets × 12–15 Reps (Rest: 60s)
-  * *Advantage:* Vertical hanging pelvic curl pulls lower stomach flat.
+  * *Advantage:* Direct APT reversal—curl your pubic bone up towards your chest (posterior pelvic tilt) at the top to fire lower abs and inhibit overactive hip flexors.
   * ![Captains Chair Leg Raise](https://fitnessprogramer.com/wp-content/uploads/2021/05/Captains-Chair-Leg-Raise.gif)
 * **Option B (Floor Mat):** **Lying Floor Leg Raise**  
   * *Sets & Reps:* 3 Sets × 12–15 Reps (Rest: 60s)
@@ -186,9 +186,11 @@
 ---
 
 ## 🟨 WEDNESDAY: ACTIVE RECOVERY & POSTURE RESET (30 Mins)
-* **20–25 Mins Incline Walk:** Treadmill speed 4.5–5.0 km/h at 8–10% incline (Zone 2 cardio).
-* **Couch Stretch:** 45 seconds per leg (opens tight hips shortened by sitting).
-* **Bird-Dogs:** 2 sets × 10 reps per side (reinforces spinal stabilization).
+* **20–25 Mins Incline Walk:** Treadmill speed 4.5–5.0 km/h at 8–10% incline (Zone 2 cardio, burns visceral fat with zero joint impact).
+* **Dead Hang from Pull-Up Bar:** 2 sets × 30–45 seconds (decompresses spine, stretches tight pec minor & lats, relieves desk hunch).
+* **Couch Stretch:** 45 seconds per leg (opens tight hip flexors shortened by prolonged sitting to fix APT).
+* **Cat-Cow & Thoracic Rotations:** 2 sets × 10 reps (restores upper-back mobility to reverse rounded slouch).
+* **Bird-Dogs:** 2 sets × 10 reps per side (reinforces spinal stabilization and glute firing).
 
 ---
 
@@ -206,26 +208,26 @@
 
 ---
 
-### Exercise 2: Mid-Back & Lat Thickness
-* **Option A (Cable Machine - Recommended):** **Seated Cable Row**  
+### Exercise 2: Lower Lat V-Taper (Slims Waist Silhouette)
+* **Option A (Cable Machine - Recommended):** **Close-Grip / Underhand Lat Pulldown**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
-  * *Advantage:* Zero lower-back strain; deep forward lat stretch and peak scapular squeeze.
-  * ![Seated Cable Row](https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif)
-* **Option B (Dumbbells):** **Chest-Supported DB Row**  
+  * *Advantage:* Pulling close or underhand drives elbows tight to hips, engaging the lower lat fibers down to the waistline to maximize the V-taper.
+  * ![Close-Grip Lat Pulldown](https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif)
+* **Option B (Dumbbells):** **Single-Arm Dumbbell Row**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 75s)
-  * *Advantage:* Lie on 45° incline bench; pull dumbbells towards hips.
-  * ![Dumbbell Row](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif)
+  * *Advantage:* Pulling dumbbell in an arc towards hip pocket isolates lower lats without lower back strain.
+  * ![Single-Arm Dumbbell Row](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif)
 
 ---
 
-### Exercise 3: Shoulder Width (2nd Hit)
+### Exercise 3: Shoulder Width Cap (2nd Weekly Hit)
 * **Option A (Cable - Recommended):** **Cable Lateral Raise**  
   * *Sets & Reps:* 4 Sets × 12–15 Reps (Rest: 60s)
-  * *Advantage:* Constant tension across full arc.
+  * *Advantage:* Constant tension across full arc delivers the 2nd weekly stimulus needed for capped 3D delts.
   * ![Cable Lateral Raise](https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif)
 * **Option B (Dumbbells):** **Dumbbell Lateral Raise**  
   * *Sets & Reps:* 4 Sets × 12–15 Reps (Rest: 60s)
-  * *Advantage:* Classical dumbbell side delt raise.
+  * *Advantage:* Classical dumbbell side delt raise with controlled 2-second negative.
   * ![Dumbbell Lateral Raise](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif)
 
 ---
@@ -233,36 +235,36 @@
 ### Exercise 4: Arm Thickness Secret (Brachialis)
 * **Option A (Cable - Recommended):** **Cable Rope Hammer Curl**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Constant diagonal load keeps continuous tension on brachialis to push biceps outward.
+  * *Advantage:* Constant diagonal load keeps continuous tension on brachialis to push biceps outward for instant arm thickness.
   * ![Cable Rope Hammer Curl](https://fitnessprogramer.com/wp-content/uploads/2021/06/rope-bicep-curls.gif)
 * **Option B (Dumbbells):** **Dumbbell Hammer Curl**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Palms face each other; no wrist rotation.
+  * *Advantage:* Palms face each other; zero wrist rotation.
   * ![Hammer Curl](https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif)
 
 ---
 
-### Exercise 5: Bicep Peak
-* **Option A (Cable - Recommended):** **Standing Cable Bicep Curl**  
+### Exercise 5: Elbow-Friendly Triceps Long Head (Hanging Arm Mass)
+* **Option A (Cable - Recommended):** **Cable Overhead Triceps Extension**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Maintains peak tension at top of curl where dumbbells go slack.
-  * ![Cable Bicep Curl](https://fitnessprogramer.com/wp-content/uploads/2021/02/cable-curl.gif)
-* **Option B (Dumbbells):** **Incline / Standing DB Bicep Curl**  
+  * *Advantage:* 100% elbow-safe! Diagonal cable line places maximum stretch tension on the long head (65% of arm size) with zero joint shearing.
+  * ![Cable Overhead Tricep Extension](https://fitnessprogramer.com/wp-content/uploads/2021/04/Cable-Rope-Overhead-Triceps-Extension.gif)
+* **Option B (Dumbbell):** **Seated Dumbbell Overhead Extension**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Supinate pinky outward at peak contraction.
-  * ![Dumbbell Curl](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Curl.gif)
+  * *Advantage:* Cupping 1 heavy dumbbell in both palms keeps elbows tucked and protects tendons.
+  * ![Seated DB Triceps Extension](https://fitnessprogramer.com/wp-content/uploads/2021/06/Seated-Dumbbell-Triceps-Extension.gif)
 
 ---
 
-### Exercise 6: Horseshoe Burnout
-* **Option A (Cable - Recommended):** **Tricep Rope Pushdown**  
+### Exercise 6: Bicep Peak Contraction
+* **Option A (Cable - Recommended):** **Standing Cable Bicep Curl**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Heavy lockout at bottom to finish triceps.
-  * ![Tricep Pushdown](https://fitnessprogramer.com/wp-content/uploads/2021/06/Rope-Pushdown.gif)
-* **Option B (Dumbbells):** **Dumbbell Skull Crusher on Bench**  
+  * *Advantage:* Cables maintain peak squeeze at the top where dumbbells lose tension.
+  * ![Cable Bicep Curl](https://fitnessprogramer.com/wp-content/uploads/2021/02/cable-curl.gif)
+* **Option B (Dumbbells):** **Incline / Standing DB Bicep Curl**  
   * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
-  * *Advantage:* Lie on flat bench, lower dumbbells to ear level.
-  * ![Dumbbell Skull Crusher](https://fitnessprogramer.com/wp-content/uploads/2021/06/Dumbbell-Skull-Crusher.gif)
+  * *Advantage:* Supinate pinky outward at peak contraction to maximize the bicep ball.
+  * ![Dumbbell Curl](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Curl.gif)
 
 ---
 
@@ -304,14 +306,38 @@
 
 ---
 
-### Exercise 4: Deep Core Corset Belt
+### Exercise 4: Hamstring & Knee Joint Stabilizer
+* **Option A (Machine - Recommended):** **Seated Leg Curl Machine**  
+  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
+  * *Advantage:* Restores agonist-antagonist knee joint balance after heavy quad pressing to prevent patellar tendon strain.
+  * ![Seated Leg Curl](https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif)
+* **Option B (Alternative):** **Lying Leg Curl (Machine / DB)**  
+  * *Sets & Reps:* 3 Sets × 10–12 Reps (Rest: 60s)
+  * *Advantage:* Focused knee flexion pump if seated machine is occupied.
+  * ![Leg Curl](https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif)
+
+---
+
+### Exercise 5: Calf Burnout & Ankle Armor (2nd Weekly Hit)
+* **Option A (Machine - Recommended):** **Calf Raise Machine / Leg Press Calves**  
+  * *Sets & Reps:* 3 Sets × 12–15 Reps (Rest: 45s)
+  * *Advantage:* 2nd weekly frequency hit for calves. Deep 2-second heel stretch at bottom.
+  * ![Calf Raise Machine](https://fitnessprogramer.com/wp-content/uploads/2021/06/Lever-Seated-Calf-Raise.gif)
+* **Option B (Dumbbell):** **Standing DB Calf Raise on Step**  
+  * *Sets & Reps:* 3 Sets × 15 Reps (Rest: 45s)
+  * *Advantage:* Single or double leg calf raise on a weight plate.
+  * ![Dumbbell Calf Raise](https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Calf-Raise.gif)
+
+---
+
+### Exercise 6: Deep Core Corset Belt (Anti-Extension)
 * **Option A (Floor - Recommended):** **Deadbugs (Floor)**  
   * *Sets & Reps:* 3 Sets × 10 reps per side (Rest: 45s)
-  * *Advantage:* Shrinks waistline by training transverse abdominis to hold stomach in flat.
+  * *Advantage:* Locks lower spine flat into floor—trains core to resist lumbar arching (APT) and flattens resting belly.
   * ![Dead Bug](https://fitnessprogramer.com/wp-content/uploads/2021/05/Dead-Bug.gif)
 * **Option B (Apparatus):** **Captain's Chair Knee Raise**  
   * *Sets & Reps:* 3 Sets × 12–15 Reps (Rest: 45s)
-  * *Advantage:* Hanging pelvic curl for lower abs.
+  * *Advantage:* Vertical pelvic curl for lower abdominal burnout.
   * ![Captains Chair Leg Raise](https://fitnessprogramer.com/wp-content/uploads/2021/05/Captains-Chair-Leg-Raise.gif)
 
 ---
