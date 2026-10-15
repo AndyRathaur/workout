@@ -429,6 +429,584 @@
       font-size: 11px;
       border-top: 1px solid var(--border);
     }
+
+    /* ====================================================
+       WEIGHT & WORKOUT TRACKER STYLES (LOCALSTORAGE)
+       ==================================================== */
+    
+    /* Bodyweight Card */
+    .bodyweight-tracker-card {
+      background: linear-gradient(145deg, #131d31 0%, #0d1527 100%);
+      border: 1px solid #1e2d4a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .bw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .bw-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bw-icon {
+      font-size: 20px;
+    }
+    .bw-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.2px;
+    }
+    .bw-sub {
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+    .bw-toggle-btn {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .bw-content {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .bw-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .bw-stat-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 4px;
+      text-align: center;
+    }
+    .bw-stat-label {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .bw-stat-val {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 2px;
+    }
+    .bw-stat-val.positive {
+      color: var(--accent-green);
+    }
+    .bw-stat-val.accent {
+      color: var(--accent);
+    }
+    .bw-input-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 8px;
+      flex-wrap: wrap;
+    }
+    .bw-date-input {
+      background: #111a2e;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 12px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      flex: 1 1 115px;
+      min-width: 0;
+    }
+    .bw-weight-wrap {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      flex: 1 1 125px;
+      justify-content: center;
+    }
+    .bw-weight-input {
+      background: #111a2e;
+      border: 1px solid var(--border);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 6px 4px;
+      border-radius: 6px;
+      width: 65px;
+      text-align: center;
+      -moz-appearance: textfield;
+    }
+    .bw-weight-input::-webkit-outer-spin-button,
+    .bw-weight-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .bw-step-btn {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .bw-step-btn:active {
+      background: #334155;
+    }
+    .bw-save-btn {
+      background: #0284c7;
+      border: none;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex: 1 1 auto;
+      text-align: center;
+      touch-action: manipulation;
+    }
+    .bw-save-btn:active {
+      background: #0369a1;
+    }
+    .bw-history-list {
+      margin-top: 10px;
+      max-height: 140px;
+      overflow-y: auto;
+      font-size: 11px;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      padding-top: 6px;
+    }
+    .bw-history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .bw-history-item:nth-child(odd) {
+      background: rgba(255,255,255,0.02);
+    }
+    .bw-del-btn {
+      background: transparent;
+      border: none;
+      color: #ef4444;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 2px 6px;
+      touch-action: manipulation;
+    }
+
+    /* Exercise Slide Tracker */
+    .slide-tracker {
+      background: #090e1a;
+      border: 1px solid #1a273e;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px 0 12px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .tracker-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .last-session-badge {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 10.5px;
+      color: #bae6fd;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1 1 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .last-session-badge strong {
+      color: #38bdf8;
+    }
+    .btn-copy-last {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+      touch-action: manipulation;
+    }
+    .btn-copy-last:hover, .btn-copy-last:active {
+      background: #334155;
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Table of Sets */
+    .sets-table {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .sets-table-head {
+      display: grid;
+      grid-template-columns: 28px 1fr 1fr 36px;
+      gap: 5px;
+      padding: 2px 4px 6px;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .set-row {
+      display: grid;
+      grid-template-columns: 28px 1fr 1fr 36px;
+      gap: 5px;
+      align-items: center;
+      margin-bottom: 6px;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 4px;
+      transition: all 0.2s ease;
+    }
+    .set-row.done {
+      background: rgba(16, 185, 129, 0.08);
+      border-color: rgba(52, 211, 153, 0.4);
+    }
+    .set-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 800;
+      margin: 0 auto;
+    }
+    .set-row.done .set-badge {
+      background: var(--accent-green);
+      color: #064e3b;
+    }
+    .stepper-box {
+      display: flex;
+      align-items: center;
+      background: #162035;
+      border: 1px solid #22324e;
+      border-radius: 6px;
+      overflow: hidden;
+      height: 32px;
+    }
+    .stepper-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 15px;
+      font-weight: 700;
+      width: 26px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      touch-action: manipulation;
+      user-select: none;
+    }
+    .stepper-btn:active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+    .stepper-input {
+      flex: 1;
+      min-width: 0;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 2px;
+      outline: none;
+      -moz-appearance: textfield;
+    }
+    .stepper-input::-webkit-outer-spin-button,
+    .stepper-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .btn-check-set {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      margin: 0 auto;
+      touch-action: manipulation;
+    }
+    .btn-check-set.active {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+      color: #042f2e;
+      box-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+    }
+
+    /* Double Progression Banner */
+    .progression-banner {
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.15), rgba(56, 189, 248, 0.15));
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 10.5px;
+      color: #a7f3d0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      animation: pulseBanner 2s infinite ease-in-out;
+    }
+    @keyframes pulseBanner {
+      0%, 100% { border-color: rgba(52, 211, 153, 0.4); }
+      50% { border-color: rgba(52, 211, 153, 0.8); }
+    }
+
+    .tracker-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      padding-top: 4px;
+    }
+    .auto-save-pill {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(30, 41, 59, 0.5);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      user-select: none;
+    }
+    .auto-save-pill.all-done {
+      color: var(--accent-green);
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+    .tracker-btn-group {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    /* Actions Bar */
+    .tracker-actions {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .btn-log-session {
+      flex: 2;
+      background: #0284c7;
+      border: 1px solid #0369a1;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: background 0.15s;
+      touch-action: manipulation;
+    }
+    .btn-log-session:active {
+      background: #0369a1;
+    }
+    .btn-history-toggle {
+      flex: 1;
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 7px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .btn-clear-session {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #ef4444;
+      font-size: 11px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    /* Collapsible History Drawer */
+    .history-drawer {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      font-size: 10.5px;
+    }
+    .history-session-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 5px 8px;
+      margin-bottom: 4px;
+    }
+    .history-session-header {
+      display: flex;
+      justify-content: space-between;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .history-session-sets {
+      color: #cbd5e1;
+    }
+
+    /* Backup / Data Management bar */
+    .backup-bar {
+      margin-top: 20px;
+      padding: 14px;
+      background: #111a2e;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .backup-bar-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .backup-bar-desc {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .backup-btn-group {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-backup {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      touch-action: manipulation;
+    }
+    .btn-backup:hover, .btn-backup:active {
+      background: #334155;
+      color: #fff;
+    }
+    .btn-backup-danger {
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .btn-backup-danger:hover, .btn-backup-danger:active {
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+    }
+
+    /* Toast Notification */
+    .tracker-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      border: 1px solid var(--accent);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .tracker-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
   </style>
 </head>
 <body>
@@ -442,6 +1020,56 @@
       <span class="badge">💪 Protein: 140–150g/day</span>
     </div>
   </header>
+
+
+  <!-- ==================== BODYWEIGHT TRACKER ==================== -->
+  <div class="bodyweight-tracker-card" id="bodyweightCard">
+    <div class="bw-header" onclick="toggleBwSection()">
+      <div class="bw-title-wrap">
+        <span class="bw-icon">⚖️</span>
+        <div>
+          <div class="bw-title">Bodyweight Tracker (84kg Fat-Loss Goal)</div>
+          <div class="bw-sub">Track morning weight (fasted, post-washroom)</div>
+        </div>
+      </div>
+      <button type="button" class="bw-toggle-btn" id="bwToggleBtn">▲ Hide</button>
+    </div>
+
+    <div class="bw-content" id="bwContent">
+      <div class="bw-stats-grid">
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">Starting</div>
+          <div class="bw-stat-val" id="bwStatStart">84.0 kg</div>
+        </div>
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">Current</div>
+          <div class="bw-stat-val accent" id="bwStatCurrent">84.0 kg</div>
+        </div>
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">Total Lost</div>
+          <div class="bw-stat-val positive" id="bwStatLoss">0.0 kg</div>
+        </div>
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">7-Day Avg</div>
+          <div class="bw-stat-val" id="bwStatAvg">84.0 kg</div>
+        </div>
+      </div>
+
+      <div class="bw-input-row">
+        <input type="date" id="bwDateInput" class="bw-date-input">
+        <div class="bw-weight-wrap">
+          <button type="button" class="bw-step-btn" onclick="stepBwInput(-0.1)">−</button>
+          <input type="number" step="0.1" id="bwWeightInput" class="bw-weight-input" placeholder="84.0">
+          <button type="button" class="bw-step-btn" onclick="stepBwInput(0.1)">+</button>
+        </div>
+        <button type="button" class="bw-save-btn" onclick="saveBodyweight()">💾 Save Weight</button>
+      </div>
+
+      <div class="bw-history-list" id="bwHistoryList">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
 
   <!-- STICKY DAY TABS BAR -->
   <div class="sticky-tabs-wrapper">
@@ -1845,6 +2473,18 @@
 
   <footer>
     <p>Saved locally on your device for instant offline access in your office gym.</p>
+
+    <!-- Backup and Reset Controls -->
+    <div class="backup-bar">
+      <div class="backup-bar-title">💾 Offline Tracker Data Backup</div>
+      <div class="backup-bar-desc">All your logged weights and reps are stored locally in your phone browser memory. Export a backup anytime so your progress is never lost.</div>
+      <div class="backup-btn-group">
+        <button type="button" class="btn-backup" onclick="exportWorkoutBackup()">📥 Export Backup (JSON)</button>
+        <button type="button" class="btn-backup" onclick="triggerImportFile()">📤 Import Backup</button>
+        <button type="button" class="btn-backup btn-backup-danger" onclick="resetAllTrackerData()">⚠️ Reset All Data</button>
+      </div>
+      <input type="file" id="backupFileInput" accept=".json" style="display:none;" onchange="handleImportFile(event)">
+    </div>
   </footer>
 
   <script>
@@ -1933,7 +2573,723 @@
       }
     }
 
-    // Auto-select today's workout tab on initial open
+
+    // ============================================================
+    // WORKOUT & BODYWEIGHT TRACKING SYSTEM (LOCALSTORAGE ENGINE)
+    // ============================================================
+
+    const BW_STORAGE_KEY = 'workout_bodyweight_history';
+    const EX_STORAGE_KEY = 'workout_exercise_history';
+    const STARTING_BODYWEIGHT = 84.0;
+
+    // Helper: Show brief floating toast
+    function showToast(msg) {
+      let toast = document.getElementById('trackerToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'trackerToast';
+        toast.className = 'tracker-toast';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    // ------------------------------------------------------------
+    // 1. BODYWEIGHT TRACKER LOGIC
+    // ------------------------------------------------------------
+    function getBwHistory() {
+      try {
+        const raw = localStorage.getItem(BW_STORAGE_KEY);
+        if (!raw) {
+          return [{ date: '2026-10-14', weight: STARTING_BODYWEIGHT, note: 'Starting weight' }];
+        }
+        return JSON.parse(raw);
+      } catch (e) {
+        return [{ date: '2026-10-14', weight: STARTING_BODYWEIGHT, note: 'Starting weight' }];
+      }
+    }
+
+    function saveBwHistory(history) {
+      try {
+        localStorage.setItem(BW_STORAGE_KEY, JSON.stringify(history));
+      } catch (e) {
+        console.error('Error saving bodyweight:', e);
+      }
+    }
+
+    function initBodyweightUI() {
+      const history = getBwHistory();
+      const todayStr = new Date().toISOString().split('T')[0];
+      
+      const dateInput = document.getElementById('bwDateInput');
+      const weightInput = document.getElementById('bwWeightInput');
+      if (dateInput) dateInput.value = todayStr;
+
+      const latestEntry = history.length > 0 ? history[history.length - 1] : { weight: STARTING_BODYWEIGHT };
+      const todayEntry = history.find(h => h.date === todayStr);
+      if (weightInput) {
+        weightInput.value = (todayEntry ? todayEntry.weight : latestEntry.weight).toFixed(1);
+      }
+
+      updateBodyweightStats(history);
+      renderBodyweightHistoryList(history);
+    }
+
+    function updateBodyweightStats(history) {
+      if (!history || history.length === 0) return;
+      const latest = history[history.length - 1];
+      const curWeight = latest.weight;
+      const diff = curWeight - STARTING_BODYWEIGHT;
+
+      const curEl = document.getElementById('bwStatCurrent');
+      const diffEl = document.getElementById('bwStatLoss');
+      const avgEl = document.getElementById('bwStatAvg');
+
+      if (curEl) curEl.textContent = `${curWeight.toFixed(1)} kg`;
+      if (diffEl) {
+        if (diff < 0) {
+          diffEl.textContent = `${diff.toFixed(1)} kg`;
+          diffEl.className = 'bw-stat-val positive';
+        } else if (diff > 0) {
+          diffEl.textContent = `+${diff.toFixed(1)} kg`;
+          diffEl.className = 'bw-stat-val';
+        } else {
+          diffEl.textContent = `0.0 kg`;
+          diffEl.className = 'bw-stat-val accent';
+        }
+      }
+
+      const recent = history.slice(-7);
+      const avg = recent.reduce((sum, item) => sum + item.weight, 0) / recent.length;
+      if (avgEl) avgEl.textContent = `${avg.toFixed(1)} kg`;
+    }
+
+    function renderBodyweightHistoryList(history) {
+      const container = document.getElementById('bwHistoryList');
+      if (!container) return;
+
+      if (history.length === 0) {
+        container.innerHTML = '<div style="color:#64748b; padding:4px;">No weight entries yet.</div>';
+        return;
+      }
+
+      const reversed = [...history].reverse();
+      let html = '';
+      reversed.forEach((entry, idx) => {
+        const realIdx = history.length - 1 - idx;
+        const diff = entry.weight - STARTING_BODYWEIGHT;
+        const diffStr = diff <= 0 ? `${diff.toFixed(1)} kg` : `+${diff.toFixed(1)} kg`;
+        const diffColor = diff < 0 ? '#34d399' : '#94a3b8';
+
+        html += `
+          <div class="bw-history-item">
+            <span>📅 <strong>${entry.date}</strong></span>
+            <span>⚖️ <strong>${entry.weight.toFixed(1)} kg</strong> <small style="color:${diffColor}">(${diffStr})</small></span>
+            ${realIdx > 0 ? `<button type="button" class="bw-del-btn" onclick="deleteBwEntry(${realIdx})" title="Delete entry">🗑️</button>` : `<span style="font-size:10px; color:#64748b;">(Start)</span>`}
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    function stepBwInput(delta) {
+      const input = document.getElementById('bwWeightInput');
+      if (!input) return;
+      let val = parseFloat(input.value) || STARTING_BODYWEIGHT;
+      val = Math.round((val + delta) * 10) / 10;
+      if (val < 40) val = 40;
+      if (val > 200) val = 200;
+      input.value = val.toFixed(1);
+    }
+
+    function saveBodyweight() {
+      const dateInput = document.getElementById('bwDateInput');
+      const weightInput = document.getElementById('bwWeightInput');
+      if (!dateInput || !weightInput) return;
+
+      const date = dateInput.value;
+      const weight = parseFloat(weightInput.value);
+
+      if (!date || isNaN(weight) || weight <= 0) {
+        alert('Please enter a valid date and weight.');
+        return;
+      }
+
+      const history = getBwHistory();
+      const existingIdx = history.findIndex(h => h.date === date);
+      if (existingIdx >= 0) {
+        history[existingIdx].weight = Math.round(weight * 10) / 10;
+      } else {
+        history.push({ date: date, weight: Math.round(weight * 10) / 10 });
+        history.sort((a, b) => a.date.localeCompare(b.date));
+      }
+
+      saveBwHistory(history);
+      updateBodyweightStats(history);
+      renderBodyweightHistoryList(history);
+      showToast(`⚖️ Weight saved: ${weight.toFixed(1)} kg`);
+    }
+
+    function deleteBwEntry(idx) {
+      if (!confirm('Delete this bodyweight log entry?')) return;
+      const history = getBwHistory();
+      history.splice(idx, 1);
+      saveBwHistory(history);
+      updateBodyweightStats(history);
+      renderBodyweightHistoryList(history);
+      showToast('🗑️ Weight entry deleted');
+    }
+
+    function toggleBwSection() {
+      const content = document.getElementById('bwContent');
+      const toggleBtn = document.getElementById('bwToggleBtn');
+      if (!content) return;
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        if (toggleBtn) toggleBtn.textContent = '▲ Hide';
+      } else {
+        content.style.display = 'none';
+        if (toggleBtn) toggleBtn.textContent = '▼ Expand';
+      }
+    }
+
+    // ------------------------------------------------------------
+    // 2. EXERCISE SET TRACKER LOGIC
+    // ------------------------------------------------------------
+
+    function getExHistory() {
+      try {
+        const raw = localStorage.getItem(EX_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveExHistory(data) {
+      try {
+        localStorage.setItem(EX_STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {
+        console.error('Error saving exercise data:', e);
+      }
+    }
+
+    function parseSetsRepsFromText(rawText) {
+      const text = (rawText || '').replace(/–/g, '-').trim();
+      const setsMatch = text.match(/(\d+)(?:\s*-\s*(\d+))?\s*Sets?/i);
+      let numSets = 3;
+      if (setsMatch) {
+        numSets = setsMatch[2] ? parseInt(setsMatch[2], 10) : parseInt(setsMatch[1], 10);
+      }
+      const afterX = text.includes('×') ? text.split('×').pop() : (text.includes('x') ? text.split('x').pop() : text);
+      const repsMatch = afterX.match(/(\d+)(?:\s*-\s*(\d+))?\s*(Reps?|Steps?|s)/i);
+      let minReps = 10;
+      let maxReps = 12;
+      let unit = 'Reps';
+      if (repsMatch) {
+        minReps = parseInt(repsMatch[1], 10);
+        maxReps = repsMatch[2] ? parseInt(repsMatch[2], 10) : minReps;
+        unit = repsMatch[3];
+      }
+      return { numSets, minReps, maxReps, unit };
+    }
+
+    function initAllExerciseTrackers() {
+      const store = getExHistory();
+      const cards = document.querySelectorAll('.exercise-card');
+
+      cards.forEach(card => {
+        const cardId = card.id;
+        const slides = card.querySelectorAll('.carousel-slide');
+
+        slides.forEach((slide, slideIdx) => {
+          const key = `${cardId}_s${slideIdx}`;
+
+          // Avoid duplicating if already present
+          if (slide.querySelector('.slide-tracker')) return;
+
+          const nameEl = slide.querySelector('.ex-name');
+          const setsEl = slide.querySelector('.ex-sets');
+          const exName = nameEl ? nameEl.textContent.trim() : `Exercise ${cardId}`;
+          const setsText = setsEl ? setsEl.textContent.trim() : '3 Sets × 10–12 Reps';
+          const meta = parseSetsRepsFromText(setsText);
+
+          if (!store[key]) {
+            store[key] = {
+              name: exName,
+              numSets: meta.numSets,
+              minReps: meta.minReps,
+              maxReps: meta.maxReps,
+              unit: meta.unit,
+              lastSession: null,
+              currentSession: null,
+              history: []
+            };
+          } else {
+            store[key].numSets = meta.numSets;
+            store[key].minReps = meta.minReps;
+            store[key].maxReps = meta.maxReps;
+            store[key].unit = meta.unit;
+          }
+
+          const trackerEl = document.createElement('div');
+          trackerEl.className = 'slide-tracker';
+          trackerEl.setAttribute('data-key', key);
+
+          const gifContainer = slide.querySelector('.gif-container');
+          if (gifContainer) {
+            slide.insertBefore(trackerEl, gifContainer);
+          } else {
+            slide.appendChild(trackerEl);
+          }
+
+          renderSlideTracker(key, store);
+        });
+      });
+
+      saveExHistory(store);
+    }
+
+    function renderSlideTracker(key, passedStore) {
+      const trackerEl = document.querySelector(`.slide-tracker[data-key="${key}"]`);
+      if (!trackerEl) return;
+
+      const store = passedStore || getExHistory();
+      const item = store[key];
+      if (!item) return;
+
+      const numSets = item.numSets || 3;
+      const minReps = item.minReps || 10;
+      const maxReps = item.maxReps || 12;
+      const todayStr = new Date().toISOString().split('T')[0];
+
+      // Smart Date Rollover:
+      // If currentSession is from a previous date and had checked sets,
+      // preserve it in lastSession and start a fresh session for today with previous weights prefilled!
+      if (item.currentSession && item.currentSession.date && item.currentSession.date !== todayStr) {
+        const anyDone = item.currentSession.sets.some(s => s.done);
+        if (anyDone) {
+          item.lastSession = {
+            date: item.currentSession.date,
+            sets: JSON.parse(JSON.stringify(item.currentSession.sets))
+          };
+          const defaultWeight = item.lastSession.sets[0] ? item.lastSession.sets[0].weight : 0;
+          item.currentSession = {
+            date: todayStr,
+            sets: item.lastSession.sets.map(s => ({
+              weight: s.weight,
+              reps: s.reps,
+              done: false
+            }))
+          };
+          saveExHistory(store);
+        }
+      }
+
+      if (!item.currentSession || !Array.isArray(item.currentSession.sets) || item.currentSession.sets.length !== numSets) {
+        const defaultWeight = item.lastSession && item.lastSession.sets && item.lastSession.sets[0] ? item.lastSession.sets[0].weight : 0;
+        const newSets = [];
+        for (let i = 0; i < numSets; i++) {
+          const prevSet = item.lastSession && item.lastSession.sets && item.lastSession.sets[i] ? item.lastSession.sets[i] : null;
+          newSets.push({
+            weight: prevSet ? prevSet.weight : defaultWeight,
+            reps: prevSet ? prevSet.reps : minReps,
+            done: false
+          });
+        }
+        item.currentSession = {
+          date: todayStr,
+          sets: newSets
+        };
+        saveExHistory(store);
+      }
+
+      const currentSets = item.currentSession.sets;
+      const doneCount = currentSets.filter(s => s.done).length;
+      const allDone = doneCount === numSets && numSets > 0;
+      const allHitMax = currentSets.every(s => s.reps >= maxReps);
+      const showDoubleProgression = allDone && allHitMax;
+
+      // Last session badge
+      let lastBadgeText = 'No previous log';
+      if (item.lastSession && Array.isArray(item.lastSession.sets) && item.lastSession.sets.length > 0) {
+        const s = item.lastSession.sets;
+        const firstWeight = s[0].weight;
+        const allSame = s.every(x => x.weight === firstWeight);
+        const repList = s.map(x => x.reps).join(', ');
+        if (allSame) {
+          lastBadgeText = `${firstWeight} kg × ${repList} (${item.lastSession.date || 'last'})`;
+        } else {
+          const details = s.map(x => `${x.weight}kg×${x.reps}`).join(', ');
+          lastBadgeText = `${details} (${item.lastSession.date || 'last'})`;
+        }
+      }
+
+      let html = `
+        <div class="tracker-header">
+          <div class="last-session-badge" title="${lastBadgeText}">
+            <span>📌 Last:</span> <strong>${lastBadgeText}</strong>
+          </div>
+          ${item.lastSession ? `<button type="button" class="btn-copy-last" onclick="copyLastSession('${key}')">⚡ Copy Last</button>` : ''}
+        </div>
+
+        <div class="sets-table">
+          <div class="sets-table-head">
+            <span>Set</span>
+            <span>Weight (kg)</span>
+            <span>Reps</span>
+            <span>Done</span>
+          </div>
+      `;
+
+      currentSets.forEach((set, sIdx) => {
+        html += `
+          <div class="set-row ${set.done ? 'done' : ''}" id="row_${key}_${sIdx}">
+            <span class="set-badge">${sIdx + 1}</span>
+            
+            <div class="stepper-box">
+              <button type="button" class="stepper-btn" onclick="stepWeight('${key}', ${sIdx}, -2.5)">−</button>
+              <input type="number" step="0.5" min="0" max="500" class="stepper-input" 
+                     value="${set.weight}" 
+                     onchange="onWeightChange('${key}', ${sIdx}, this.value)" 
+                     onfocus="this.select()">
+              <button type="button" class="stepper-btn" onclick="stepWeight('${key}', ${sIdx}, 2.5)">+</button>
+            </div>
+
+            <div class="stepper-box">
+              <button type="button" class="stepper-btn" onclick="stepReps('${key}', ${sIdx}, -1)">−</button>
+              <input type="number" step="1" min="0" max="100" class="stepper-input" 
+                     value="${set.reps}" 
+                     onchange="onRepsChange('${key}', ${sIdx}, this.value)" 
+                     onfocus="this.select()">
+              <button type="button" class="stepper-btn" onclick="stepReps('${key}', ${sIdx}, 1)">+</button>
+            </div>
+
+            <button type="button" class="btn-check-set ${set.done ? 'active' : ''}" onclick="toggleSetCheck('${key}', ${sIdx})" title="Mark set done">
+              ✓
+            </button>
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+
+      if (showDoubleProgression) {
+        html += `
+          <div class="progression-banner">
+            🔥 <strong>Target Hit!</strong> You reached ${maxReps}+ reps on all sets. Increase weight by 2.5kg next session!
+          </div>
+        `;
+      }
+
+      const historyCount = item.history ? item.history.length : 0;
+      
+      let statusText = '🟢 Real-time Auto-saved';
+      if (allDone) {
+        statusText = '✅ Completed & Auto-saved';
+      } else if (doneCount > 0) {
+        statusText = `🟢 Auto-saved (${doneCount}/${numSets} done)`;
+      }
+
+      html += `
+        <div class="tracker-status-bar">
+          <div class="auto-save-pill ${allDone ? 'all-done' : ''}">
+            ${statusText}
+          </div>
+          <div class="tracker-btn-group">
+            <button type="button" class="btn-history-toggle" onclick="toggleHistoryDrawer('${key}')">
+              📜 Logs (${historyCount})
+            </button>
+            <button type="button" class="btn-clear-session" onclick="clearCurrentSession('${key}')" title="Reset sets for a new round">
+              🔄 Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="history-drawer" id="drawer_${key}" style="display:none;"></div>
+      `;
+
+      trackerEl.innerHTML = html;
+    }
+
+    function syncSessionHistory(key, store) {
+      const item = store[key];
+      if (!item || !item.currentSession) return;
+      const currentSets = item.currentSession.sets;
+      const anyDone = currentSets.some(s => s.done);
+      if (anyDone) {
+        const todayStr = new Date().toISOString().split('T')[0];
+        const sessionData = {
+          date: todayStr,
+          sets: JSON.parse(JSON.stringify(currentSets))
+        };
+        item.lastSession = sessionData;
+        if (!item.history) item.history = [];
+        const existingIdx = item.history.findIndex(h => h.date === todayStr);
+        if (existingIdx >= 0) {
+          item.history[existingIdx] = sessionData;
+        } else {
+          item.history.unshift(sessionData);
+          if (item.history.length > 15) item.history.pop();
+        }
+      }
+    }
+
+    function stepWeight(key, setIdx, delta) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseFloat(set.weight) || 0;
+      val = Math.round((val + delta) * 10) / 10;
+      if (val < 0) val = 0;
+      set.weight = val;
+
+      if (setIdx === 0) {
+        store[key].currentSession.sets.forEach((s, idx) => {
+          if (idx > 0 && !s.done) {
+            s.weight = val;
+          }
+        });
+      }
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function onWeightChange(key, setIdx, rawVal) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseFloat(rawVal) || 0;
+      if (val < 0) val = 0;
+      set.weight = Math.round(val * 10) / 10;
+
+      if (setIdx === 0) {
+        store[key].currentSession.sets.forEach((s, idx) => {
+          if (idx > 0 && !s.done) {
+            s.weight = set.weight;
+          }
+        });
+      }
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function stepReps(key, setIdx, delta) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseInt(set.reps, 10) || 0;
+      val = val + delta;
+      if (val < 0) val = 0;
+      set.reps = val;
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function onRepsChange(key, setIdx, rawVal) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseInt(rawVal, 10) || 0;
+      if (val < 0) val = 0;
+      set.reps = val;
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function toggleSetCheck(key, setIdx) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      set.done = !set.done;
+
+      // Automatically sync to lastSession and history in real-time
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+
+      if (set.done) {
+        const numSets = store[key].currentSession.sets.length;
+        const doneCount = store[key].currentSession.sets.filter(s => s.done).length;
+        if (doneCount === numSets) {
+          showToast(`🎉 All sets complete & auto-saved!`);
+        } else {
+          showToast(`✅ Set ${setIdx + 1} marked done (Auto-saved)`);
+        }
+      }
+    }
+
+    function copyLastSession(key) {
+      const store = getExHistory();
+      const item = store[key];
+      if (!item || !item.lastSession || !item.lastSession.sets) return;
+
+      item.currentSession.sets.forEach((s, idx) => {
+        if (item.lastSession.sets[idx]) {
+          s.weight = item.lastSession.sets[idx].weight;
+          s.reps = item.lastSession.sets[idx].reps;
+          s.done = false;
+        }
+      });
+
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+      showToast('📋 Copied previous session weights & reps!');
+    }
+
+    function clearCurrentSession(key) {
+      if (!confirm('Reset sets for this exercise?')) return;
+      const store = getExHistory();
+      const item = store[key];
+      if (!item || !item.currentSession) return;
+
+      item.currentSession.sets.forEach(s => {
+        s.done = false;
+      });
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+      showToast('🔄 Sets reset for a new workout');
+    }
+
+    function toggleHistoryDrawer(key) {
+      const drawer = document.getElementById(`drawer_${key}`);
+      if (!drawer) return;
+
+      if (drawer.style.display === 'none') {
+        const store = getExHistory();
+        const item = store[key];
+        if (!item || !item.history || item.history.length === 0) {
+          drawer.innerHTML = '<div style="color:#64748b; padding:4px;">No logged sessions yet. Complete your workout and tap Save Session!</div>';
+        } else {
+          let html = '';
+          item.history.forEach(session => {
+            const totalVolume = session.sets.reduce((sum, s) => sum + (s.weight * s.reps), 0);
+            const setDetails = session.sets.map((s, idx) => `S${idx+1}: ${s.weight}kg×${s.reps}`).join(' | ');
+            html += `
+              <div class="history-session-item">
+                <div class="history-session-header">
+                  <span>📅 ${session.date}</span>
+                  <span>Total Vol: ${totalVolume} kg</span>
+                </div>
+                <div class="history-session-sets">${setDetails}</div>
+              </div>
+            `;
+          });
+          drawer.innerHTML = html;
+        }
+        drawer.style.display = 'block';
+      } else {
+        drawer.style.display = 'none';
+      }
+    }
+
+    // ------------------------------------------------------------
+    // 3. BACKUP, RESTORE & DATA RESET
+    // ------------------------------------------------------------
+
+    function exportWorkoutBackup() {
+      const bwData = getBwHistory();
+      const exData = getExHistory();
+
+      const backupPayload = {
+        app: 'VTaperHypertrophyTracker',
+        version: '1.0',
+        exportDate: new Date().toISOString(),
+        bodyweightHistory: bwData,
+        exerciseHistory: exData
+      };
+
+      const jsonString = JSON.stringify(backupPayload, null, 2);
+      const blob = new Blob([jsonString], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+
+      const now = new Date().toISOString().split('T')[0];
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `workout_routine_backup_${now}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showToast('📥 Backup exported successfully!');
+    }
+
+    function triggerImportFile() {
+      const input = document.getElementById('backupFileInput');
+      if (input) input.click();
+    }
+
+    function handleImportFile(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (!data.exerciseHistory && !data.bodyweightHistory) {
+            alert('Invalid backup file format.');
+            return;
+          }
+
+          if (data.bodyweightHistory) {
+            saveBwHistory(data.bodyweightHistory);
+          }
+          if (data.exerciseHistory) {
+            saveExHistory(data.exerciseHistory);
+          }
+
+          initBodyweightUI();
+          initAllExerciseTrackers();
+          showToast('✅ Backup restored successfully!');
+        } catch (err) {
+          alert('Error reading backup file: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = '';
+    }
+
+    function resetAllTrackerData() {
+      const confirm1 = confirm('⚠️ Are you sure you want to reset all tracked weights, reps, and bodyweight history?');
+      if (!confirm1) return;
+      const confirm2 = confirm('This cannot be undone. Do you want to proceed?');
+      if (!confirm2) return;
+
+      localStorage.removeItem(BW_STORAGE_KEY);
+      localStorage.removeItem(EX_STORAGE_KEY);
+
+      initBodyweightUI();
+      // Re-render trackers
+      document.querySelectorAll('.slide-tracker').forEach(t => t.remove());
+      initAllExerciseTrackers();
+      showToast('🔄 All tracker data reset.');
+    }
+
+    // Auto-select today's workout tab on initial open + init trackers
     window.addEventListener('DOMContentLoaded', () => {
       const dayNum = new Date().getDay(); // 0 Sun, 1 Mon, 2 Tue, 3 Wed, 4 Thu, 5 Fri, 6 Sat
       const dayMap = { 1: 'mon', 2: 'tue', 3: 'wed', 4: 'thu', 5: 'fri' };
@@ -1942,8 +3298,15 @@
       if (activeBtn) {
         switchDayTab(currentDayKey, activeBtn);
       }
+
+      // Initialize Bodyweight Tracker
+      initBodyweightUI();
+
+      // Initialize Exercise Set Trackers across all cards & slides
+      initAllExerciseTrackers();
     });
   </script>
 
+  <div id="trackerToast" class="tracker-toast"></div>
 </body>
 </html>
