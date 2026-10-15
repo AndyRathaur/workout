@@ -345,7 +345,7 @@
 ## 🧘 Everyday Morning Routine & Core Architecture
 
 ### **The Stomach Vacuum (Deep Internal Girdle)**
-* **When:** Every single morning, directly **after washroom/potty** on an empty stomach.
+* **When:** Every single morning, directly **after using the washroom** on an empty stomach.
 * **How to do it:**
   1. Stand upright with hands on your hips.
   2. Exhale **all** air out of your lungs completely.
