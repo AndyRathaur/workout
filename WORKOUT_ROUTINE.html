@@ -1,0 +1,3642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>V-Taper & Big Arms Routine</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #151f32;
+      --slide-bg: #0f172a;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-green: #34d399;
+      --accent-orange: #fb923c;
+      --accent-purple: #c084fc;
+      --border: #22324e;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 12px 10px 60px;
+      line-height: 1.5;
+    }
+    header {
+      text-align: center;
+      padding: 14px 0 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 20px;
+      color: var(--accent);
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      font-weight: 800;
+    }
+    .subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .badge {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: 14px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--accent-green);
+    }
+
+    /* STICKY DAY TABS NAVIGATION */
+    .sticky-tabs-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 17, 32, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 8px 0 10px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .day-tabs-nav {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 2px 2px 6px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .day-tabs-nav::-webkit-scrollbar {
+      display: none;
+    }
+    .day-tab-btn {
+      flex: 1 0 auto;
+      background: #111a2e;
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-sub {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .day-tab-btn.active {
+      background: #1e293b;
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+      transform: translateY(-1px);
+    }
+    .day-tab-btn.active .tab-sub {
+      color: var(--accent);
+    }
+
+    /* Global Mode Switcher */
+    .global-switcher {
+      background: #101827;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .global-switcher-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .global-btn-group {
+      display: inline-flex;
+      background: #060a12;
+      border-radius: 8px;
+      padding: 2px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .global-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .global-btn.active {
+      background: var(--accent);
+      color: #041226;
+      box-shadow: 0 1px 6px rgba(56, 189, 248, 0.4);
+    }
+
+    .daily-box {
+      background: linear-gradient(135deg, #1e1b4b, #172554);
+      border: 1px solid #3b82f6;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+    .daily-box h3 {
+      color: #93c5fd;
+      margin-bottom: 4px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .daily-box p {
+      font-size: 11.5px;
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .day-card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      animation: fadeIn 0.25s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .day-header {
+      background: linear-gradient(90deg, #1b263b, #0f172a);
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .day-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .day-tag {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .tag-blue { background: rgba(56, 189, 248, 0.15); color: var(--accent); }
+    .tag-green { background: rgba(52, 211, 153, 0.15); color: var(--accent-green); }
+    .tag-orange { background: rgba(251, 146, 60, 0.15); color: var(--accent-orange); }
+
+    .exercise-list {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Swipeable Card Styles */
+    .exercise-card {
+      background: #090e1a;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      background: #111a2e;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ex-index {
+      font-size: 11px;
+      font-weight: 800;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pill-tabs {
+      display: inline-flex;
+      background: #060a12;
+      border-radius: 20px;
+      padding: 2px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .pill-tab {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .pill-tab.active {
+      background: var(--accent);
+      color: #041226;
+      box-shadow: 0 1px 6px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Carousel Snap Track */
+    .carousel-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel-slide {
+      flex: 0 0 100%;
+      min-width: 100%;
+      scroll-snap-align: start;
+      box-sizing: border-box;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .slide-badge {
+      display: inline-block;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-machine {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-freeweight {
+      background: rgba(251, 146, 60, 0.15);
+      color: var(--accent-orange);
+      border: 1px solid rgba(251, 146, 60, 0.3);
+    }
+    .swipe-hint-badge {
+      font-size: 9.5px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .ex-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      gap: 6px;
+    }
+    .ex-name {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .ex-sets {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent-green);
+      background: rgba(52, 211, 153, 0.1);
+      padding: 2px 6px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+    .ex-target {
+      font-size: 10.5px;
+      color: var(--accent-purple);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .ex-advantage {
+      font-size: 10.5px;
+      color: #6ee7b7;
+      margin-bottom: 5px;
+      background: rgba(16, 185, 129, 0.08);
+      padding: 3px 6px;
+      border-radius: 5px;
+      border-left: 3px solid #10b981;
+      line-height: 1.35;
+    }
+    .ex-cue {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .gif-container {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 190px;
+    }
+    .gif-container img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Card Bottom Swipe Bar */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      background: #0a1120;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .swipe-label {
+      font-size: 9.5px;
+      color: #64748b;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .dot-indicators {
+      display: flex;
+      gap: 5px;
+    }
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dot.active {
+      width: 12px;
+      border-radius: 3px;
+      background: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0 10px;
+      color: var(--text-muted);
+      font-size: 11px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ====================================================
+       WEIGHT & WORKOUT TRACKER STYLES (LOCALSTORAGE)
+       ==================================================== */
+    
+    /* Bodyweight Card */
+    .bodyweight-tracker-card {
+      background: linear-gradient(145deg, #131d31 0%, #0d1527 100%);
+      border: 1px solid #1e2d4a;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .bw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .bw-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bw-icon {
+      font-size: 20px;
+    }
+    .bw-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.2px;
+    }
+    .bw-sub {
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+    .bw-toggle-btn {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .bw-content {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .bw-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .bw-stat-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 4px;
+      text-align: center;
+    }
+    .bw-stat-box.full-width {
+      grid-column: 1 / -1;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bw-stat-box.full-width .bw-stat-label {
+      font-size: 11px;
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .bw-stat-box.full-width .bw-stat-val {
+      font-size: 13px;
+      text-align: right;
+    }
+    .bw-stat-label {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .bw-stat-val {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 2px;
+    }
+    .bw-stat-val.positive {
+      color: var(--accent-green);
+    }
+    .bw-stat-val.accent {
+      color: var(--accent);
+    }
+    .bw-input-row {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 8px;
+      flex-wrap: wrap;
+    }
+    .bw-date-input {
+      background: #111a2e;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 12px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      flex: 1 1 115px;
+      min-width: 0;
+    }
+    .bw-weight-wrap {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      flex: 1 1 125px;
+      justify-content: center;
+    }
+    .bw-weight-input {
+      background: #111a2e;
+      border: 1px solid var(--border);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      padding: 6px 4px;
+      border-radius: 6px;
+      width: 65px;
+      text-align: center;
+      -moz-appearance: textfield;
+    }
+    .bw-weight-input::-webkit-outer-spin-button,
+    .bw-weight-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .bw-step-btn {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .bw-step-btn:active {
+      background: #334155;
+    }
+    .bw-save-btn {
+      background: #0284c7;
+      border: none;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+      flex: 1 1 auto;
+      text-align: center;
+      touch-action: manipulation;
+    }
+    .bw-save-btn:active {
+      background: #0369a1;
+    }
+    .bw-history-list {
+      margin-top: 10px;
+      max-height: 140px;
+      overflow-y: auto;
+      font-size: 11px;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      padding-top: 6px;
+    }
+    .bw-history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 6px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .bw-history-item:nth-child(odd) {
+      background: rgba(255,255,255,0.02);
+    }
+    .bw-del-btn {
+      background: transparent;
+      border: none;
+      color: #ef4444;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 2px 6px;
+      touch-action: manipulation;
+    }
+
+    /* Exercise Slide Tracker */
+    .slide-tracker {
+      background: #090e1a;
+      border: 1px solid #1a273e;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px 0 12px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .tracker-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .last-session-badge {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 10.5px;
+      color: #bae6fd;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1 1 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .last-session-badge strong {
+      color: #38bdf8;
+    }
+    .btn-copy-last {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+      touch-action: manipulation;
+    }
+    .btn-copy-last:hover, .btn-copy-last:active {
+      background: #334155;
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Table of Sets */
+    .sets-table {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .sets-table-head {
+      display: grid;
+      grid-template-columns: 28px 1fr 1fr 36px;
+      gap: 5px;
+      padding: 2px 4px 6px;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    .set-row {
+      display: grid;
+      grid-template-columns: 28px 1fr 1fr 36px;
+      gap: 5px;
+      align-items: center;
+      margin-bottom: 6px;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 4px;
+      transition: all 0.2s ease;
+    }
+    .set-row.done {
+      background: rgba(16, 185, 129, 0.08);
+      border-color: rgba(52, 211, 153, 0.4);
+    }
+    .set-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 800;
+      margin: 0 auto;
+    }
+    .set-row.done .set-badge {
+      background: var(--accent-green);
+      color: #064e3b;
+    }
+    .stepper-box {
+      display: flex;
+      align-items: center;
+      background: #162035;
+      border: 1px solid #22324e;
+      border-radius: 6px;
+      overflow: hidden;
+      height: 32px;
+    }
+    .stepper-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 15px;
+      font-weight: 700;
+      width: 26px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      touch-action: manipulation;
+      user-select: none;
+    }
+    .stepper-btn:active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+    .stepper-input {
+      flex: 1;
+      min-width: 0;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 2px;
+      outline: none;
+      -moz-appearance: textfield;
+    }
+    .stepper-input::-webkit-outer-spin-button,
+    .stepper-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .btn-check-set {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #64748b;
+      font-size: 15px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      margin: 0 auto;
+      touch-action: manipulation;
+    }
+    .btn-check-set.active {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+      color: #042f2e;
+      box-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+    }
+
+    /* Double Progression Banner */
+    .progression-banner {
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.15), rgba(56, 189, 248, 0.15));
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 10.5px;
+      color: #a7f3d0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      animation: pulseBanner 2s infinite ease-in-out;
+    }
+    @keyframes pulseBanner {
+      0%, 100% { border-color: rgba(52, 211, 153, 0.4); }
+      50% { border-color: rgba(52, 211, 153, 0.8); }
+    }
+
+    .tracker-status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      padding-top: 4px;
+    }
+    .auto-save-pill {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(30, 41, 59, 0.5);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      user-select: none;
+    }
+    .auto-save-pill.all-done {
+      color: var(--accent-green);
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+    .tracker-btn-group {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    /* Actions Bar */
+    .tracker-actions {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-top: 6px;
+    }
+    .btn-log-session {
+      flex: 2;
+      background: #0284c7;
+      border: 1px solid #0369a1;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: background 0.15s;
+      touch-action: manipulation;
+    }
+    .btn-log-session:active {
+      background: #0369a1;
+    }
+    .btn-history-toggle {
+      flex: 1;
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #94a3b8;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 7px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .btn-clear-session {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #ef4444;
+      font-size: 11px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    /* Collapsible History Drawer */
+    .history-drawer {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      font-size: 10.5px;
+    }
+    .history-session-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 5px 8px;
+      margin-bottom: 4px;
+    }
+    .history-session-header {
+      display: flex;
+      justify-content: space-between;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .history-session-sets {
+      color: #cbd5e1;
+    }
+
+    /* Backup / Data Management bar */
+    .backup-bar {
+      margin-top: 20px;
+      padding: 14px;
+      background: #111a2e;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .backup-bar-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .backup-bar-desc {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .backup-btn-group {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-backup {
+      background: #1e293b;
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      touch-action: manipulation;
+    }
+    .btn-backup:hover, .btn-backup:active {
+      background: #334155;
+      color: #fff;
+    }
+    .btn-backup-danger {
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    .btn-backup-danger:hover, .btn-backup-danger:active {
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+    }
+
+    /* Toast Notification */
+    .tracker-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      border: 1px solid var(--accent);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .tracker-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>V-TAPER & BIG ARMS HYPERTROPHY</h1>
+    <div class="subtitle">Quick Day Tabs & Swipeable Exercise Cards</div>
+    <div class="stats-bar">
+      <span class="badge">🔥 Broad Frame & Big Arms</span>
+      <span class="badge">👈👉 Swipe cards left/right</span>
+      <span class="badge">💪 Protein: 145–160g/day</span>
+      <span class="badge">🎯 Deficit: ~400 kcal/day</span>
+      <span class="badge">🚶 8k–10k Steps/day</span>
+    </div>
+  </header>
+
+
+  <!-- ==================== BODYWEIGHT TRACKER ==================== -->
+  <div class="bodyweight-tracker-card" id="bodyweightCard">
+    <div class="bw-header" onclick="toggleBwSection()">
+      <div class="bw-title-wrap">
+        <span class="bw-icon">⚖️</span>
+        <div>
+          <div class="bw-title">Bodyweight Tracker (84kg Fat-Loss Goal)</div>
+          <div class="bw-sub">Track morning weight (fasted, post-washroom)</div>
+        </div>
+      </div>
+      <button type="button" class="bw-toggle-btn" id="bwToggleBtn">▲ Hide</button>
+    </div>
+
+    <div class="bw-content" id="bwContent">
+      <div class="bw-stats-grid">
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">Starting</div>
+          <div class="bw-stat-val" id="bwStatStart">84.0 kg</div>
+        </div>
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">Current</div>
+          <div class="bw-stat-val accent" id="bwStatCurrent">84.0 kg</div>
+        </div>
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">Total Lost</div>
+          <div class="bw-stat-val positive" id="bwStatLoss">0.0 kg</div>
+        </div>
+        <div class="bw-stat-box">
+          <div class="bw-stat-label">7-Day Avg</div>
+          <div class="bw-stat-val" id="bwStatAvg">84.0 kg</div>
+        </div>
+        <div class="bw-stat-box full-width">
+          <div class="bw-stat-label">Waist Circumference (Navel / Weekly)</div>
+          <div class="bw-stat-val accent" id="bwStatWaist">-- cm</div>
+        </div>
+      </div>
+
+      <div class="bw-input-row">
+        <input type="date" id="bwDateInput" class="bw-date-input">
+        <div class="bw-waist-wrap" style="display: inline-flex; align-items: center; gap: 4px; margin-right: 6px;">
+          <span style="color: #94a3b8; font-size: 12px; font-weight: bold;">Waist:</span>
+          <input type="number" step="0.5" id="bwWaistInput" class="bw-weight-input" placeholder="88" style="width: 68px;">
+          <span style="color: #64748b; font-size: 11px;">cm</span>
+        </div>
+        <div class="bw-weight-wrap">
+          <button type="button" class="bw-step-btn" onclick="stepBwInput(-0.1)">−</button>
+          <input type="number" step="0.1" id="bwWeightInput" class="bw-weight-input" placeholder="84.0">
+          <button type="button" class="bw-step-btn" onclick="stepBwInput(0.1)">+</button>
+        </div>
+        <button type="button" class="bw-save-btn" onclick="saveBodyweight()">💾 Save Weight</button>
+      </div>
+
+      <div class="bw-history-list" id="bwHistoryList">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY DAY TABS BAR -->
+  <div class="sticky-tabs-wrapper">
+    <div class="day-tabs-nav">
+      <button class="day-tab-btn active" data-day="mon" onclick="switchDayTab('mon', this)">
+        <span>Mon</span><span class="tab-sub">Upper A</span>
+      </button>
+      <button class="day-tab-btn" data-day="tue" onclick="switchDayTab('tue', this)">
+        <span>Tue</span><span class="tab-sub">Lower A</span>
+      </button>
+      <button class="day-tab-btn" data-day="wed" onclick="switchDayTab('wed', this)">
+        <span>Wed</span><span class="tab-sub">Mobility</span>
+      </button>
+      <button class="day-tab-btn" data-day="thu" onclick="switchDayTab('thu', this)">
+        <span>Thu</span><span class="tab-sub">Upper B</span>
+      </button>
+      <button class="day-tab-btn" data-day="fri" onclick="switchDayTab('fri', this)">
+        <span>Fri</span><span class="tab-sub">Lower B</span>
+      </button>
+      <button class="day-tab-btn" data-day="all" onclick="switchDayTab('all', this)">
+        <span>All</span><span class="tab-sub">Full Week</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Global One-Tap Switcher -->
+  <div class="global-switcher">
+    <div class="global-switcher-title">Exercise Setup:</div>
+    <div class="global-btn-group">
+      <button class="global-btn active" id="btnAllMachine" onclick="switchAllCards(0)">⚙️ Machine</button>
+      <button class="global-btn" id="btnAllFree" onclick="switchAllCards(1)">🏋️ Free Weight</button>
+    </div>
+  </div>
+
+  <div class="daily-box">
+    <h3>🧘 Daily Routine, Posture & Progression Rules (Reconciled & Evidence-Based)</h3>
+    <p>
+      <strong>Caloric Target & Deficit:</strong> Maintenance ~2,250–2,350 kcal. Lifting Days: ~1,900 kcal (-400 deficit). Rest Days: ~1,700 kcal (-400/-350 deficit). Average daily deficit ~385 kcal/day producing predictable 0.3–0.4 kg/week fat loss while maintaining full muscle mass. Target 8,000–10,000 steps daily (NEAT).<br>
+      <strong>Protein Target & Whole-Food Nutrition (Zero Whey):</strong> 145–160g/day (calibrated at 1.75–1.9g/kg). Daily Anchor Dinner: 500g raw chicken breast (~113g protein, ~575 kcal) + 200g dahi (~8g protein) + 2 scoops BeastLife Creatine (6g creatine). Office Days: Office lunch (2 rotis, dal, sabji, chawal, sides ~20g) + 4 PM snack (~8g) + dinner = ~150g protein (~1,850 kcal). WFH Days: Midday meal (60–75g air-fried soya chunks ~35g protein OR 4 boiled eggs ~25g protein) + dinner = ~146–156g protein (~1,250–1,400 kcal).<br>
+      <strong>Morning Posture & TVA:</strong> Fasted Stomach Vacuum (3 sets × 15–20s) to train deep transverse abdominis motor control + Daily Kneeling Hip-Flexor Stretch (2 × 45s/side) to release tight psoas from desk sitting.<br>
+      <strong>Overload & Rest Protocols:</strong> 1–2 RIR on heavy compounds (Rest 2–3m); 0–1 RIR on isolations (Rest 60–75s). Add reps before jumping dumbbell increments. Deload every 6–8 weeks by halving volume for 1 week.
+    </p>
+  </div>
+
+    <!-- ==================== MONDAY ==================== -->
+  <div class="day-card" id="day-mon">
+    <div class="day-header">
+      <div class="day-title">Monday: Upper Body A</div>
+      <div class="day-tag tag-blue">Width, 30° Chest Shelf & Arm Superset</div>
+    </div>
+    <div class="exercise-list">
+      <div class="warmup-banner" style="background: #111a2e; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; border: 1px solid rgba(56,189,248,0.2);">
+        <span style="color: #38bdf8; font-weight: bold; font-size: 13px;">🔥 Warm-Up Protocol:</span>
+        <span style="color: #cbd5e1; font-size: 12.5px; line-height: 1.5;"> 5 mins dynamic mobility + 2 ramp-up sets before Exercise 1 (Set 1: ~50% weight × 8; Set 2: ~75% weight × 3–4). Warm-ups do not count toward working sets.</span>
+      </div>
+
+      <!-- EXERCISE 1: INCLINE PRESS (30 DEGREE) -->
+      <div class="exercise-card" id="card-m-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-1', 0)">Incline DB (30°)</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-1', 1)">Incline Rod (30°)</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-1')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for Barbell Rod 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline Dumbbell Bench Press (30°)</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Upper Pectorals (Clavicular Shelf) | Rest: 2–3m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ 30° Sweet Spot: Maximizes upper pec fibers with less front delt takeover than 45°. Safer to drop solo.</div>
+            <div class="ex-cue">Bench at low 30° incline. Retract shoulder blades. Lower over 2s to collarbones, press up in gentle arc.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif" alt="Incline Dumbbell Press">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Barbell Rod Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Dumbbells</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline Barbell Rod Press (30°)</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Upper Pectorals & Pressing Power | Rest: 2–3m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Barbell Advantage: Easier micro-loading. Stop 1–2 reps shy of failure for safety without a spotter.</div>
+            <div class="ex-cue">Medium grip outside shoulders. Lower rod under control to collarbone level, drive up explosively.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Barbell-Bench-Press.gif" alt="Incline Barbell Bench Press">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 2: WIDE-GRIP LAT PULLDOWN -->
+      <div class="exercise-card" id="card-m-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-2', 0)">Lat Pulldown</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-2', 1)">Assisted Pull-ups</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-2')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for Pull-ups 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Wide-Grip Lat Pulldown</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Latissimus Dorsi (V-Taper Wing Width) | Rest: 90s</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Pure vertical pulling plane that isolates lats without lower back fatigue.</div>
+            <div class="ex-cue">Grip slightly wider than shoulders. Lean back 10°–15°. Drive elbows down and back to your pockets. Squeeze 1s at chest.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif" alt="Wide-Grip Lat Pulldown">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Pull-Up Bar Setup (Recommended)</span>
+              <span class="swipe-hint-badge">👈 Swipe for Pulldown</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Assisted Pull-Ups / Chin-Ups (Bar)</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Latissimus Dorsi (True Vertical Pull Width) | Rest: 90s | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ True Vertical Pull: Use your pull-up bar (assisted with resistance band if needed) for true compound vertical pulling mechanics to maximize V-taper lat width.</div>
+            <div class="ex-cue">Overhand or neutral grip slightly wider than shoulders. Depress shoulder blades, drive elbows down and back to lift chest toward bar. Control 2-second descent. (Alternative: Inverted bar rows or DB pullovers).</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif" alt="Pull-Up Exercise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 3: SEATED CABLE ROW -->
+      <div class="exercise-card" id="card-m-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-3', 0)">Cable Row</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-3', 1)">Chest-Supported DB</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-3')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Row 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated Cable Row</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rhomboids, Mid-Back & Scapular Balance | Rest: 90s</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Constant resistance pulling your shoulders forward, forcing deep scapular retraction.</div>
+            <div class="ex-cue">Neutral V-bar grip. Sit tall with chest puffed out. Pull handle into belly button; pause and pinch shoulder blades for 1s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif" alt="Seated Cable Row">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Row</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Chest-Supported DB Row</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Mid-Back Thickness & Posture | Rest: 90s</div>
+            <div class="ex-advantage">⚡ Bench Advantage: Chest pinned to pad eliminates all lower back strain and cheating.</div>
+            <div class="ex-cue">Lie face-down on 30°–45° incline bench. Row dumbbells upward driving elbows behind back. Squeeze 1s at top.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif" alt="Dumbbell Row">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 4: BUTTERFLY / PEC DECK -->
+      <div class="exercise-card" id="card-m-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-4', 0)">Pec Deck</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-4', 1)">DB Flyes</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-4')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Flyes 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Butterfly / Pec Deck Machine</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Sternal Pecs (Midline Peak Contraction) | Rest: 60s–75s</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Maximum tension when hands meet across the center of the chest.</div>
+            <div class="ex-cue">Adjust seat so handles align with mid-chest. Bring arms together across midline; hold peak squeeze for 1 second.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif" alt="Pec Deck Fly">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Flat / Incline Dumbbell Flyes</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Pectoral Stretch & Midline | Rest: 60s–75s</div>
+            <div class="ex-advantage">⚡ Dumbbell Advantage: Deep eccentric stretch across pectoral fascia at bottom.</div>
+            <div class="ex-cue">Maintain fixed 15° elbow bend. Lower until deep comfortable chest stretch; bring up like hugging a barrel.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Fly.gif" alt="Dumbbell Fly">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 5: LATERAL RAISES -->
+      <div class="exercise-card" id="card-m-5">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 5</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-5', 0)">Cable Lateral</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-5', 1)">DB Lateral</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-5')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Lateral 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoid (Shoulder Cap Width) | Rest: 60s</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Constant tension from 0° to 90°. Micro-load (+1kg) or build to 15 reps before jumping.</div>
+            <div class="ex-cue">Pulley at wrist/knee height. Raise arm in scapular plane (30° forward). Lead with elbow to shoulder height.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif" alt="Cable Lateral Raise">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing Dumbbell Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoid (Shoulder Width) | Rest: 60s</div>
+            <div class="ex-advantage">⚡ DB Advantage: Strict scapular plane work. Add reps before jumping DB weights.</div>
+            <div class="ex-cue">Slight 10° forward lean. Raise dumbbells out to sides leading with elbows. Control the 2s lowering; no hip swinging.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" alt="Dumbbell Lateral Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-5', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-5', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 6: TRICEPS (OVERHEAD PRIORITY - MAEO ET AL. 2022) -->
+      <div class="exercise-card" id="card-m-6">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 6 (Arm Superset Part 1)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-6', 0)">Overhead Cable</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-6', 1)">Rope Pushdown</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-6')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Overhead Priority (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for Pushdown 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Overhead Triceps Extension</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Long Head (Triceps = ~60–67% of Upper Arm Mass) | Superset with Curls</div>
+            <div class="ex-advantage">⚡ European Journal of Sport Science (Maeo et al. 2022, 12-wk study in untrained adults): Overhead extensions triggered ~1.4-fold greater total triceps growth (+28.5% vs +19.6% in long head) via stretch-mediated tension.</div>
+            <div class="ex-cue">High cable rope. Face away. Extend forearms forward until elbows lock. Deep stretch on long head.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/04/Cable-Rope-Overhead-Triceps-Extension.gif" alt="Cable Overhead Triceps Extension">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Pushdown Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Overhead</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Tricep Rope Pushdown</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Lateral & Medial Heads | Elbow-Safe</div>
+            <div class="ex-advantage">⚡ Elbow-Safe: Eliminates elbow strain from skull crushers while isolating the triceps lockout.</div>
+            <div class="ex-cue">Pin elbows firmly against ribs. Push rope down and flare outward at bottom. Control return to 90°.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Rope-Pushdown.gif" alt="Tricep Rope Pushdown">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-6', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-6', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 7: MONDAY BICEPS (TRUE 2X/WEEK FREQUENCY) -->
+      <div class="exercise-card" id="card-m-7">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 7 (Arm Superset Part 2)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-7', 0)">Cable Curl</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-7', 1)">Incline DB</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-7')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup</span>
+              <span class="swipe-hint-badge">Swipe for Incline DB 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing Cable Bicep Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Biceps Peak & Constant Tension | Rest: 60s after Superset</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Keeps maximum tension at top peak contraction where dumbbells lose resistance.</div>
+            <div class="ex-cue">Low pulley with straight/EZ bar. Pin elbows at sides. Curl upward and squeeze biceps hard for 1s at top.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/cable-curl.gif" alt="Standing Cable Curl">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup (Recommended)</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Curl</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline Dumbbell Bicep Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Biceps Brachii (Long Head Stretch) | Rest: 60s</div>
+            <div class="ex-advantage">⚡ Peak Stretch: Incline 45° angle places biceps under deep stretch at long muscle lengths, complementing Thursday's brachialis hammer curls.</div>
+            <div class="ex-cue">Bench at 45°. Let arms hang straight down for deep bottom bicep stretch. Curl up while supinating wrists outward.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Curl.gif" alt="Incline Dumbbell Curl">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-7', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-7', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 8: CABLE FACE PULL (POSTURE & REAR DELTS) -->
+      <div class="exercise-card" id="card-m-8">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 8 (Rear Delts & Posture)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-m-8', 0)">Face Pull</button>
+            <button class="pill-tab" onclick="slideToCard('card-m-8', 1)">DB Reverse Fly</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-m-8')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Fly 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Face Pull</div>
+              <div class="ex-sets">2 Sets × 15–20 Reps</div>
+            </div>
+            <div class="ex-target">Target: Posterior Deltoid & Rotator Cuff (3D Look & Desk Posture) | Rest: 60s</div>
+            <div class="ex-advantage">⚡ Posture Alignment: Externally rotates the humerus, pulling rounded shoulders back into athletic alignment.</div>
+            <div class="ex-cue">Set rope at eye level. Thumbs-back grip. Pull towards forehead while rotating knuckles backward. Squeeze rear delts.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Face-Pull.gif" alt="Cable Face Pull">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline DB Reverse Fly</div>
+              <div class="ex-sets">2 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rear Deltoid Isolation | Rest: 60s</div>
+            <div class="ex-advantage">⚡ DB Advantage: Incline bench eliminates hip swinging and isolates posterior deltoid.</div>
+            <div class="ex-cue">Lie chest-down on 30° bench. Raise dumbbells outward with pinkies leading slightly. Squeeze rear delts at top.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Reverse-Fly.gif" alt="Incline DB Reverse Fly">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-m-8', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-m-8', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== TUESDAY ==================== -->
+  <div class="day-card" id="day-tue">
+    <div class="day-header">
+      <div class="day-title">Tuesday: Lower Body A</div>
+      <div class="day-tag tag-green">Hamstrings (RDL & Curls), Calves & Cable Core</div>
+    </div>
+    <div class="exercise-list">
+      <div class="warmup-banner" style="background: #111a2e; border-left: 4px solid #10b981; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; border: 1px solid rgba(16,185,129,0.2);">
+        <span style="color: #10b981; font-weight: bold; font-size: 13px;">🔥 Warm-Up Protocol:</span>
+        <span style="color: #cbd5e1; font-size: 12.5px; line-height: 1.5;"> 5 mins dynamic mobility (hip circles, bodyweight hinges) + 2 ramp-up sets before Exercise 1 (Set 1: ~50% weight × 8; Set 2: ~75% weight × 3–4). Warm-ups do not count toward working sets.</span>
+      </div>
+
+      <!-- EXERCISE 1: ROMANIAN DEADLIFT (POSTERIOR CHAIN STRENGTH) -->
+      <div class="exercise-card" id="card-t-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-1', 0)">Dumbbell RDL</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-1', 1)">Barbell RDL</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-1')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for Barbell 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Romanian Deadlift (RDL)</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Hamstrings & Glutes (Lengthened Stretch) | Rest: 2–3m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Pure Eccentric Stretch: Dumbbells track along the sides/front of thighs, reducing lumbar shear while maximally loading hamstrings at long muscle lengths.</div>
+            <div class="ex-cue">Dumbbells graze thighs. Soft knee bend. Push hips straight back to wall until deep hamstring stretch. Drive hips forward and squeeze glutes to lockout.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Romanian-Deadlift.gif" alt="Dumbbell Romanian Deadlift">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Barbell Rod Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for DB RDL</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Barbell Rod Romanian Deadlift</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Posterior Chain Strength | Rest: 2–3m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Heavy Overload: Use straps so grip does not bottleneck hamstring loading. Strict neutral spine throughout.</div>
+            <div class="ex-cue">Bar stays glued to legs. Push hips back; stop when hips stop traveling backward. Squeeze glutes hard at top.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Romanian-Deadlift.gif" alt="Barbell Romanian Deadlift">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 2: SEATED LEG CURL MACHINE -->
+      <div class="exercise-card" id="card-t-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-2', 0)">Seated Leg Curl</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-2', 1)">Lying Leg Curl</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-2')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Seated Setup (Gold Standard)</span>
+              <span class="swipe-hint-badge">Swipe for Lying Curl 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated Leg Curl Machine</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Hamstrings Knee Flexion | Rest: 75s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Science-Backed Knee Flexion: Hips flexed at 90° places hamstrings at long muscle lengths for superior hypertrophy compared to lying curls. Zero spinal load.</div>
+            <div class="ex-cue">Lock thigh pad firmly. Curl heels under seat with control; hold 1s at peak contraction. 2s slow eccentric return.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif" alt="Seated Leg Curl">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Lying Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Seated</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Lying Leg Curl (Machine / DB)</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Hamstrings Knee Flexion | Rest: 75s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Alternative: Solid knee flexion work when seated machine is unavailable.</div>
+            <div class="ex-cue">Keep hips pinned flat against bench. Curl heels toward glutes without arching lower back. Control descent.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif" alt="Lying Leg Curl">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 3: CALF RAISE MACHINE -->
+      <div class="exercise-card" id="card-t-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-3', 0)">Calf Machine</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-3', 1)">DB Step Calf</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-3')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Step 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Calf Raise Machine</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Gastrocnemius & Soleus | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Calf Hypertrophy: Calves respond to full range of motion with a deep 2-second stretch at long muscle lengths. Progress with 2.5–5 kg jumps or extra reps.</div>
+            <div class="ex-cue">Balls of feet on edge. Lower heels for a full 2-second deep stretch; pause 1s at bottom, drive up onto big toes and hold 1s. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Lever-Seated-Calf-Raise.gif" alt="Calf Raise Machine">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing DB Calf Raise on Step</div>
+              <div class="ex-sets">3 Sets × 15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lower Leg Diamond Shape | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ DB Advantage: Maximizes ankle range of motion using any step or block.</div>
+            <div class="ex-cue">Hold heavy DB in one hand on step. Drop heel deep below step level for 2s stretch, explode up onto ball of foot. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Calf-Raise.gif" alt="Dumbbell Calf Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 4: BONUS SIDE DELT EXPOSURE (SUPERSET WITH CALVES) -->
+      <div class="exercise-card" id="card-t-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4 (Width Booster)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-4', 0)">Cable Lateral</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-4', 1)">DB Lateral</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-4')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup</span>
+              <span class="swipe-hint-badge">Swipe for DB Lateral 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Lateral Raise</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoid (Continuous Tension) | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Cable Advantage: Constant mechanical tension from 0° to 90°. Micro-load or build reps before jumping.</div>
+            <div class="ex-cue">Pulley at wrist/knee height. Raise arm out and slightly forward in scapular plane. Squeeze at parallel.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif" alt="Cable Lateral Raise">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup (Recommended)</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing DB Lateral Raise (Superset)</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoid (3rd Weekly Hit) | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Middle Path Efficiency: Superset with Exercise 3 Calves! Costs zero extra gym time, produces negligible systemic fatigue, and elevates weekly side-delt volume to 11 sets for rapid shoulder cap growth.</div>
+            <div class="ex-cue">Slight 10° forward lean. Lead with elbows, raise dumbbells outward in scapular plane to shoulder height. Control the descent.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" alt="Standing DB Lateral Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 5: CAPTAIN'S CHAIR & DECLINE BENCH CRUNCH (ANTI-APT CORE) -->
+      <div class="exercise-card" id="card-t-5">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 5 (Anti-APT Core)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-t-5', 0)">Captain's Chair</button>
+            <button class="pill-tab" onclick="slideToCard('card-t-5', 1)">Decline Crunch</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-t-5')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Tower Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for Decline Crunch 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Captain's Chair Knee Raise (Pelvic Curl)</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lower Abdominals & Posterior Pelvic Tilt | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Decompression & Lower Abs: Supported vertical station decompresses the lumbar spine while curling the pelvis upward to strengthen lower abs without lower back strain.</div>
+            <div class="ex-cue">Forearms on pads, back supported. Bend knees at 90° (never straight legs). Smoothly pull bent knees toward chest, rolling pelvis slightly upward at top for a 1s squeeze. Lower under control (2s); do not swing.</div>
+            <div class="gif-container">
+              <img src="https://i.makeagif.com/media/3-17-2015/kRr25D.gif" alt="Captain's Chair Knee Raise (Bent Knees)">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Bench Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Captain's Chair</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Adjustable Decline Bench Crunch</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rectus Abdominis (Upper & Mid Core) | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Dedicated Bench: Avoids awkward floor setups. Allows adjustable decline angle for controlled abdominal loading.</div>
+            <div class="ex-cue">Hook feet securely under rollers. Cross arms over chest. Keep movement strictly to a crunch (curl ribs down toward belly button 30°–45°). Do not do a full sit-up; pause 1s at peak contraction.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Decline-Sit-up.gif" alt="Adjustable Decline Bench Crunch">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-t-5', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-t-5', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== WEDNESDAY ==================== -->
+  <div class="day-card" id="day-wed">
+    <div class="day-header">
+      <div class="day-title">Wednesday: Active Recovery & Mobility</div>
+      <div class="day-tag tag-orange">Cardio & Mobility</div>
+    </div>
+    <div class="exercise-list">
+      <div style="background: #111a2e; border-radius: 12px; padding: 14px; border: 1px solid rgba(255,255,255,0.06);">
+        <h4 style="color: #93c5fd; margin-bottom: 8px; font-size: 14px;">Desk Worker Total Posture Reset (30 Mins)</h4>
+        <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6; margin-bottom: 8px;">
+          • <strong>20–25 Mins Incline Walk:</strong> Treadmill speed 4.0–4.8 km/h at 6–8% incline (Low-Intensity Steady State cardio for active recovery and NEAT).<br>
+          • <strong>Dead Hang from Bar:</strong> 2 sets × 30–45s (decompresses spine, stretches tight pec minor & lats, relieves desk hunch).<br>
+          • <strong>Couch Stretch:</strong> 2 sets × 45s per leg (opens tight hip flexors shortened by desk sitting).<br>
+          • <strong>Cat-Cow & Thoracic Rotations:</strong> 2 sets × 10 reps (restores upper-back mobility to reverse rounded shoulders).<br>
+          • <strong>Bird-Dogs:</strong> 2 sets × 10 reps per side (reinforces spinal stabilization and glute firing).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== THURSDAY ==================== -->
+  <div class="day-card" id="day-thu">
+    <div class="day-header">
+      <div class="day-title">Thursday: Upper Body B</div>
+      <div class="day-tag tag-purple">30° Chest Shelf (2x/wk), Overhead Press & Arm Width</div>
+    </div>
+    <div class="exercise-list">
+      <div class="warmup-banner" style="background: #111a2e; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; border: 1px solid rgba(56,189,248,0.2);">
+        <span style="color: #38bdf8; font-weight: bold; font-size: 13px;">🔥 Warm-Up Protocol:</span>
+        <span style="color: #cbd5e1; font-size: 12.5px; line-height: 1.5;"> 5 mins dynamic mobility + 2 ramp-up sets before Exercise 1 (Set 1: ~50% weight × 8; Set 2: ~75% weight × 3–4). Warm-ups do not count toward working sets.</span>
+      </div>
+
+      <!-- EXERCISE 1: SECOND CHEST EXPOSURE (LOW-INCLINE 30 DEGREE) -->
+      <div class="exercise-card" id="card-th-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-1', 0)">Machine Press</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-1', 1)">DB Bench Press</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-1')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for DB Press 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Flat / Low-Incline (15°) Machine Chest Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Sternal & Mid-Pectorals (2nd Weekly Chest Exposure) | Rest: 2m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ 2x Weekly Hypertrophy: Flat/15° press delivers genuine horizontal pressing for mid/lower sternal pecs, balancing Monday's 30° incline press.</div>
+            <div class="ex-cue">Seat handles at mid-chest. Press smoothly; 2-second negative until pecs are fully stretched. Keep scapulae retracted.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Chest-Press-Machine.gif" alt="Chest Press Machine">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine Press</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Flat / Low-Incline (15°) DB Bench Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Mid/Lower Pectorals | Rest: 2m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Free-Weight Option: Flat or low 15° bench. Tuck elbows 45° to protect shoulders. Safe to drop if solo.</div>
+            <div class="ex-cue">Lower dumbbells over 2s to mid-chest with elbows tucked 45°. Press up smoothly in a gentle inward arc.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Press.gif" alt="Dumbbell Bench Press">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-card" id="card-th-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-2', 0)">Machine Press</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-2', 1)">DB Shoulder Press</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-2')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for DB Press 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Machine Shoulder Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Anterior & Lateral Deltoids | Rest: 90s | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Shoulder Mass: Overhead vertical pressing plane for broad 3D shoulders.</div>
+            <div class="ex-cue">Handles at ear height. Press overhead smoothly without locking elbows; lower over 2 seconds. Avoid lumbar arching.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/04/Lever-Shoulder-Press.gif" alt="Machine Shoulder Press">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine Press</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated Dumbbell Shoulder Press</div>
+              <div class="ex-sets">3 Sets × 8–10 Reps</div>
+            </div>
+            <div class="ex-target">Target: Shoulders & Upper Chest | Rest: 90s</div>
+            <div class="ex-advantage">⚡ Free-Weight Strength: High bench at 75°–80° allows natural shoulder mechanics.</div>
+            <div class="ex-cue">Press dumbbells up in a gentle arc. Core tight, lower back firmly against bench.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Shoulder-Press.gif" alt="Dumbbell Shoulder Press">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-card" id="card-th-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-3', 0)">Underhand Pulldown</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-3', 1)">Chin-Ups</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-3')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for Chin-Ups 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Close-Grip / Underhand Lat Pulldown</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Latissimus Dorsi & Biceps Assistance | Rest: 90s | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Grip Variation: A close, supinated or neutral grip provides an alternative vertical pulling angle with strong latissimus dorsi and bicep recruitment.</div>
+            <div class="ex-cue">Pull elbows straight down into sides. Squeeze lats hard at bottom for 1 second. 2s controlled ascent.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/V-bar-Lat-Pulldown.gif" alt="Close-Grip Lat Pulldown">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Bodyweight Bar Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Pulldown</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Underhand Chin-Ups (Bar)</div>
+              <div class="ex-sets">3 Sets × 6–8 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lats & Biceps Peak Power | Rest: 90s</div>
+            <div class="ex-advantage">⚡ Calisthenic Power: Uses pull-up bar for maximum neuromuscular vertical pulling tension.</div>
+            <div class="ex-cue">Underhand grip. Pull chest to bar, driving elbows down. Lower under strict control.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/03/Chin-Up.gif" alt="Underhand Chin-Ups">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-card" id="card-th-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4 (Mid-Back & Lat Density)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-4', 0)">Chest-Supported Row</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-4', 1)">Single-Arm DB Row</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-4')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for DB Row 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Chest-Supported Row (Machine / T-Bar)</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rhomboids & Mid-Back Thickness | Rest: 90s | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Complete Back Development: Delivers the dedicated Thursday horizontal pull, bringing weekly lat/mid-back volume to a full 12 sets.</div>
+            <div class="ex-cue">Chest flat against pad. Pull handles toward ribs, driving elbows back. Squeeze shoulder blades together for 1s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif" alt="Chest Supported Row">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine Row</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Single-Arm Dumbbell Row</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Unilateral Lat & Mid-Back Density | Rest: 90s</div>
+            <div class="ex-advantage">⚡ Unilateral Balance: Corrects strength imbalances between left and right lats.</div>
+            <div class="ex-cue">One hand and knee on bench. Row dumbbell smoothly toward hip pocket with neutral spine.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif" alt="Single-Arm Dumbbell Row">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-card" id="card-th-5">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 5</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-5', 0)">Cable Lateral</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-5', 1)">DB Lateral</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-5')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for DB Lateral 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoid (Main Weekly Dose) | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Continuous Tension: Cable tension never drops at the bottom, maximizing deltoid metabolic stress.</div>
+            <div class="ex-cue">Raise arm in scapular plane (30° forward). Constant tension from start to finish. Focus on pure side delt burn.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif" alt="Cable Lateral Raise">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Lateral</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Lateral Raise</div>
+              <div class="ex-sets">4 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Lateral Deltoid Width | Rest: 60s</div>
+            <div class="ex-advantage">⚡ Shoulder Capping: Strict dumbbell raises with forward torso tilt.</div>
+            <div class="ex-cue">Strict form, slight forward lean. Do not bounce or swing hips. Add reps before increasing weight.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" alt="Dumbbell Lateral Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-5', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-5', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-card" id="card-th-6">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 6</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-6', 0)">Cable Rope Hammer</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-6', 1)">DB Hammer</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-6')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for DB Hammer 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Rope Hammer Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Brachialis & Forearm Thickness | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Arm Thickness Secret: The brachialis muscle sits underneath the bicep. Growing it physically pushes the bicep outward for thicker arms.</div>
+            <div class="ex-cue">Neutral grip. Curl rope to upper chest; pull rope slightly apart at top to maximally engage brachialis.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/rope-bicep-curls-300x300.gif" alt="Cable Hammer Curl">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Hammer</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Hammer Curl</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Brachialis & Brachioradialis | Rest: 60s</div>
+            <div class="ex-advantage">⚡ Heavy Arm Mass: Allows heavy neutral-grip loading without wrist strain.</div>
+            <div class="ex-cue">Palms inward throughout. Pin elbows to ribs; curl up with pure forearm and brachialis control.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif" alt="Dumbbell Hammer Curl">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-6', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-6', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-card" id="card-th-7">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 7</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-7', 0)">Overhead Cable</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-7', 1)">DB Overhead</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-7')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for DB Overhead 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Overhead Triceps Extension</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Long Head (Maximum Arm Mass) | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Stretch Hypertrophy: Places the triceps long head at maximal stretch for superior volume growth (Maeo et al. 2022).</div>
+            <div class="ex-cue">High pulley rope. Upper arms fixed beside ears; extend forearms forward. Deep stretch at bottom.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/04/Cable-Rope-Overhead-Triceps-Extension.gif" alt="Cable Overhead Triceps Extension">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Cable Overhead</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated DB Overhead Extension</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Triceps Long Head | Rest: 60s</div>
+            <div class="ex-advantage">⚡ Free-Weight Mass: One heavy dumbbell held vertically with both palms for deep overhead extension.</div>
+            <div class="ex-cue">Sit upright. Diamond grip on dumbbell plate. Lower under control to base of neck; extend overhead.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Triceps-Extension.gif" alt="Dumbbell Overhead Extension">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-7', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-7', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 8: REAR DELT & POSTURE FREQUENCY -->
+      <div class="exercise-card" id="card-th-8">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 8 (Rear Delts & Posture)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-th-8', 0)">Face Pull</button>
+            <button class="pill-tab" onclick="slideToCard('card-th-8', 1)">DB Reverse Fly</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-th-8')">
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Cable Setup (2nd Weekly Hit)</span>
+              <span class="swipe-hint-badge">Swipe for DB Fly 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Cable Face Pull</div>
+              <div class="ex-sets">2 Sets × 15–20 Reps</div>
+            </div>
+            <div class="ex-target">Target: Posterior Deltoid & External Rotators | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ 2x Weekly Exposure: 2 sets on Monday + 2 sets on Thursday balances heavy pushing, repairs desk-bound posture, and builds 3D shoulder thickness without joint fatigue.</div>
+            <div class="ex-cue">High rope pulley. Pull toward eye level while externally rotating forearms backward. Squeeze rear delts for 1s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Face-Pull.gif" alt="Cable Face Pull">
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Face Pull</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Incline DB Reverse Fly</div>
+              <div class="ex-sets">2 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Posterior Deltoids | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ DB Advantage: Incline bench eliminates hip swinging and isolates posterior deltoid.</div>
+            <div class="ex-cue">Lie chest-down on 30° bench. Raise dumbbells outward leading with pinkies. Squeeze rear delts at top.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Reverse-Fly.gif" alt="Incline DB Reverse Fly">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-th-8', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-th-8', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== FRIDAY ==================== -->
+  <div class="day-card" id="day-fri">
+    <div class="day-header">
+      <div class="day-title">Friday: Lower Body B</div>
+      <div class="day-tag tag-green">Quads & Core Corset</div>
+    </div>
+    <div class="exercise-list">
+      <div class="warmup-banner" style="background: #111a2e; border-left: 4px solid #38bdf8; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; border: 1px solid rgba(56,189,248,0.2);">
+        <span style="color: #38bdf8; font-weight: bold; font-size: 13px;">🔥 Warm-Up Protocol:</span>
+        <span style="color: #cbd5e1; font-size: 12.5px; line-height: 1.5;"> 5 mins dynamic mobility + 2 ramp-up sets before Exercise 1 (Set 1: ~50% weight × 8; Set 2: ~75% weight × 3–4). Warm-ups do not count toward working sets.</span>
+      </div>
+
+      <!-- EXERCISE 1 -->
+      <div class="exercise-card" id="card-f-1">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 1</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-1', 0)">Leg Press</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-1', 1)">Goblet Squat</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-1')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for Goblet Squat 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Leg Press Machine / Hack Squat</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Quadriceps & Knee Extension | Rest: 2m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Removes spinal and forearm grip bottlenecks so you can overload quads safely with 1–2 RIR.</div>
+            <div class="ex-cue">Lower sled to 90° knee angle. Drive forcefully through midfoot without violent knee locking. Rest 2m.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2015/11/Leg-Press.gif" alt="Leg Press Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Leg Press</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Goblet Squat</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Quadriceps & Core Drive | Rest: 2m | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Hold heavy dumbbell vertically against chest; stay tall and upright.</div>
+            <div class="ex-cue">Squat down between knees until thighs are parallel to floor, pushing knees outward. Rest 2m.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2023/01/Dumbbell-Goblet-Squat.gif" alt="Dumbbell Goblet Squat">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-1', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-1', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 2 -->
+      <div class="exercise-card" id="card-f-2">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 2</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-2', 0)">DB Lunges</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-2', 1)">Split Squat</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-2')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">Swipe for Split Squats 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Dumbbell Walking Lunges</div>
+              <div class="ex-sets">3 Sets × 10 Steps/Leg</div>
+            </div>
+            <div class="ex-target">Target: Quads & Glute Stability | Rest: 90s | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Functional Muscle: Unilateral work balances leg strength and fires stabilizer muscles.</div>
+            <div class="ex-cue">Controlled forward strides. Back knee gently kisses floor. Keep torso upright. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2023/09/dumbbell-lunges.gif" alt="Dumbbell Walking Lunges">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Stationary Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Walking Lunges</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Static Dumbbell Split Squats</div>
+              <div class="ex-sets">3 Sets × 10 Reps/Leg</div>
+            </div>
+            <div class="ex-target">Target: Glute & Quad Isolation | Rest: 90s | 1–2 RIR</div>
+            <div class="ex-advantage">⚡ Gym Tip: If the floor is crowded, stationary split squats deliver the same stimulus without walking.</div>
+            <div class="ex-cue">One foot forward, one back. Lower straight down until back knee is 1 inch off floor, drive through front heel. Rest 90s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Split-Squat.gif" alt="Split Squats">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-2', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-2', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 3 -->
+      <div class="exercise-card" id="card-f-3">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 3</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-3', 0)">Leg Extension</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-3', 1)">Split Squat</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-3')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup</span>
+              <span class="swipe-hint-badge">Swipe for Bodyweight 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Leg Extension Machine</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Rectus Femoris Tear-Drop | Rest: 60–75s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Direct isolation of the front quad without hip or glute takeover.</div>
+            <div class="ex-cue">Extend legs and pause 1 full second at top. Lower slowly over 2 seconds. Rest 60–75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/LEG-EXTENSION.gif" alt="Leg Extension Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Free Weight Alternative</span>
+              <span class="swipe-hint-badge">👈 Swipe for Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Elevated Heel Split Squat</div>
+              <div class="ex-sets">3 Sets × 12 Reps/Leg</div>
+            </div>
+            <div class="ex-target">Target: Quad Teardrop Muscle (Vastus Medialis) | Rest: 60–75s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Quad Tip: Elevating front heel slightly places massive isolated tension on front quads.</div>
+            <div class="ex-cue">Drive knee forward over toes in a controlled split squat to load the quad teardrop. Rest 60–75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Split-Squat.gif" alt="Split Squat Alternative">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-3', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-3', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 4: HAMSTRING KNEE BALANCE -->
+      <div class="exercise-card" id="card-f-4">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 4</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-4', 0)">Seated Leg Curl</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-4', 1)">Lying / DB Curl</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-4')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup (Knee Joint Protection)</span>
+              <span class="swipe-hint-badge">Swipe for Lying Curl 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Seated Leg Curl Machine</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Hamstrings Knee Flexion | Rest: 60–75s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Hamstring Knee Flexion: Trains the hamstrings through knee flexion at long muscle lengths, completing Friday lower-body development.</div>
+            <div class="ex-cue">Lap pad firm on thighs. Curl heels down and back under seat. Squeeze 1s at bottom, 2s return. Rest 60–75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif" alt="Seated Leg Curl Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Alternative Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Seated Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Lying Leg Curl (Machine / DB)</div>
+              <div class="ex-sets">3 Sets × 10–12 Reps</div>
+            </div>
+            <div class="ex-target">Target: Hamstrings Peak Flexion | Rest: 60–75s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Alternative: Smooth knee flexion curl if seated machine is occupied.</div>
+            <div class="ex-cue">Lie flat, pad against lower calves. Curl heels smoothly towards glutes, hold peak contraction 1s. Rest 60–75s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif" alt="Leg Curl Alternative">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-4', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-4', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 5: CALVES 2ND HIT -->
+      <div class="exercise-card" id="card-f-5">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 5</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-5', 0)">Calf Machine</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-5', 1)">DB Calf Raise</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-5')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-machine">Machine Setup (2nd Weekly Hit)</span>
+              <span class="swipe-hint-badge">Swipe for DB Calf 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Calf Raise Machine / Leg Press Calves</div>
+              <div class="ex-sets">3 Sets × 12–15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Gastrocnemius & Soleus (Calf Mass) | Rest: 60s | 0–1 RIR</div>
+            <div class="ex-advantage">⚡ Machine Advantage: Heavy progressive overload with a full 2-second bottom stretch for gastrocnemius & soleus hypertrophy.</div>
+            <div class="ex-cue">Balls of feet on ledge. Deep 2-second heel stretch at bottom, press up high on big toes for 1s squeeze. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/06/Lever-Seated-Calf-Raise.gif" alt="Calf Raise Machine">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Dumbbell Setup</span>
+              <span class="swipe-hint-badge">👈 Swipe for Calf Machine</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Standing DB Calf Raise on Step</div>
+              <div class="ex-sets">3 Sets × 15 Reps</div>
+            </div>
+            <div class="ex-target">Target: Calves & Ankle Stability</div>
+            <div class="ex-advantage">⚡ Free-Weight Tip: Single or double leg calf raise on a weight plate holding 1 dumbbell.</div>
+            <div class="ex-cue">Sink heels below plate for 2s stretch, explode onto toes for 1s peak hold. Rest 60s.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Calf-Raise.gif" alt="Dumbbell Calf Raise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-5', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-5', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXERCISE 6: DEEP CORE CORSET BELT -->
+      <div class="exercise-card" id="card-f-6">
+        <div class="card-topbar">
+          <span class="ex-index">Exercise 6 (Deep Core & Anti-Extension)</span>
+          <div class="pill-tabs">
+            <button class="pill-tab active" onclick="slideToCard('card-f-6', 0)">Deadbugs</button>
+            <button class="pill-tab" onclick="slideToCard('card-f-6', 1)">RKC Plank</button>
+          </div>
+        </div>
+        <div class="carousel-track" onscroll="handleScroll('card-f-6')">
+          <!-- Slide 1 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Floor Mat Setup (Recommended)</span>
+              <span class="swipe-hint-badge">Swipe for RKC Plank 👉</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">Deadbugs (Floor)</div>
+              <div class="ex-sets">3 Sets × 10 Reps/Side</div>
+            </div>
+            <div class="ex-target">Target: Transverse Abdominis (Inner Corset Belt & Anti-Extension) | Rest: 45s–60s</div>
+            <div class="ex-advantage">⚡ Spinal Alignment: Glues lower back to floor to train anterior core anti-extension without hip flexor takeover.</div>
+            <div class="ex-cue">Lower back glued firmly into floor with zero arch. Slowly extend opposite arm and leg without letting spine arch. Return under control and alternate.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/05/Dead-Bug.gif" alt="Deadbug Floor Exercise">
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="slide-badge-row">
+              <span class="slide-badge badge-freeweight">Mat Setup (Posterior Pelvic Tilt)</span>
+              <span class="swipe-hint-badge">👈 Swipe for Deadbug</span>
+            </div>
+            <div class="ex-title-row">
+              <div class="ex-name">RKC Plank (Posterior Pelvic Tilt)</div>
+              <div class="ex-sets">3 Sets × 30–45s Hold</div>
+            </div>
+            <div class="ex-target">Target: Rectus Abdominis & Deep Core (Anti-Extension & Pelvic Alignment) | Rest: 45s–60s</div>
+            <div class="ex-advantage">⚡ Posterior Tilt Active Brace: Pulling elbows down toward toes while squeezing glutes maximally tilts pelvis posteriorly, strengthening the core against lumbar hyperextension.</div>
+            <div class="ex-cue">Forearms on floor, fists clenched. Squeeze quads and glutes with 100% effort, pull elbows towards toes, actively tucking pelvis. Zero lower back sagging.</div>
+            <div class="gif-container">
+              <img src="https://fitnessprogramer.com/wp-content/uploads/2021/02/plank.gif" alt="RKC Plank Exercise">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="swipe-label"><span>👈👉</span> Swipe to compare</span>
+          <div class="dot-indicators">
+            <span class="dot active" onclick="slideToCard('card-f-6', 0)"></span>
+            <span class="dot" onclick="slideToCard('card-f-6', 1)"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Saved locally on your device for instant offline access in your office gym.</p>
+
+    <!-- Backup and Reset Controls -->
+    <div class="backup-bar">
+      <div class="backup-bar-title">💾 Offline Tracker Data Backup</div>
+      <div class="backup-bar-desc">All your logged weights and reps are stored locally in your phone browser memory. Export a backup anytime so your progress is never lost.</div>
+      <div class="backup-btn-group">
+        <button type="button" class="btn-backup" onclick="exportWorkoutBackup()">📥 Export Backup (JSON)</button>
+        <button type="button" class="btn-backup" onclick="triggerImportFile()">📤 Import Backup</button>
+        <button type="button" class="btn-backup btn-backup-danger" onclick="resetAllTrackerData()">⚠️ Reset All Data</button>
+      </div>
+      <input type="file" id="backupFileInput" accept=".json" style="display:none;" onchange="handleImportFile(event)">
+    </div>
+  </footer>
+
+  <script>
+    // 1. Timezone-Accurate Local Date String (Fixes India Midnight-5:30 AM UTC date lag)
+    function getLocalDateString() {
+      const now = new Date();
+      const offset = now.getTimezoneOffset() * 60000;
+      return new Date(now.getTime() - offset).toISOString().split('T')[0];
+    }
+
+    // 2. Exercise-Specific Step Sizing
+    function getExerciseStep(key, name) {
+      const lower = (name || '').toLowerCase();
+      // 1. Timed holds: Plank, vacuum, hang (0 kg weight delta)
+      if (lower.includes('plank') || lower.includes('vacuum') || lower.includes('hang')) {
+        return 0;
+      }
+      // 2. Heavy plate sleds: Leg press, hack squat (5 kg steps)
+      if (lower.includes('leg press') || lower.includes('hack squat')) {
+        return 5.0;
+      }
+      // 3. Machine pin stacks & cable movements (Cable Crunch uses 2.5 kg!)
+      if (lower.includes('cable crunch') || lower.includes('machine') || lower.includes('pulldown') || 
+          lower.includes('cable row') || lower.includes('leg extension') || lower.includes('leg curl') || 
+          lower.includes('pec deck') || lower.includes('butterfly') || lower.includes('calf') || 
+          lower.includes('extension') || lower.includes('press')) {
+        return 2.5;
+      }
+      // 4. Free weight compounds: Barbell bench, RDL, deadlift, squats (2.5 kg steps)
+      if (lower.includes('barbell') || lower.includes('deadlift') || lower.includes('rdl') || 
+          lower.includes('bench press') || lower.includes('squat')) {
+        return 2.5;
+      }
+      // 5. Dumbbell & cable isolations: Lateral raises, bicep curls, hammer curls, triceps (1.0 kg steps)
+      if (lower.includes('lateral') || lower.includes('curl') || lower.includes('tricep') || 
+          lower.includes('face pull') || lower.includes('reverse fly')) {
+        return 1.0;
+      }
+      // 6. Bodyweight rep movements: Deadbugs, captain's chair, crunches (0 kg default weight)
+      if (lower.includes('deadbug') || lower.includes('crunch') || lower.includes('chair') || lower.includes('knee raise')) {
+        return 0;
+      }
+      return 2.5;
+    }
+
+
+    // Tab switching for Days (Monday, Tuesday, Wednesday, Thursday, Friday, All)
+    function switchDayTab(dayKey, clickedBtn) {
+      const allDayCards = document.querySelectorAll('.day-card');
+      const allTabs = document.querySelectorAll('.day-tab-btn');
+
+      allTabs.forEach(b => b.classList.remove('active'));
+      if (clickedBtn) {
+        clickedBtn.classList.add('active');
+      }
+
+      if (dayKey === 'all') {
+        allDayCards.forEach(c => c.style.display = 'block');
+      } else {
+        allDayCards.forEach(c => {
+          if (c.id === `day-${dayKey}`) {
+            c.style.display = 'block';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      }
+
+      // Scroll top smoothly to top of cards
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Smoothly slide to a specific card slide (0 = Machine/Default, 1 = Free Weight)
+    function slideToCard(cardId, slideIndex) {
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      const track = card.querySelector('.carousel-track');
+      if (!track) return;
+      const slideWidth = track.offsetWidth;
+      track.scrollTo({
+        left: slideIndex * slideWidth,
+        behavior: 'smooth'
+      });
+      updateCardUI(card, slideIndex);
+    }
+
+    // Handle scroll-snap detection on touch swipe
+    function handleScroll(cardId) {
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      const track = card.querySelector('.carousel-track');
+      if (!track) return;
+      const slideWidth = track.offsetWidth;
+      const scrollLeft = track.scrollLeft;
+      const activeIndex = Math.round(scrollLeft / slideWidth);
+      updateCardUI(card, activeIndex);
+    }
+
+    // Update the pill tabs and dot indicators for a card
+    function updateCardUI(card, activeIndex) {
+      const pills = card.querySelectorAll('.pill-tab');
+      pills.forEach((p, idx) => {
+        if (idx === activeIndex) p.classList.add('active');
+        else p.classList.remove('active');
+      });
+
+      const dots = card.querySelectorAll('.dot');
+      dots.forEach((d, idx) => {
+        if (idx === activeIndex) d.classList.add('active');
+        else d.classList.remove('active');
+      });
+    }
+
+    // Switch all cards across all days at once
+    function switchAllCards(slideIndex) {
+      const cards = document.querySelectorAll('.exercise-card');
+      cards.forEach(c => {
+        slideToCard(c.id, slideIndex);
+      });
+
+      const btnMachine = document.getElementById('btnAllMachine');
+      const btnFree = document.getElementById('btnAllFree');
+      if (slideIndex === 0) {
+        btnMachine.classList.add('active');
+        btnFree.classList.remove('active');
+      } else {
+        btnMachine.classList.remove('active');
+        btnFree.classList.add('active');
+      }
+    }
+
+
+    // ============================================================
+    // WORKOUT & BODYWEIGHT TRACKING SYSTEM (LOCALSTORAGE ENGINE)
+    // ============================================================
+
+    const BW_STORAGE_KEY = 'workout_bodyweight_history';
+    const EX_STORAGE_KEY = 'workout_exercise_history';
+    const STARTING_BODYWEIGHT = 84.0;
+
+    // Helper: Show brief floating toast
+    function showToast(msg) {
+      let toast = document.getElementById('trackerToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'trackerToast';
+        toast.className = 'tracker-toast';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    // ------------------------------------------------------------
+    // 1. BODYWEIGHT TRACKER LOGIC
+    // ------------------------------------------------------------
+    function getBwHistory() {
+      try {
+        const raw = localStorage.getItem(BW_STORAGE_KEY);
+        if (!raw) {
+          return [{ date: '2026-10-14', weight: STARTING_BODYWEIGHT, note: 'Starting weight' }];
+        }
+        return JSON.parse(raw);
+      } catch (e) {
+        return [{ date: '2026-10-14', weight: STARTING_BODYWEIGHT, note: 'Starting weight' }];
+      }
+    }
+
+    function saveBwHistory(history) {
+      try {
+        localStorage.setItem(BW_STORAGE_KEY, JSON.stringify(history));
+      } catch (e) {
+        console.error('Error saving bodyweight:', e);
+      }
+    }
+
+    function initBodyweightUI() {
+      const history = getBwHistory();
+      const todayStr = getLocalDateString();
+      
+      const dateInput = document.getElementById('bwDateInput');
+      const weightInput = document.getElementById('bwWeightInput');
+      const waistInput = document.getElementById('bwWaistInput');
+      if (dateInput) {
+        dateInput.value = todayStr;
+        dateInput.onchange = () => {
+          const currentHistory = getBwHistory(); // Always re-read fresh from storage
+          const selDate = dateInput.value;
+          const entry = currentHistory.find(h => h.date === selDate);
+          if (entry) {
+            if (weightInput) weightInput.value = entry.weight.toFixed(1);
+            if (waistInput) waistInput.value = entry.waist ? entry.waist.toFixed(1) : '';
+          } else {
+            const latest = currentHistory.length > 0 ? currentHistory[currentHistory.length - 1] : null;
+            if (weightInput && latest) weightInput.value = latest.weight.toFixed(1);
+            if (waistInput) waistInput.value = '';
+          }
+        };
+      }
+
+      const latestEntry = history.length > 0 ? history[history.length - 1] : { weight: STARTING_BODYWEIGHT };
+      const todayEntry = history.find(h => h.date === todayStr);
+      if (weightInput) {
+        weightInput.value = (todayEntry ? todayEntry.weight : latestEntry.weight).toFixed(1);
+      }
+      if (waistInput) {
+        waistInput.value = (todayEntry && todayEntry.waist) ? todayEntry.waist.toFixed(1) : '';
+      }
+
+      updateBodyweightStats(history);
+      renderBodyweightHistoryList(history);
+    }
+
+    function updateBodyweightStats(history) {
+      if (!history || history.length === 0) return;
+      const latest = history[history.length - 1];
+      const curWeight = latest.weight;
+      const diff = curWeight - STARTING_BODYWEIGHT;
+
+      const curEl = document.getElementById('bwStatCurrent');
+      const diffEl = document.getElementById('bwStatLoss');
+      const avgEl = document.getElementById('bwStatAvg');
+
+      if (curEl) curEl.textContent = `${curWeight.toFixed(1)} kg`;
+      if (diffEl) {
+        if (diff < 0) {
+          diffEl.textContent = `${diff.toFixed(1)} kg`;
+          diffEl.className = 'bw-stat-val positive';
+        } else if (diff > 0) {
+          diffEl.textContent = `+${diff.toFixed(1)} kg`;
+          diffEl.className = 'bw-stat-val';
+        } else {
+          diffEl.textContent = `0.0 kg`;
+          diffEl.className = 'bw-stat-val accent';
+        }
+      }
+
+      const recent = history.slice(-7);
+      const avg = recent.reduce((sum, item) => sum + item.weight, 0) / recent.length;
+      if (avgEl) avgEl.textContent = `${avg.toFixed(1)} kg`;
+
+      const waistEl = document.getElementById('bwStatWaist');
+      if (waistEl) {
+        const waistEntries = history.filter(h => h.waist && h.waist > 0);
+        if (waistEntries.length > 0) {
+          const firstWaist = waistEntries[0].waist;
+          const latestWaist = waistEntries[waistEntries.length - 1].waist;
+          const diffW = latestWaist - firstWaist;
+          let diffStr = '';
+          if (waistEntries.length > 1) {
+            diffStr = diffW < 0 ? ` (${diffW.toFixed(1)} cm)` : (diffW > 0 ? ` (+${diffW.toFixed(1)} cm)` : ' (0 cm)');
+          }
+          waistEl.innerHTML = `${latestWaist.toFixed(1)} cm <span style="font-size:11px; color:#94a3b8; font-weight:normal;">(Start: ${firstWaist.toFixed(1)}cm${diffStr})</span>`;
+        } else {
+          waistEl.textContent = '-- cm';
+        }
+      }
+    }
+
+    function renderBodyweightHistoryList(history) {
+      const listEl = document.getElementById('bwHistoryList');
+      if (!listEl) return;
+
+      if (!history || history.length === 0) {
+        listEl.innerHTML = '<div style="color: #64748b; font-size: 12px; text-align: center; padding: 10px;">No entries logged yet. Track your first morning weight & waist above!</div>';
+        return;
+      }
+
+      const reversed = [...history].reverse();
+      let html = '';
+      reversed.forEach((entry, rIdx) => {
+        const actualIdx = history.length - 1 - rIdx;
+        const isBaseline = actualIdx === 0;
+        const waistText = entry.waist ? ` • <span style="color: #38bdf8;">${entry.waist.toFixed(1)} cm waist</span>` : '';
+        const actionHtml = isBaseline 
+          ? '<span style="color: #64748b; font-size: 11px; padding: 2px 6px; font-weight: 600;" title="Initial starting baseline">Base</span>'
+          : `<button type="button" class="bw-del-btn" onclick="deleteBwEntry(${actualIdx})" title="Delete entry">✕</button>`;
+        html += `
+          <div class="bw-history-item">
+            <span class="bw-history-date">${entry.date}</span>
+            <span class="bw-history-weight">${entry.weight.toFixed(1)} kg${waistText}</span>
+            ${actionHtml}
+          </div>
+        `;
+      });
+      listEl.innerHTML = html;
+    }
+
+    function stepBwInput(delta) {
+      const input = document.getElementById('bwWeightInput');
+      if (!input) return;
+      let val = parseFloat(input.value) || STARTING_BODYWEIGHT;
+      val = Math.round((val + delta) * 10) / 10;
+      if (val < 40) val = 40;
+      if (val > 200) val = 200;
+      input.value = val.toFixed(1);
+    }
+
+    function saveBodyweight() {
+      const dateInput = document.getElementById('bwDateInput');
+      const weightInput = document.getElementById('bwWeightInput');
+      const waistInput = document.getElementById('bwWaistInput');
+      if (!dateInput || !weightInput) return;
+
+      const date = dateInput.value;
+      const weight = parseFloat(weightInput.value);
+      const waist = waistInput && waistInput.value ? parseFloat(waistInput.value) : null;
+
+      if (!date || isNaN(weight) || weight <= 0) {
+        alert('Please enter a valid date and weight.');
+        return;
+      }
+
+      const history = getBwHistory();
+      const existingIdx = history.findIndex(h => h.date === date);
+      const existingEntry = existingIdx >= 0 ? history[existingIdx] : null;
+      const entryData = {
+        date: date,
+        weight: Math.round(weight * 10) / 10,
+        waist: (waist && !isNaN(waist) && waist > 0) 
+               ? Math.round(waist * 10) / 10 
+               : (existingEntry && existingEntry.waist ? existingEntry.waist : null)
+      };
+
+      if (existingIdx >= 0) {
+        history[existingIdx] = entryData;
+      } else {
+        history.push(entryData);
+        history.sort((a, b) => a.date.localeCompare(b.date));
+      }
+
+      saveBwHistory(history);
+      updateBodyweightStats(history);
+      renderBodyweightHistoryList(history);
+      showToast(`⚖️ Logged: ${weight.toFixed(1)} kg ${waist ? `• ${waist.toFixed(1)} cm waist` : ''}`);
+    }
+
+    function deleteBwEntry(idx) {
+      const history = getBwHistory();
+      if (idx === 0 || history.length <= 1) {
+        alert('Cannot delete the initial baseline entry.');
+        return;
+      }
+      if (!confirm('Delete this bodyweight & waist log entry?')) return;
+      history.splice(idx, 1);
+      saveBwHistory(history);
+      updateBodyweightStats(history);
+      renderBodyweightHistoryList(history);
+      showToast('🗑️ Weight entry deleted');
+    }
+
+    function toggleBwSection() {
+      const content = document.getElementById('bwContent');
+      const toggleBtn = document.getElementById('bwToggleBtn');
+      if (!content) return;
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        if (toggleBtn) toggleBtn.textContent = '▲ Hide';
+      } else {
+        content.style.display = 'none';
+        if (toggleBtn) toggleBtn.textContent = '▼ Expand';
+      }
+    }
+
+    // ------------------------------------------------------------
+    // 2. EXERCISE SET TRACKER LOGIC
+    // ------------------------------------------------------------
+
+    function getExHistory() {
+      try {
+        const raw = localStorage.getItem(EX_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveExHistory(data) {
+      try {
+        localStorage.setItem(EX_STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {
+        console.error('Error saving exercise data:', e);
+      }
+    }
+
+    function parseSetsRepsFromText(rawText) {
+      const text = (rawText || '').replace(/–/g, '-').trim();
+      const setsMatch = text.match(/(\d+)(?:\s*-\s*(\d+))?\s*Sets?/i);
+      let numSets = 3;
+      if (setsMatch) {
+        numSets = setsMatch[2] ? parseInt(setsMatch[2], 10) : parseInt(setsMatch[1], 10);
+      }
+      const afterX = text.includes('×') ? text.split('×').pop() : (text.includes('x') ? text.split('x').pop() : text);
+      const repsMatch = afterX.match(/(\d+)(?:\s*-\s*(\d+))?\s*(Reps?|Steps?|s)/i);
+      let minReps = 10;
+      let maxReps = 12;
+      let unit = 'Reps';
+      if (repsMatch) {
+        minReps = parseInt(repsMatch[1], 10);
+        maxReps = repsMatch[2] ? parseInt(repsMatch[2], 10) : minReps;
+        unit = repsMatch[3];
+      }
+      return { numSets, minReps, maxReps, unit };
+    }
+
+    function initAllExerciseTrackers() {
+      const store = getExHistory();
+      const cards = document.querySelectorAll('.exercise-card');
+
+      cards.forEach(card => {
+        const cardId = card.id;
+        const slides = card.querySelectorAll('.carousel-slide');
+
+        slides.forEach((slide, slideIdx) => {
+          const key = `${cardId}_s${slideIdx}`;
+
+          // Avoid duplicating if already present
+          if (slide.querySelector('.slide-tracker')) return;
+
+          const nameEl = slide.querySelector('.ex-name');
+          const setsEl = slide.querySelector('.ex-sets');
+          const exName = nameEl ? nameEl.textContent.trim() : `Exercise ${cardId}`;
+          const setsText = setsEl ? setsEl.textContent.trim() : '3 Sets × 10–12 Reps';
+          const meta = parseSetsRepsFromText(setsText);
+
+          if (!store[key]) {
+            store[key] = {
+              name: exName,
+              numSets: meta.numSets,
+              minReps: meta.minReps,
+              maxReps: meta.maxReps,
+              unit: meta.unit,
+              lastSession: null,
+              currentSession: null,
+              history: []
+            };
+          } else {
+            store[key].numSets = meta.numSets;
+            store[key].minReps = meta.minReps;
+            store[key].maxReps = meta.maxReps;
+            store[key].unit = meta.unit;
+          }
+
+          const trackerEl = document.createElement('div');
+          trackerEl.className = 'slide-tracker';
+          trackerEl.setAttribute('data-key', key);
+
+          const gifContainer = slide.querySelector('.gif-container');
+          if (gifContainer) {
+            slide.insertBefore(trackerEl, gifContainer);
+          } else {
+            slide.appendChild(trackerEl);
+          }
+
+          renderSlideTracker(key, store);
+        });
+      });
+
+      saveExHistory(store);
+    }
+
+    function renderSlideTracker(key, passedStore) {
+      const trackerEl = document.querySelector(`.slide-tracker[data-key="${key}"]`);
+      if (!trackerEl) return;
+
+      const store = passedStore || getExHistory();
+      const item = store[key];
+      if (!item) return;
+
+      const numSets = item.numSets || 3;
+      const minReps = item.minReps || 10;
+      const maxReps = item.maxReps || 12;
+      const todayStr = getLocalDateString();
+
+      // Smart Date Rollover:
+      // If currentSession is from a previous date and had checked sets,
+      // preserve it in lastSession and start a fresh session for today.
+      // If no sets were done (e.g. app opened on a rest day), simply roll date forward to today!
+      if (item.currentSession && item.currentSession.date && item.currentSession.date !== todayStr) {
+        const anyDone = item.currentSession.sets.some(s => s.done);
+        if (anyDone) {
+          const finishedSets = item.currentSession.sets.filter(s => s.done);
+          item.lastSession = {
+            date: item.currentSession.date,
+            sets: JSON.parse(JSON.stringify(finishedSets.length > 0 ? finishedSets : item.currentSession.sets))
+          };
+          item.currentSession = {
+            date: todayStr,
+            sets: item.lastSession.sets.map(s => ({
+              weight: s.weight,
+              reps: s.reps,
+              done: false
+            }))
+          };
+        } else {
+          item.currentSession.date = todayStr; // Update date without polluting lastSession
+        }
+        saveExHistory(store);
+      }
+
+      if (!item.currentSession || !Array.isArray(item.currentSession.sets) || item.currentSession.sets.length !== numSets) {
+        const defaultWeight = item.lastSession && item.lastSession.sets && item.lastSession.sets[0] ? item.lastSession.sets[0].weight : 0;
+        const newSets = [];
+        for (let i = 0; i < numSets; i++) {
+          const prevSet = item.lastSession && item.lastSession.sets && item.lastSession.sets[i] ? item.lastSession.sets[i] : null;
+          newSets.push({
+            weight: prevSet ? prevSet.weight : defaultWeight,
+            reps: prevSet ? prevSet.reps : minReps,
+            done: false
+          });
+        }
+        item.currentSession = {
+          date: todayStr,
+          sets: newSets
+        };
+        saveExHistory(store);
+      }
+
+      const currentSets = item.currentSession.sets;
+      const doneCount = currentSets.filter(s => s.done).length;
+      const allDone = doneCount === numSets && numSets > 0;
+      const allHitMax = currentSets.every(s => s.reps >= maxReps);
+
+      // Determine exercise modality:
+      const lowerName = (item.name || '').toLowerCase();
+      const isTimedHold = lowerName.includes('plank') || lowerName.includes('vacuum') || lowerName.includes('hang') || item.unit === 's';
+      const isBodyweightReps = !isTimedHold && (lowerName.includes('deadbug') || (lowerName.includes('crunch') && !lowerName.includes('cable')));
+      const stepDelta = getExerciseStep(key, item.name);
+      const buttonDelta = stepDelta > 0 ? stepDelta : 1.0;
+      const repStep = isTimedHold ? 5 : 1; // Timed holds jump by 5s; deadbugs & crunches step by 1 rep
+
+      let progAdvice = `+${stepDelta} kg`;
+      if (isTimedHold) {
+        progAdvice = `+5 to 10 seconds hold time`;
+      } else if (isBodyweightReps) {
+        progAdvice = `+1 to 2 reps (or add resistance)`;
+      } else if (stepDelta <= 1.0) {
+        progAdvice = `+1 kg (or add repetitions with current weight)`;
+      } else if (stepDelta >= 5.0) {
+        progAdvice = `+5 to 10 kg`;
+      }
+      const showDoubleProgression = allDone && allHitMax;
+
+      // Anchored Last Session Badge (Strictly looks back to previous completed session from history)
+      let prevSession = null;
+      if (item.history && Array.isArray(item.history) && item.history.length > 0) {
+        prevSession = item.history.find(h => h.date !== todayStr) || null;
+      }
+      if (!prevSession && item.lastSession && Array.isArray(item.lastSession.sets) && item.lastSession.sets.length > 0 && item.lastSession.date !== todayStr) {
+        prevSession = item.lastSession;
+      }
+
+      let lastBadgeText = 'No previous log';
+      if (prevSession && Array.isArray(prevSession.sets) && prevSession.sets.length > 0) {
+        const s = prevSession.sets;
+        const firstWeight = s[0].weight;
+        const allSame = s.every(x => x.weight === firstWeight);
+        const repList = s.map(x => x.reps).join(', ');
+        const dateTag = prevSession.date || 'previous';
+        if (allSame) {
+          lastBadgeText = `${firstWeight} kg × ${repList} (${dateTag})`;
+        } else {
+          const details = s.map(x => `${x.weight}kg×${x.reps}`).join(', ');
+          lastBadgeText = `${details} (${dateTag})`;
+        }
+      }
+
+      let html = `
+        <div class="tracker-header">
+          <div class="last-session-badge" title="${lastBadgeText}">
+            <span>📌 Last:</span> <strong>${lastBadgeText}</strong>
+          </div>
+          ${item.lastSession ? `<button type="button" class="btn-copy-last" onclick="copyLastSession('${key}')">⚡ Copy Last</button>` : ''}
+        </div>
+
+        <div class="sets-table">
+          <div class="sets-table-head">
+            <span>Set</span>
+            <span>Weight (kg)</span>
+            <span>Reps</span>
+            <span>Done</span>
+          </div>
+      `;
+
+      currentSets.forEach((set, sIdx) => {
+        html += `
+          <div class="set-row ${set.done ? 'done' : ''}" id="row_${key}_${sIdx}">
+            <span class="set-badge">${sIdx + 1}</span>
+            
+            <div class="stepper-box">
+              <button type="button" class="stepper-btn" onclick="stepWeight('${key}', ${sIdx}, -${buttonDelta})">−</button>
+              <input type="number" step="${buttonDelta >= 2.5 ? 2.5 : (buttonDelta >= 1.0 ? 1.0 : 0.5)}" min="0" max="500" class="stepper-input" 
+                     value="${set.weight}" 
+                     onchange="onWeightChange('${key}', ${sIdx}, this.value)" 
+                     onfocus="this.select()">
+              <button type="button" class="stepper-btn" onclick="stepWeight('${key}', ${sIdx}, ${buttonDelta})">+</button>
+            </div>
+
+            <div class="stepper-box">
+              <button type="button" class="stepper-btn" onclick="stepReps('${key}', ${sIdx}, -${repStep})">−</button>
+              <input type="number" step="${repStep}" min="0" max="100" class="stepper-input" 
+                     value="${set.reps}" 
+                     onchange="onRepsChange('${key}', ${sIdx}, this.value)" 
+                     onfocus="this.select()">
+              <button type="button" class="stepper-btn" onclick="stepReps('${key}', ${sIdx}, ${repStep})">+</button>
+            </div>
+
+            <button type="button" class="btn-check-set ${set.done ? 'active' : ''}" onclick="toggleSetCheck('${key}', ${sIdx})" title="Mark set done">
+              ✓
+            </button>
+          </div>
+        `;
+      });
+
+      html += `</div>`;
+
+      if (showDoubleProgression) {
+        let adviceMsg = '';
+        if (isTimedHold) {
+          adviceMsg = `🔥 <strong>Target Hit!</strong> You reached ${maxReps}+ seconds on all sets. Increase hold duration by 5–10 seconds next session!`;
+        } else if (isBodyweightReps) {
+          adviceMsg = `🔥 <strong>Target Hit!</strong> You reached ${maxReps}+ reps on all sets. Add 1–2 reps or advance to a weighted progression next session!`;
+        } else {
+          adviceMsg = `🔥 <strong>Target Hit!</strong> You reached ${maxReps}+ reps on all sets. Increase weight by ${progAdvice} next session!`;
+        }
+        html += `
+          <div class="progression-banner">
+            ${adviceMsg}
+          </div>
+        `;
+      }
+
+      const historyCount = item.history ? item.history.length : 0;
+      
+      let statusText = '🟢 Real-time Auto-saved';
+      if (allDone) {
+        statusText = '✅ Completed & Auto-saved';
+      } else if (doneCount > 0) {
+        statusText = `🟢 Auto-saved (${doneCount}/${numSets} done)`;
+      }
+
+      html += `
+        <div class="tracker-status-bar">
+          <div class="auto-save-pill ${allDone ? 'all-done' : ''}">
+            ${statusText}
+          </div>
+          <div class="tracker-btn-group">
+            <button type="button" class="btn-history-toggle" onclick="toggleHistoryDrawer('${key}')">
+              📜 Logs (${historyCount})
+            </button>
+            <button type="button" class="btn-clear-session" onclick="clearCurrentSession('${key}')" title="Reset sets for a new round">
+              🔄 Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="history-drawer" id="drawer_${key}" style="display:none;"></div>
+      `;
+
+      trackerEl.innerHTML = html;
+    }
+
+    function syncSessionHistory(key, store) {
+      const item = store[key];
+      if (!item || !item.currentSession) return;
+      const currentSets = item.currentSession.sets;
+      const doneSets = [];
+      currentSets.forEach((s, idx) => {
+        if (s.done) {
+          doneSets.push({
+            setNum: idx + 1,
+            weight: s.weight,
+            reps: s.reps,
+            done: true
+          });
+        }
+      });
+
+      // Only save to history if at least one set is completed
+      if (doneSets.length > 0) {
+        const todayStr = getLocalDateString();
+        const sessionData = {
+          date: todayStr,
+          sets: doneSets // Store completed sets with original set numbers (S1, S2, S3)
+        };
+        if (!item.history) item.history = [];
+        const existingIdx = item.history.findIndex(h => h.date === todayStr);
+        if (existingIdx >= 0) {
+          item.history[existingIdx] = sessionData;
+        } else {
+          item.history.unshift(sessionData);
+          if (item.history.length > 20) item.history.pop();
+        }
+      }
+    }
+
+    function stepWeight(key, setIdx, delta) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseFloat(set.weight) || 0;
+      val = Math.round((val + delta) * 10) / 10;
+      if (val < 0) val = 0;
+      set.weight = val;
+
+      if (setIdx === 0) {
+        store[key].currentSession.sets.forEach((s, idx) => {
+          if (idx > 0 && !s.done) {
+            s.weight = val;
+          }
+        });
+      }
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function onWeightChange(key, setIdx, rawVal) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseFloat(rawVal) || 0;
+      if (val < 0) val = 0;
+      set.weight = Math.round(val * 10) / 10;
+
+      if (setIdx === 0) {
+        store[key].currentSession.sets.forEach((s, idx) => {
+          if (idx > 0 && !s.done) {
+            s.weight = set.weight;
+          }
+        });
+      }
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function stepReps(key, setIdx, delta) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseInt(set.reps, 10) || 0;
+      val = val + delta;
+      if (val < 0) val = 0;
+      set.reps = val;
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function onRepsChange(key, setIdx, rawVal) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      let val = parseInt(rawVal, 10) || 0;
+      if (val < 0) val = 0;
+      set.reps = val;
+
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+    }
+
+    function toggleSetCheck(key, setIdx) {
+      const store = getExHistory();
+      if (!store[key] || !store[key].currentSession) return;
+      const set = store[key].currentSession.sets[setIdx];
+      if (!set) return;
+
+      set.done = !set.done;
+
+      // Automatically sync to lastSession and history in real-time
+      syncSessionHistory(key, store);
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+
+      if (set.done) {
+        const numSets = store[key].currentSession.sets.length;
+        const doneCount = store[key].currentSession.sets.filter(s => s.done).length;
+        if (doneCount === numSets) {
+          showToast(`🎉 All sets complete & auto-saved!`);
+        } else {
+          showToast(`✅ Set ${setIdx + 1} marked done (Auto-saved)`);
+        }
+      }
+    }
+
+    function copyLastSession(key) {
+      const store = getExHistory();
+      const item = store[key];
+      if (!item) return;
+
+      const todayStr = getLocalDateString();
+      let sourceSession = null;
+      // Prioritize completed session from history before today
+      if (item.history && Array.isArray(item.history) && item.history.length > 0) {
+        sourceSession = item.history.find(h => h.date !== todayStr) || item.history[0];
+      }
+      if (!sourceSession && item.lastSession && Array.isArray(item.lastSession.sets) && item.lastSession.sets.length > 0 && item.lastSession.date !== todayStr) {
+        sourceSession = item.lastSession;
+      }
+
+      if (!sourceSession || !sourceSession.sets) {
+        showToast('ℹ️ No previous completed session found to copy');
+        return;
+      }
+
+      item.currentSession.sets.forEach((s, idx) => {
+        if (sourceSession.sets[idx]) {
+          s.weight = sourceSession.sets[idx].weight;
+          s.reps = sourceSession.sets[idx].reps;
+          s.done = false;
+        } else if (sourceSession.sets[0]) {
+          s.weight = sourceSession.sets[0].weight;
+          s.reps = sourceSession.sets[0].reps;
+          s.done = false;
+        }
+      });
+
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+      showToast('📋 Copied previous session weights & reps!');
+    }
+
+    function clearCurrentSession(key) {
+      if (!confirm('Reset sets for this exercise?')) return;
+      const store = getExHistory();
+      const item = store[key];
+      if (!item || !item.currentSession) return;
+
+      item.currentSession.sets.forEach(s => {
+        s.done = false;
+      });
+      saveExHistory(store);
+      renderSlideTracker(key, store);
+      showToast('🔄 Sets reset for a new workout');
+    }
+
+    function toggleHistoryDrawer(key) {
+      const drawer = document.getElementById(`drawer_${key}`);
+      if (!drawer) return;
+
+      if (drawer.style.display === 'none') {
+        const store = getExHistory();
+        const item = store[key];
+        if (!item || !item.history || item.history.length === 0) {
+          drawer.innerHTML = '<div style="color:#64748b; padding:4px;">No logged sessions yet. Complete your workout and tap Save Session!</div>';
+        } else {
+          let html = '';
+          item.history.forEach(session => {
+            const totalVolume = session.sets.reduce((sum, s) => sum + (s.weight * s.reps), 0);
+            const setDetails = session.sets.map((s, idx) => `S${s.setNum || (idx+1)}: ${s.weight}kg×${s.reps}`).join(' | ');
+            html += `
+              <div class="history-session-item">
+                <div class="history-session-header">
+                  <span>📅 ${session.date}</span>
+                  <span>Total Vol: ${totalVolume} kg</span>
+                </div>
+                <div class="history-session-sets">${setDetails}</div>
+              </div>
+            `;
+          });
+          drawer.innerHTML = html;
+        }
+        drawer.style.display = 'block';
+      } else {
+        drawer.style.display = 'none';
+      }
+    }
+
+    // ------------------------------------------------------------
+    // 3. BACKUP, RESTORE & DATA RESET
+    // ------------------------------------------------------------
+
+    function exportWorkoutBackup() {
+      const bwData = getBwHistory();
+      const exData = getExHistory();
+
+      const backupPayload = {
+        app: 'VTaperHypertrophyTracker',
+        version: '1.0',
+        exportDate: new Date().toISOString(),
+        bodyweightHistory: bwData,
+        exerciseHistory: exData
+      };
+
+      const jsonString = JSON.stringify(backupPayload, null, 2);
+      const blob = new Blob([jsonString], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+
+      const now = getLocalDateString();
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `workout_routine_backup_${now}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showToast('📥 Backup exported successfully!');
+    }
+
+    function triggerImportFile() {
+      const input = document.getElementById('backupFileInput');
+      if (input) input.click();
+    }
+
+    function handleImportFile(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      const confirmImport = confirm('⚠️ WARNING: Importing a backup file will overwrite your current workout and bodyweight data on this browser.\n\nDo you want to proceed?');
+      if (!confirmImport) {
+        event.target.value = '';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (!data.exerciseHistory && !data.bodyweightHistory) {
+            alert('Invalid backup file format.');
+            return;
+          }
+
+          if (data.bodyweightHistory) {
+            saveBwHistory(data.bodyweightHistory);
+          }
+          if (data.exerciseHistory) {
+            saveExHistory(data.exerciseHistory);
+          }
+
+          initBodyweightUI();
+          initAllExerciseTrackers();
+          showToast('✅ Backup restored successfully!');
+        } catch (err) {
+          alert('Error reading backup file: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = '';
+    }
+
+    function resetAllTrackerData() {
+      const confirm1 = confirm('⚠️ Are you sure you want to reset all tracked weights, reps, and bodyweight history?');
+      if (!confirm1) return;
+      const confirm2 = confirm('This cannot be undone. Do you want to proceed?');
+      if (!confirm2) return;
+
+      localStorage.removeItem(BW_STORAGE_KEY);
+      localStorage.removeItem(EX_STORAGE_KEY);
+
+      initBodyweightUI();
+      // Re-render trackers
+      document.querySelectorAll('.slide-tracker').forEach(t => t.remove());
+      initAllExerciseTrackers();
+      showToast('🔄 All tracker data reset.');
+    }
+
+    // Auto-select today's workout tab on initial open + init trackers
+    window.addEventListener('DOMContentLoaded', () => {
+      const dayNum = new Date().getDay(); // 0 Sun, 1 Mon, 2 Tue, 3 Wed, 4 Thu, 5 Fri, 6 Sat
+      const dayMap = { 1: 'mon', 2: 'tue', 3: 'wed', 4: 'thu', 5: 'fri' };
+      const currentDayKey = dayMap[dayNum] || 'mon'; // If weekend, default to Monday
+      const activeBtn = document.querySelector(`.day-tab-btn[data-day="${currentDayKey}"]`);
+      if (activeBtn) {
+        switchDayTab(currentDayKey, activeBtn);
+      }
+
+      // Initialize Bodyweight Tracker
+      initBodyweightUI();
+
+      // Initialize Exercise Set Trackers across all cards & slides
+      initAllExerciseTrackers();
+    });
+  </script>
+
+  <div id="trackerToast" class="tracker-toast"></div>
+</body>
+</html>

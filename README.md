@@ -67,7 +67,7 @@ The program is engineered to build an aesthetic V-taper silhouette (broad should
 Prolonged seated office work produces a predictable postural distortion: shortened, hyperactive hip flexors (psoas, rectus femoris) and lumbar extensors, combined with underactive gluteals and abdominal stabilizers. 
 
 ### The Realistic Anterior Pelvic Tilt (APT) Strategy:
-* **Why Leg Raises Were Removed:** Traditional captain's chair and lying floor leg raises are heavily hip-flexor dominant. When abdominal strength is challenged, the hip flexors pull the lumbar spine into hyperextension, worsening anterior tilt and aggravating lower back arch. All leg raises have been replaced with **Kneeling Cable Crunches (Posterior Tilt)**, **Reverse Crunches (Pelvic Roll)**, **Deadbugs (Lower Back Glued to Floor)**, and **RKC Planks (Active Pelvic Tuck)**.
+* **Proper Abdominal Form:** Traditional straight-leg raises pull heavily on the hip flexors and arch the lower back. On the **Captain's Chair Knee Raise**, always keep knees bent at ~90° and focus on curling the pelvis upward at the top—this isolates the lower abdominal wall and decompresses the lumbar spine without hip-flexor strain. Paired with **Adjustable Decline Bench Crunches**, **Deadbugs (Lower Back Glued to Floor)**, and **RKC Planks (Active Pelvic Tuck)**, this directly strengthens anterior core stability.
 * **Deadbugs Cue:** Keeping the lower back glued flat against the mat minimizes hip flexor takeover and forces the anterior core to resist lumbar hyperextension.
 * **Hamstring Training Context:** RDLs and leg curls build posterior-chain strength and hip hinge mechanics, but RDLs alone do not "cure" APT. APT is managed by releasing anterior hip tension, strengthening glute hip extension, and bracing the anterior abdominal wall.
 * **Daily Hip-Flexor Stretching (Every Single Day):**
@@ -195,13 +195,13 @@ Every exercise features a **Dual-Track Architecture**:
   * *Volume:* 3 Sets × 12–15 Reps | Rest: 60s after superset | 0–1 RIR
   * *Form Cues:* Performed as an easy superset with calves. Low systemic fatigue, costs 4 minutes, and elevates total weekly side-delt volume to **11 direct sets** for accelerated shoulder cap width.
 
-### Exercise 5: Anterior Core Flexion (Without Hip Flexor Dominance)
-* **Track A (Recommended): Kneeling Cable Crunch (Posterior Pelvic Tilt)**
+### Exercise 5: Anterior Core & Pelvic Alignment (Zero Awkward Floor Postures)
+* **Track A (Recommended): Captain's Chair Knee Raise (Pelvic Curl)**
+  * *Volume:* 3 Sets × 10–12 Reps | Rest: 60s | 0–1 RIR
+  * *Form Cues:* Rest forearms on pads with back supported. Keep knees bent at ~90° (never straight legs). Smoothly pull bent knees toward chest, then curl hips and pelvis slightly upward at the top for a 1-second peak contraction. Lower under 2s control without swinging.
+* **Track B (Alternative): Adjustable Decline Bench Crunch**
   * *Volume:* 3 Sets × 12–15 Reps | Rest: 60s | 0–1 RIR
-  * *Form Cues:* Kneel facing cable machine with rope held firmly at ears. Lock hips stationary. Flex rectus abdominis to curl ribcage down toward pelvis while actively tucking pelvis posteriorly. Avoid hip hinging; all movement occurs through spinal flexion.
-* **Track B (Alternative): Reverse Crunch on Mat (Pelvic Roll)**
-  * *Volume:* 3 Sets × 12–15 Reps | Rest: 60s | 0–1 RIR
-  * *Form Cues:* Lie flat on mat with knees bent at 90°. Initiate movement by contracting lower abs to roll pelvis off the mat toward your chest. Do not swing legs or allow hips to pull lower back into hyperextension.
+  * *Form Cues:* Hook feet under rollers on a decline bench. Cross arms over chest. Perform a strict crunch by curling your ribs down toward your belly button (30°–45° lift only). Do not perform a full 90° sit-up; pause 1s at peak contraction and lower slowly.
 
 ---
 
@@ -407,15 +407,31 @@ If you share this program with a sports scientist, trainer, or physician, here a
 * **Target: 8,000 to 10,000 steps daily.**
 * For a desk worker, formal lifting sessions burn only ~200–350 kcal net. Daily walking is the primary lever that sustains the caloric deficit without metabolic adaptation.
 
-### 3. Protein Target & Meal Schedule (Mapped to Real Day)
+### 3. Protein Target & Meal Schedule (Mapped to Real Day - Zero Whey)
 * **Daily Target: 145 to 160 grams/day** (~1.75–1.9 g/kg bodyweight).
-* **Daily Meal Distribution (Evening Workout at 6:00 PM):**
-  * **Breakfast (8:30 AM):** 35–40g protein (3 whole eggs + 2 egg whites, or 1 scoop whey + 200g Greek yogurt/dahi + oats/berries).
-  * **Lunch (1:30 PM):** 35–40g protein (Office thali + 100g paneer/soya chunks, or 150g chicken breast + rotis/bhakri + daal + salad).
-  * **Pre-Workout Snack (5:00 PM):** 20–25g protein + 30g carbs (1 scoop whey in water + 1 banana or rice cakes).
-  * **Dinner / Post-Workout (8:30 PM):** 45–50g protein (**220g raw chicken breast** [yields ~160g cooked = ~48g protein] + 1 cup rice/roti + big green salad).
-  * **Total Protein:** **145g to 165g** (safely exceeding the 140g floor every single day).
-* *Note on Chicken Weight:* Always weigh chicken **raw** (220g raw = ~48g protein), as cooked chicken loses water and weight varies by cooking duration.
+* **The Foundation Dinner (Every Single Night):**
+  * **500g Raw Boneless Skinless Chicken Breast:** yields ~360–375g cooked meat = **~112–115g pure protein**, ~575 kcal (~115 kcal / 100g raw, ~22.5g protein / 100g raw).
+  * **200–250g Dahi (Curd):** **~8g protein**, ~130–150 kcal.
+  * **Creatine:** 2 level scoops BeastLife Tropical Tango (6.0g pure creatine monohydrate) taken with dinner/post-workout.
+  * **Dinner Total:** **~120–123g pure protein** (~725–750 kcal). This single meal provides ~80% of your entire day's protein target!
+
+* **Office Days (Gym Days: Mon, Tue, Thu, Fri):**
+  * *Schedule:* Wake-up ~11:00 AM (breakfast & lunch merge).
+  * **Lunch (12:00 PM – 1:00 PM):** Office Thali (2 rotis/chapatis, dal, sabji, small plain rice + canteen sides like soya wadi, paneer mutter, kofta, buttermilk, salad) = **~18–24g protein**, ~480–550 kcal.
+  * **Afternoon Snack (4:00 PM):** Office snack (tomato omelet sandwich, upma, dosa, roll, etc.) or coffee/tea = **~6–10g protein**, ~200–280 kcal.
+  * **Workout (6:00 PM – 7:00 PM):** Office Gym.
+  * **Dinner (9:00 PM – 10:00 PM):** 500g raw chicken breast + 200g dahi + creatine = **~121g protein**, ~725 kcal.
+  * **Total Office Day:** **~145–155g protein**, **~1,750–1,880 kcal** (perfect match for ~1,900 kcal lifting-day target with ~400 kcal deficit).
+
+* **Work-From-Home (WFH) Days (Non-Gym / Rest Days: Wed, Sat, Sun):**
+  * *Schedule:* Wake-up ~11:00 AM.
+  * **Midday / Morning Meal (11:30 AM – 1:00 PM):**
+    * *Primary (Air-Fried Soya Chunks):* 60–75g dry soya chunks (boiled with salt, squeezed, spiced and air fried) = **~31–39g protein**, ~210–260 kcal, ~8–10g fiber (vital for gut motility alongside chicken).
+    * *Optional (Boiled Eggs):* 3 to 4 whole boiled eggs (optional 1 roti or toast) = **~20–26g protein**, ~210–280 kcal.
+  * **Dinner (8:30 PM – 9:30 PM):** 500g raw chicken breast + 200g–250g dahi + creatine = **~121g protein**, ~725 kcal.
+  * **Total WFH Day:** **~146–156g protein**, **~1,100–1,400 kcal** (safely under the ~1,700 kcal rest ceiling, leaving room for cooking oil/ghee and fruit).
+
+* *Note on Chicken Accounting:* Raw boneless chicken breast has ~22.5g protein and ~115 kcal per 100g raw. 500g raw contains ~112–115g pure protein and ~575 kcal. Water loss during cooking reduces weight to ~360–375g cooked, but does not alter calories or protein.
 
 ### 4. Weekend Protocol (Protecting the Deficit)
 * Weekday deficits are commonly erased by relaxed weekend eating.
