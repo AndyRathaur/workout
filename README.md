@@ -18,7 +18,7 @@ The program is engineered to build an aesthetic V-taper silhouette (broad should
 | **Chest** | **9 sets** | **2x / week** | • Mon: Incline DB Press 30° (3 sets) + Pec Deck Machine (3 sets)<br>• Thu: Flat / Low-Incline (15°) Chest Press (3 sets) | **High Priority:** True 2x exposure; 30° clavicular shelf + flat/15° sternal pecs |
 | **Lats & Mid-Back** | **12 sets** | **2x / week** | • Mon: Wide-Grip Lat Pulldown (3 sets) + Seated Cable Row (3 sets)<br>• Thu: Close-Grip Lat Pulldown (3 sets) + Chest-Supported / DB Row (3 sets) | **High Priority:** Dual-vector back width (6 vertical pull sets + 6 horizontal row sets) |
 | **Side Delts** | **11 sets** | **3x / week** | • Mon: Cable Lateral Raise (4 sets)<br>• Tue: DB Lateral Raise (3 sets superset with calves)<br>• Thu: Cable Lateral Raise (4 sets) | **High Priority:** High-frequency lateral deltoid capping for silhouette width |
-| **Rear Delts & Rotator Cuff** | **6 sets** | **2x / week** | • Mon: Cable Face Pull (3 sets)<br>• Thu: Incline DB Reverse Fly / Face Pull (3 sets) | **High Priority:** Postural balance, rotator cuff stability & 3D shoulder look |
+| **Rear Delts & Rotator Cuff** | **4 sets** | **2x / week** | • Mon: Cable Face Pull (2 sets) / Reverse Butterfly Machine (2 sets)<br>• Thu: Reverse Butterfly Machine (2 sets) / Face Pull (2 sets) | **High Priority:** 3D shoulder thickness, chest-supported rear delt hypertrophy & posture balance |
 | **Triceps** | **9 sets** | **2x / week** | • Mon: Cable Overhead Extension (3 sets) + Tricep Pushdown (3 sets)<br>• Thu: Cable Overhead Extension (3 sets) | **High Priority:** Stretch-mediated long head priority (Maeo et al. 2022) |
 | **Biceps & Brachialis** | **6 sets** | **2x / week** | • Mon: Incline DB Bicep Curl (3 sets)<br>• Thu: Cable Rope Hammer Curl (3 sets) | **High Priority:** True 2x weekly arm stimulus; brachialis pushes bicep outward |
 | **Quads** | **9 sets** | **1x / week (direct)** | • Fri: Leg Press Quad Stance (3 sets) + Walking Lunges (3 sets) + Leg Extension (3 sets) | **Balanced Volume:** Friday-only quad focus avoids excessive lower-body dominance |
@@ -152,12 +152,12 @@ Every exercise features a **Dual-Track Architecture**:
   * *Form Cues:* Straight bar or EZ-attachment. Pin elbows to ribs. Curl up while keeping wrists firm; squeeze biceps hard at peak contraction.
 
 ### Exercise 8: Rear Delts & Posture (Posterior Deltoid & External Rotators)
-* **Track A (Recommended): Cable Face Pull**
+* **Track A (Posture & Rotators): Cable Face Pull**
   * *Volume:* 2 Sets × 15–20 Reps | Rest: 60s | 0–1 RIR
   * *Form Cues:* Set rope at eye height. Grip with thumbs backward. Pull rope toward bridge of nose while externally rotating knuckles backward. Squeeze rear delts and mid-traps to reverse desk posture. (2 sets Monday + 2 sets Thursday = 4 direct sets/week).
-* **Track B (Alternative): Incline DB Reverse Fly**
+* **Track B (Top Hypertrophy Choice): Reverse Butterfly Machine (Reverse Pec Deck)**
   * *Volume:* 2 Sets × 12–15 Reps | Rest: 60s | 0–1 RIR
-  * *Form Cues:* Lie chest-down on a 30° incline bench. Raise dumbbells outward leading with pinkies. Squeeze posterior delts at top.
+  * *Form Cues:* Sit facing the pad with chest pressed flat against backrest. Adjust seat so handles align with shoulder/eye height. Keep a slight elbow bend, push arms outward and back in a wide arc. Squeeze rear delts for 1 full second at peak contraction without arching lower back.
 
 ---
 
@@ -278,12 +278,12 @@ Every exercise features a **Dual-Track Architecture**:
   * *Form Cues:* Sit upright on short-back bench. Hold one dumbbell vertically with diamond grip behind head. Lower under control to neck base; press overhead.
 
 ### Exercise 8: Rear Delt & Posture Frequency (Posterior Deltoid)
-* **Track A (Recommended): Cable Face Pull or Reverse Cable Flye**
+* **Track A (Posture & Rotators): Cable Face Pull or Reverse Cable Flye**
   * *Volume:* 2 Sets × 15–20 Reps | Rest: 60s | 0–1 RIR
   * *Form Cues:* High pulley face pull or reverse flye. Squeeze posterior delts and mid-traps to balance Thursday pressing. Brings rear-delt volume to **4 direct sets/week** (2 Mon + 2 Thu).
-* **Track B (Alternative): Incline DB Reverse Fly**
+* **Track B (Top Hypertrophy Choice): Reverse Butterfly Machine (Reverse Pec Deck)**
   * *Volume:* 2 Sets × 12–15 Reps | Rest: 60s | 0–1 RIR
-  * *Form Cues:* Chest-down on 30° incline bench. Raise dumbbells outward leading with pinkies.
+  * *Form Cues:* Sit facing pad, chest firmly supported. Grip handles, keep slight elbow bend, drive outward and back using rear deltoids. Squeeze shoulder blades together for 1s.
 
 ---
 
